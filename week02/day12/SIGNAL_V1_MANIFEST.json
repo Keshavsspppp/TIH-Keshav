@@ -1,0 +1,153 @@
+{
+  "signal_version": "1.0",
+  "frozen_utc": "2026-09-09T02:03:58Z",
+  "pipeline_version": "1.0.0",
+  "config_file": "configs/preprocess_v1.yaml",
+  "config_sha256": "7f9e704da49b8b74609d33135f7d80da370cf4b70070436ba90b7d271deab820",
+  "n_videos": 4,
+  "n_signals": 10,
+  "total_samples": 131080,
+  "signals": [
+    {
+      "video": "1LED_92bps",
+      "lamp": 1,
+      "file": "1LED_92bps/lamp1.npy",
+      "n_samples": 27856,
+      "box": [
+        294,
+        117,
+        105,
+        105
+      ],
+      "value_sha256": "325e405405e456d5b8a72ad35b7b7d833f46b12113426e5aeb55c9a1fa95c9c8",
+      "file_sha256": "ca41200e5ff07b28fd5f6338a42a11b68425249b7ae936b30f43e44a4738fc2f"
+    },
+    {
+      "video": "2LEDs_92bps",
+      "lamp": 1,
+      "file": "2LEDs_92bps/lamp1.npy",
+      "n_samples": 17195,
+      "box": [
+        319,
+        23,
+        75,
+        82
+      ],
+      "value_sha256": "27697cf645a07ac1056744f0ba9335c5da9b824fbe0c1f97d2150db356bed878",
+      "file_sha256": "8675dc93cb15da6aa135d6f291a4cce85fb4449eeee4cddaf5ccf1b6122b300e"
+    },
+    {
+      "video": "2LEDs_92bps",
+      "lamp": 2,
+      "file": "2LEDs_92bps/lamp2.npy",
+      "n_samples": 17195,
+      "box": [
+        418,
+        25,
+        73,
+        81
+      ],
+      "value_sha256": "249089480aa1ff671b6281057e4b13253984c186b58cfe2ae37518c4ea3c8546",
+      "file_sha256": "d39598ef2f2921f3008ea0f8b5eb6dfa4d9bd832e7523660c3d2330c23d69725"
+    },
+    {
+      "video": "3LEDs_92bps",
+      "lamp": 1,
+      "file": "3LEDs_92bps/lamp1.npy",
+      "n_samples": 11466,
+      "box": [
+        410,
+        41,
+        49,
+        49
+      ],
+      "value_sha256": "ab44db3b24ecea284d85a5b304cf3fcefb989d43418a174092676bc262e9f6b3",
+      "file_sha256": "efa5ee61babffd98d54d71ea7bc5853e3dec36b17db4fa503135dbddd28c0e00"
+    },
+    {
+      "video": "3LEDs_92bps",
+      "lamp": 2,
+      "file": "3LEDs_92bps/lamp2.npy",
+      "n_samples": 11466,
+      "box": [
+        480,
+        41,
+        49,
+        49
+      ],
+      "value_sha256": "aa72c2d2517bb7c18df0646a933d48d272fb405fcad66432b3a1dc391d8fed1a",
+      "file_sha256": "c6d68dbf44ed92c50e4cfa5903728cfa60cd8586a3c8b709b068df93402e7ee9"
+    },
+    {
+      "video": "3LEDs_92bps",
+      "lamp": 3,
+      "file": "3LEDs_92bps/lamp3.npy",
+      "n_samples": 11466,
+      "box": [
+        554,
+        46,
+        47,
+        46
+      ],
+      "value_sha256": "a0834b6280c043579204239fa698b97f57074eb1935f223437c96166e517bd21",
+      "file_sha256": "da2f78c57abdb1703021ed996e4337ec092e5ce18a87c732c143c9a58af0cd07"
+    },
+    {
+      "video": "4LEDs_92bps",
+      "lamp": 1,
+      "file": "4LEDs_92bps/lamp1.npy",
+      "n_samples": 8609,
+      "box": [
+        279,
+        86,
+        67,
+        67
+      ],
+      "value_sha256": "537a5d88a55f15a13dee28756043331378d851edf12c11a5a10424f2860c0191",
+      "file_sha256": "28f494ad8baf711753a1b9732554cd34d23e15896a5ac487b86f9f0464b2cbf6"
+    },
+    {
+      "video": "4LEDs_92bps",
+      "lamp": 2,
+      "file": "4LEDs_92bps/lamp2.npy",
+      "n_samples": 8609,
+      "box": [
+        401,
+        89,
+        66,
+        65
+      ],
+      "value_sha256": "02f0603e51f0dd29a9ebfa42ce33d2f3b4b50385c28c20320beb870c54f63662",
+      "file_sha256": "b57dc4c4b56f48be3fef280ec7a859209eb45f55b6ec9ac318c21abea5f717f1"
+    },
+    {
+      "video": "4LEDs_92bps",
+      "lamp": 3,
+      "file": "4LEDs_92bps/lamp3.npy",
+      "n_samples": 8609,
+      "box": [
+        281,
+        167,
+        66,
+        66
+      ],
+      "value_sha256": "9d3aa2d251c16d77a1efad32094f44aedfbecab3c4572171a3f1e808d6bd766e",
+      "file_sha256": "0a2a3564a2ebfe1980e8f50cca468d4d55bdd82783f16f3221a9c88f86fd9423"
+    },
+    {
+      "video": "4LEDs_92bps",
+      "lamp": 4,
+      "file": "4LEDs_92bps/lamp4.npy",
+      "n_samples": 8609,
+      "box": [
+        400,
+        169,
+        65,
+        65
+      ],
+      "value_sha256": "724655986359882b1aede3e788ca1a6544fadd349d00e09190da7b2a66679f71",
+      "file_sha256": "a04f9d5313a0eaa1a6477f513a4787a8852283c3fd737368bb08e5c13d7753cf"
+    }
+  ],
+  "note": "Frozen set. Every later step reads these files. Do not edit them. To change anything, produce Signal V2 and record why."
+}

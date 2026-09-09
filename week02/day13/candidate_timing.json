@@ -1,0 +1,82 @@
+{
+  "1LED_92bps/lamp1": {
+    "period_frames": 2.8261,
+    "bits_per_second": 92.0,
+    "phase_frames": 2.44,
+    "n_bits": 9855,
+    "eye_score": 117.99,
+    "basis": "ASSUMED from filename; not confirmed by the signal"
+  },
+  "2LEDs_92bps/lamp1": {
+    "period_frames": 2.8261,
+    "bits_per_second": 92.0,
+    "phase_frames": 1.54,
+    "n_bits": 6083,
+    "eye_score": 123.05,
+    "basis": "ASSUMED from filename; not confirmed by the signal"
+  },
+  "2LEDs_92bps/lamp2": {
+    "period_frames": 2.8261,
+    "bits_per_second": 92.0,
+    "phase_frames": 1.32,
+    "n_bits": 6083,
+    "eye_score": 120.98,
+    "basis": "ASSUMED from filename; not confirmed by the signal"
+  },
+  "3LEDs_92bps/lamp1": {
+    "period_frames": 2.8261,
+    "bits_per_second": 92.0,
+    "phase_frames": 2.66,
+    "n_bits": 4056,
+    "eye_score": 122.74,
+    "basis": "ASSUMED from filename; not confirmed by the signal"
+  },
+  "3LEDs_92bps/lamp2": {
+    "period_frames": 2.8261,
+    "bits_per_second": 92.0,
+    "phase_frames": 2.36,
+    "n_bits": 4056,
+    "eye_score": 122.38,
+    "basis": "ASSUMED from filename; not confirmed by the signal"
+  },
+  "3LEDs_92bps/lamp3": {
+    "period_frames": 2.8261,
+    "bits_per_second": 92.0,
+    "phase_frames": 2.7,
+    "n_bits": 4056,
+    "eye_score": 109.32,
+    "basis": "ASSUMED from filename; not confirmed by the signal"
+  },
+  "4LEDs_92bps/lamp1": {
+    "period_frames": 2.8261,
+    "bits_per_second": 92.0,
+    "phase_frames": 1.1,
+    "n_bits": 3045,
+    "eye_score": 124.46,
+    "basis": "ASSUMED from filename; not confirmed by the signal"
+  },
+  "4LEDs_92bps/lamp2": {
+    "period_frames": 2.8261,
+    "bits_per_second": 92.0,
+    "phase_frames": 1.28,
+    "n_bits": 3045,
+    "eye_score": 124.47,
+    "basis": "ASSUMED from filename; not confirmed by the signal"
+  },
+  "4LEDs_92bps/lamp3": {
+    "period_frames": 2.8261,
+    "bits_per_second": 92.0,
+    "phase_frames": 2.8,
+    "n_bits": 3045,
+    "eye_score": 124.36,
+    "basis": "ASSUMED from filename; not confirmed by the signal"
+  },
+  "4LEDs_92bps/lamp4": {
+    "period_frames": 2.8261,
+    "bits_per_second": 92.0,
+    "phase_frames": 2.4,
+    "n_bits": 3045,
+    "eye_score": 124.34,
+    "basis": "ASSUMED from filename; not confirmed by the signal"
+  }
+}
