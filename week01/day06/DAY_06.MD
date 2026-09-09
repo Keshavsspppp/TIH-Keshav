@@ -1,7 +1,6 @@
 # Day 06 — Reproducible Workflow Package
-**Name:**Keshav Prasad 
-
 **Project:** Optical Camera Communication (OCC) Video Message Decoding
+**Name:**Keshav Prasad
 **Status:** dataset not received. Everything here is designed to work without it.
 
 **What this file is:** all four Day 06 deliverables in one place — pipeline flowchart, experiment plan, log template, and folder structure. It can be read on its own. The full-length versions live in `EXPERIMENT_PLAN_V2.MD` and `EXPERIMENT_LOG.MD`.
