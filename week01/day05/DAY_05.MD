@@ -364,14 +364,3 @@ These come from the Week 1 blockers. They decide which parts of this plan stay g
 | Packet / framing structure | `decode/framing.py` | Print the raw bits, and run preamble search as a hint only |
 | Rolling shutter or global shutter | Whether we can read stripes inside one frame | Assume one sample per frame. Stripe decoding is out of scope unless the videos show stripes |
 | Codec / compression damage | Whether the brightness signal needs fixing | Add a re-encode sweep (different CRF values) to the sensitivity study |
-
----
-
-## 8. Day 05 Checklist
-
-- [x] Pipeline flowchart — §1
-- [x] Baseline, advanced methods, and our own experiment — §2, §3
-- [x] Scoring criteria (correctness, BER, timing robustness, speed) — §4
-- [x] Folder structure — §6
-- [x] Experiment plan — `EXPERIMENT_PLAN.MD`
-- [x] Log template — `EXPERIMENT_LOG.MD`
