@@ -1,55 +1,105 @@
 # TIH-Keshav
 
-**T**oday **I** **L**earned — a day-by-day research log for an **Optical Camera Communication (OCC) video message decoding** project.
+**T**oday **I** **L**earned — a day-by-day research log for an **Optical Camera Communication (OCC) video message decoding** project (TIH IIT Guwahati, 4-week online internship, Days 1–21 so far).
 
-Each `dayNN` folder is a snapshot of one day's work: notes, plans, experiment logs, figures, notebooks and scripts, written up as the project actually happened — including dead ends, revised assumptions, and open questions carried forward to the next day.
+Each `dayNN` folder is a snapshot of one day's work: notes, plans, experiment logs, figures, notebooks and scripts, written up as the project actually happened — including dead ends, revised assumptions, and open questions carried forward. Where a later day disproved an earlier one, the earlier file keeps its original text and carries a dated correction note pointing forward; nothing is rewritten after the fact.
 
 ## Project in one paragraph
 
-A light source ("transmitter") blinks in On-Off Keying (OOK), encoding a binary message. A standard frame-based camera records this blinking as video, but its frame rate is not synchronized to the transmitter's bit clock — so each video only contains an indirect, noisy trace of the original bitstream. The goal is a fully offline, software-only pipeline that takes raw video and reconstructs the transmitted bits and the human-readable message, evaluated on bit error rate (BER), synchronization robustness, and reproducibility — no camera or transmitter hardware involved.
+A light source ("transmitter") blinks in On-Off Keying (OOK), encoding a binary message. A standard frame-based camera records this blinking as video, but its frame rate is not synchronized to the transmitter's bit clock — so each video only contains an indirect, noisy trace of the original bitstream. The goal is a fully offline, software-only pipeline that takes raw video and reconstructs the transmitted bits and the human-readable message, evaluated on bit error rate (BER), synchronization robustness and reproducibility — no camera or transmitter hardware involved.
+
+## The dataset, in numbers
+
+| | |
+|---|---|
+| Videos | `1LED_92bps`, `2LEDs_92bps`, `3LEDs_92bps`, `4LEDs_92bps` — 226 MB, in `Videos/` |
+| Frame rate / format | 260 fps, steady, no duplicated frames; 640×360, mpeg4 |
+| Signal | Near-binary: lamp at 0 or ~245, noise 6–11; camera static (< 1 px drift); ambient light constant to ~0.1 % of contrast |
+| Lamps | Carry **different** data, share a clock |
+| Bit rate | **92 bps is from the filename — an assumption.** Days 10, 13 and 16 found evidence against it; no other rate fits better |
+| Ground truth | **None supplied.** No decoded bit can be checked for correctness |
 
 ## Repo structure
 
 ```
 TIH-Keshav/
 ├── week01/
-│   ├── day01/   Problem statement, rewritten from the faculty brief
-│   ├── day02/   Domain concepts (CV, OCC/VLC, signal processing, ML) + candidate methods
-│   ├── day03/   Method shortlist presentation
-│   ├── day04/   Expected dataset schema, splitting strategy, risk assessment (written pre-dataset)
-│   ├── day05/   Pipeline design, experiment plan and log templates (still pre-dataset)
-│   ├── day06/   Reproducible workflow package (v2 of the Day 05 deliverables)
-│   └── day07/   Real dataset arrives — inspection, fingerprinting, first findings
-└── week02/
-    ├── day08/   Full audit of every frame in every video
-    ├── day09/   Automatic ROI (lamp) localization and signal extraction strategy
-    ├── day10/   Exploratory data analysis on frame intensity and run lengths
-    ├── day11/   End-to-end, config-driven signal extraction pipeline
-    ├── day12/   Signal V1 — reviewed, frozen and fingerprinted
-    ├── day13/   Symbol/clock synchronization analysis
-    └── day14/   Week 2 wrap-up and peer review package
+│   ├── day01/   Problem statement, rewritten from the faculty brief; pipeline diagram; 10 questions
+│   ├── day02/   Domain concepts (CV, OCC/VLC, signal processing, ML); 6-system comparison table; 3-method shortlist
+│   ├── day03/   Research question, 3-slide review pack
+│   ├── day04/   Expected dataset schema, split rules, risk checklist (written pre-dataset)
+│   ├── day05/   Pipeline design, experiment plan, log template, folder structure (still pre-dataset)
+│   ├── day06/   Readiness package — v2 of the Day 05 deliverables
+│   └── day07/   Dataset arrives — inspection tool, manifest, first findings, questions for the faculty
+├── week02/
+│   ├── day08/   Full audit of every frame in every video: quality table, extraction-risk checklist
+│   ├── day09/   Automatic per-lamp ROI (behaviour clustering), sampling-rule study, frozen preprocessing
+│   ├── day10/   EDA notebook: ROI statistics, transitions, run lengths vs 92 bps, drift
+│   ├── day11/   Config-driven, deterministic extraction pipeline (video → per-lamp brightness)
+│   ├── day12/   Cleaning ablation; Signal V1 frozen and fingerprinted (signal_v1/ is committed)
+│   ├── day13/   Synchronisation notebook: three clock estimators, candidate timing, hypotheses
+│   └── day14/   Week-2 package, hypothesis register, the 21-frame beat
+└── week03/
+    ├── day15/   Threshold OOK decoder (fixed / adaptive), preliminary bits, consistency indicators
+    ├── day16/   Decoder v2: phase as a convention, per-bit "safe" mask (~44 % of bits phase-independent)
+    ├── day17/   occlib.py (shared library); ML symbol classifier — synthetic true labels vs real pseudo-labels
+    ├── day18/   One comparison table over all methods; 3-slide pack; shortlist
+    ├── day19/   Tuning grid (51 runs, logged); the Day 09 sampling rule replaced on validation evidence
+    ├── day20/   Sensitivity study: ROI, smoothing, threshold, phase, period — baseline vs tuned
+    └── day21/   Best-candidate checkpoint: TEST opened once; Week-4 direction for approval
+
+OCC_Complete_Analysis.ipynb   Days 7–16 in one executed notebook (generated by build_all.py)
+build_all.py                  Source of that notebook — edit this, not the .ipynb
+AUDIT_CHANGELOG.md            2026-09-10 audit of Days 1–16: what was re-verified against the videos, what was corrected
+Videos/                       The four supplied videos (git-ignored; scripts expect them under data/raw/)
 ```
 
-Each day folder typically contains a `DAY_NN.MD` write-up plus supporting artifacts (plots, notebooks, scripts, manifests).
+Each day folder has a `DAY_NN.MD` write-up (or a notebook) plus its artefacts. Two `.gitignore` conventions: raw video and regenerable run outputs (`signals/`, `bits/`, …) are ignored; the frozen `week02/day12/signal_v1/` and every report JSON are tracked.
 
 ## How the project evolved
 
-**Week 1 — framing the problem before seeing any data.** The brief was reverse-engineered into an explicit pipeline (frame extraction → ROI tracking → intensity extraction → preprocessing → symbol sync → thresholding/classification → decoding → evaluation), the relevant CV/OCC/signal-processing/ML background was mapped out, and a full dataset schema, split strategy (grouped by video/session, never by frame, to avoid leakage) and risk register were written down *before* the faculty dataset arrived — so that when it did arrive, inspection was a checklist run against stated expectations rather than an improvised look-around.
+**Week 1 — framing the problem before seeing any data.** The brief was turned into an explicit pipeline (frames → ROI → intensity → preprocessing → symbol sync → decision → decoding → evaluation), the CV/OCC/signal-processing/ML background was mapped, and a dataset schema, split strategy and risk register were written *before* the data arrived — so inspection would be a checklist run against stated expectations. Several of those expectations (30–60 fps, drift to detrend, a by-video split, an ML branch with labels) were later reversed by the data; the Day 4–6 files say where.
 
-**Dataset arrival (Day 07).** Four videos, ~226 MB total, shot at **260 fps** (not the assumed 30–60 fps) with 1–4 LEDs blinking at 92 bps each. Clean two-level signal, static camera, no dropped frames — but no ground truth, and framing/encoding above the raw OOK bits unknown.
+**Dataset arrival (Day 7).** Four videos at 260 fps, 1–4 lamps, clean two-level signal, static camera, no dropped frames — but no ground truth, no known framing above the raw bits, and four different setups with no repeats, so no generalisation claim is possible. Day 7 also *believed* the run lengths confirmed 92 bps; Day 10 showed they do the opposite (a fifth of all runs are impossible at that rate), and Day 7 carries the correction.
 
-**Week 2 — signal extraction and synchronization.** Automatic lamp/ROI localization worked across all four videos; a deterministic, config-driven extraction pipeline produced a reproducible, fingerprinted signal set ("Signal V1," 131,080 samples). Exploratory analysis showed run lengths didn't cleanly match the expected 92 bps, and the initial synchronization pass found no recoverable clock at any tested rate — until shared glitches across lamps in the peer-review stage suggested a common clock might exist after all, an open thread carried into later work.
+**Week 2 — signal extraction and synchronisation.** Lamps are found automatically in all four videos by clustering pixels on how they blink. A deterministic pipeline produces Signal V1: ten brightness series, 131,080 samples, fingerprinted and byte-for-byte reproducible from the config. Every cleaning step (detrend, normalise, smooth) was measured and switched off — there is no drift to remove and smoothing deletes real transitions. Then the central negative result: **the level changes fit a 92 bps grid 0.3 % better than randomly chosen times, and no other rate does better.** The symbol clock is not recoverable from these videos. Day 14 found the one lead — glitches shared across lamps that repeat every ~21 frames, consistent with a clock near 91, 124 or 136 bps.
+
+**Week 3 — decoding without a clock, and how far the settings can be wrong.**
+- *Days 15–16.* A threshold decoder produces 46,372 preliminary bits at the assumed rate, but its phase estimate is blind — the score used to pick the phase is identical at every phase. Decoder v2 stops estimating, decodes at twelve phases and reports which bits do not depend on it: about 44 % of every stream.
+- *Day 17.* The ML classifier (logistic regression) is built with the only labels that exist — synthetic — and separately with the threshold decoder's own safe bits. It beats the threshold where a BER can be measured, is a coin toss on the phase-dependent real bits, and inherits the phase problem. Building the synthetic generator exposed a window bug in the sampling rule (the last frame of a bit can expose inside the next bit).
+- *Days 18–19.* One comparison table, four methods, timed; then a 51-run tuning grid with the selection rule fixed in advance. Result: the Day 9 "most confident frame" rule is the *worst* choice at an unknown phase (12 % BER on the model); the "nearest frame to the bit centre" rule Day 9 rejected halves that and is immune to threshold placement. The real-data consistency indicators would have picked the wrong rule — which is why they were excluded from selection.
+- *Day 20.* The sensitivity study: the tuned decoder changes under 1 % of its bits for a box half or double the size, a shift of half a box, a 3-frame smoother or a ±30 % threshold move; it decodes correctly across 60 % of possible phases. **The one thing it is sensitive to is the bit period — a 0.2 % rate error is a coin toss over 3,000 bits**, and the rate is not known to within 40 %.
+- *Day 21.* TEST (the last 70 % of each signal) opened once; the checkpoint and a Week-4 proposal (fix the clock via the beat or the transmitted bits, then block-wise phase decoding) await mentor approval.
+
+**Standing result.** The pipeline is stable, deterministic, fingerprinted and insensitive to everything it controls; it produces bit streams for all four videos; and it cannot say whether a single bit is correct, because the bit clock could not be recovered and no reference was supplied. Every "confidence", "safe" or "agreement" figure in this repo is an internal-consistency indicator, never a correctness measurement, and is labelled as such.
+
+## Reproducing
+
+```bash
+cp -r Videos data/raw                              # or a symlink; nothing is ever written there
+python week01/day07/inspect_dataset.py --raw data/raw --out reports/day07
+python week02/day11/occ_pipeline.py --all --config week02/day11/configs/preprocess_v1.yaml --out signals
+python week02/day12/freeze_signal.py --freeze --signals signals --out signal_v1 --config week02/day11/configs/preprocess_v1.yaml
+python week03/day15/decoder.py --signals signal_v1 --out bits
+python week03/day16/decoder_v2.py --signals signal_v1 --out bits_v2
+python week03/day17/occlib.py                      # self-check of the shared library
+python week03/day17/ml_decoder.py && python week03/day18/compare_methods.py
+python week03/day19/tune.py && python week03/day20/ablation.py && python week03/day21/final_eval.py
+```
+
+Needs Python 3 with OpenCV, NumPy, SciPy, scikit-learn, Matplotlib, PyYAML and Jupyter; `ffprobe` is optional. Days 17–21 read the committed `week02/day12/signal_v1/` directly and run in under two minutes. The pipeline is deterministic: the `signal_v1/` it produces is byte-identical to the frozen copy (checked 2026-09-10). Notebooks (`Day10_EDA`, `Day13_Synchronisation`, `OCC_Complete_Analysis`) read `data/raw/` and, where needed, `signal_v1/` from their own folder; `python build_all.py` regenerates the consolidated notebook.
 
 ## Tech stack
 
-- **Python** — OpenCV (`cv2`) for video/frame handling, NumPy for signal processing, Matplotlib for figures, Jupyter notebooks for exploratory analysis
+- **Python** — OpenCV for video and frame handling, NumPy/SciPy for signal processing, scikit-learn for the symbol classifier, Matplotlib for figures, Jupyter for exploration
 - **Markdown + Mermaid** for write-ups and pipeline diagrams
-- Config-driven, reproducibility-first tooling: raw data is hashed and locked read-only (`preserve_raw.sh`), and pipeline runs are versioned via manifest/config files
+- Reproducibility first: raw videos are SHA-256 fingerprinted, the signal set is frozen with two fingerprints per file, every run is config-driven and seeded, and every reported number is in a JSON next to the script that produced it
 
 ## Notes
 
-- This is a personal/academic learning log, not a packaged library — there's no single install/run entry point across the whole repo. Each day's scripts and notebooks are self-contained; see the `DAY_NN.MD` in that folder for context on what to run and why.
-- Ground truth for the supplied videos is limited, so several days explicitly separate *measured/self-consistency* results from *validated-against-truth* results — this distinction is called out wherever it matters.
+- This is a personal/academic learning log, not a packaged library. Each day's scripts are self-contained; the `DAY_NN.MD` in each folder says what to run and why.
+- Mentor decisions were not recorded on Days 3, 6, 12, 15, 18 and 21; those sections are left blank rather than filled in.
+- `AUDIT_CHANGELOG.md` lists every correction note added on 2026-09-10 and the files that were regenerated from the videos.
 
 ## Author
 
