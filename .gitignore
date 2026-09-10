@@ -1,0 +1,31 @@
+# ---- raw dataset: never committed (226 MB; fingerprints are in week01/day07/DATASET_MANIFEST.csv) ----
+/Videos/
+/data/
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# ---- regenerable run outputs (see readme.md "Reproducing") ----
+# Anchored to the repo root so the frozen, committed copy in week02/day12/signal_v1/ is NOT ignored.
+/signals/
+/signals_verify/
+/signal_v1/
+/bits/
+/bits_v2/
+/reports/
+/runs/
+var_*.npy
+
+# ---- Python / Jupyter ----
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*_exec.ipynb
+
+# ---- OS / editor ----
+desktop.ini
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
