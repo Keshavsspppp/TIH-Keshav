@@ -1,0 +1,191 @@
+{
+  "note": "No ground truth exists for the real videos. Section A (synthetic) is the only BER. Section B scores AGREEMENT with the threshold decoder on pseudo-labels, never correctness.",
+  "features": "d[lo-1..lo+3] = (value - threshold)/range at the five frames from one before the window start, plus frac(window start); phase-0 convention; end_margin=0",
+  "model": "sklearn LogisticRegression(C=1.0)",
+  "A_synthetic": {
+    "meta": {
+      "n_train_bits": 95968,
+      "train_time_s": 0.077
+    },
+    "rows": [
+      {
+        "noise": 8,
+        "exposure": 0.3,
+        "ber_threshold_true_phase": 0.025,
+        "ber_threshold_margin03_true_phase": 0.0,
+        "ber_ml_true_phase": 0.0,
+        "ber_threshold_phase0": 18.815,
+        "ber_threshold_margin03_phase0": 17.991,
+        "ber_ml_phase0": 13.291
+      },
+      {
+        "noise": 8,
+        "exposure": 1.0,
+        "ber_threshold_true_phase": 0.567,
+        "ber_threshold_margin03_true_phase": 0.0,
+        "ber_ml_true_phase": 0.0,
+        "ber_threshold_phase0": 0.225,
+        "ber_threshold_margin03_phase0": 0.2,
+        "ber_ml_phase0": 0.25
+      },
+      {
+        "noise": 40,
+        "exposure": 0.3,
+        "ber_threshold_true_phase": 0.625,
+        "ber_threshold_margin03_true_phase": 0.0,
+        "ber_ml_true_phase": 0.0,
+        "ber_threshold_phase0": 17.108,
+        "ber_threshold_margin03_phase0": 16.182,
+        "ber_ml_phase0": 12.04
+      },
+      {
+        "noise": 40,
+        "exposure": 1.0,
+        "ber_threshold_true_phase": 2.434,
+        "ber_threshold_margin03_true_phase": 0.15,
+        "ber_ml_true_phase": 0.0,
+        "ber_threshold_phase0": 7.451,
+        "ber_threshold_margin03_phase0": 6.877,
+        "ber_ml_phase0": 4.485
+      },
+      {
+        "noise": 80,
+        "exposure": 0.3,
+        "ber_threshold_true_phase": 2.292,
+        "ber_threshold_margin03_true_phase": 1.1,
+        "ber_ml_true_phase": 1.225,
+        "ber_threshold_phase0": 12.021,
+        "ber_threshold_margin03_phase0": 11.712,
+        "ber_ml_phase0": 11.364
+      },
+      {
+        "noise": 80,
+        "exposure": 1.0,
+        "ber_threshold_true_phase": 5.385,
+        "ber_threshold_margin03_true_phase": 2.434,
+        "ber_ml_true_phase": 1.35,
+        "ber_threshold_phase0": 8.453,
+        "ber_threshold_margin03_phase0": 8.686,
+        "ber_ml_phase0": 11.07
+      },
+      {
+        "noise": 110,
+        "exposure": 0.3,
+        "ber_threshold_true_phase": 5.31,
+        "ber_threshold_margin03_true_phase": 4.435,
+        "ber_ml_true_phase": 4.518,
+        "ber_threshold_phase0": 13.157,
+        "ber_threshold_margin03_phase0": 12.181,
+        "ber_ml_phase0": 11.055
+      },
+      {
+        "noise": 110,
+        "exposure": 1.0,
+        "ber_threshold_true_phase": 9.153,
+        "ber_threshold_margin03_true_phase": 6.802,
+        "ber_ml_true_phase": 5.152,
+        "ber_threshold_phase0": 16.187,
+        "ber_threshold_margin03_phase0": 16.189,
+        "ber_ml_phase0": 14.274
+      }
+    ]
+  },
+  "B_real_pseudo_labels": {
+    "meta": {
+      "n_train_bits": 6087,
+      "predict_time_s_total": 0.0018
+    },
+    "rows": {
+      "1LED_92bps/lamp1": {
+        "n_bits_dev": 2955,
+        "agree_threshold_safe_bits_pct": 96.98,
+        "agree_threshold_unsafe_bits_pct": 50.2,
+        "ml_confident_pct": 67.82,
+        "ml_confident_and_unsafe_pct": 32.22,
+        "ones_pct_ml": 45.41,
+        "ones_pct_threshold": 44.77
+      },
+      "2LEDs_92bps/lamp1": {
+        "n_bits_dev": 1823,
+        "agree_threshold_safe_bits_pct": 97.3,
+        "agree_threshold_unsafe_bits_pct": 54.5,
+        "ml_confident_pct": 72.9,
+        "ml_confident_and_unsafe_pct": 32.97,
+        "ones_pct_ml": 59.63,
+        "ones_pct_threshold": 60.12
+      },
+      "2LEDs_92bps/lamp2": {
+        "n_bits_dev": 1823,
+        "agree_threshold_safe_bits_pct": 96.33,
+        "agree_threshold_unsafe_bits_pct": 49.66,
+        "ml_confident_pct": 70.21,
+        "ml_confident_and_unsafe_pct": 33.9,
+        "ones_pct_ml": 57.32,
+        "ones_pct_threshold": 40.81
+      },
+      "3LEDs_92bps/lamp1": {
+        "n_bits_dev": 1215,
+        "agree_threshold_safe_bits_pct": 95.19,
+        "agree_threshold_unsafe_bits_pct": 48.2,
+        "ml_confident_pct": 69.14,
+        "ml_confident_and_unsafe_pct": 32.26,
+        "ones_pct_ml": 58.35,
+        "ones_pct_threshold": 40.16
+      },
+      "3LEDs_92bps/lamp2": {
+        "n_bits_dev": 1215,
+        "agree_threshold_safe_bits_pct": 95.28,
+        "agree_threshold_unsafe_bits_pct": 45.55,
+        "ml_confident_pct": 67.33,
+        "ml_confident_and_unsafe_pct": 30.37,
+        "ones_pct_ml": 59.09,
+        "ones_pct_threshold": 41.32
+      },
+      "3LEDs_92bps/lamp3": {
+        "n_bits_dev": 1215,
+        "agree_threshold_safe_bits_pct": 97.35,
+        "agree_threshold_unsafe_bits_pct": 48.62,
+        "ml_confident_pct": 62.47,
+        "ml_confident_and_unsafe_pct": 27.82,
+        "ones_pct_ml": 49.3,
+        "ones_pct_threshold": 41.65
+      },
+      "4LEDs_92bps/lamp1": {
+        "n_bits_dev": 912,
+        "agree_threshold_safe_bits_pct": 98.51,
+        "agree_threshold_unsafe_bits_pct": 54.13,
+        "ml_confident_pct": 75.88,
+        "ml_confident_and_unsafe_pct": 38.16,
+        "ones_pct_ml": 60.86,
+        "ones_pct_threshold": 46.93
+      },
+      "4LEDs_92bps/lamp2": {
+        "n_bits_dev": 912,
+        "agree_threshold_safe_bits_pct": 96.98,
+        "agree_threshold_unsafe_bits_pct": 51.46,
+        "ml_confident_pct": 75.88,
+        "ml_confident_and_unsafe_pct": 39.47,
+        "ones_pct_ml": 62.39,
+        "ones_pct_threshold": 47.48
+      },
+      "4LEDs_92bps/lamp3": {
+        "n_bits_dev": 912,
+        "agree_threshold_safe_bits_pct": 98.38,
+        "agree_threshold_unsafe_bits_pct": 53.75,
+        "ml_confident_pct": 78.07,
+        "ml_confident_and_unsafe_pct": 36.95,
+        "ones_pct_ml": 61.4,
+        "ones_pct_threshold": 54.28
+      },
+      "4LEDs_92bps/lamp4": {
+        "n_bits_dev": 912,
+        "agree_threshold_safe_bits_pct": 97.32,
+        "agree_threshold_unsafe_bits_pct": 48.8,
+        "ml_confident_pct": 74.67,
+        "ml_confident_and_unsafe_pct": 36.29,
+        "ones_pct_ml": 62.61,
+        "ones_pct_threshold": 50.55
+      }
+    }
+  }
+}

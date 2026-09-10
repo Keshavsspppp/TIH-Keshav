@@ -1,0 +1,14 @@
+{
+  "features": "d[lo-1..lo+3] = (value - threshold)/range at the five frames from one before the window start, plus frac(window start); phase-0 convention; end_margin=0",
+  "model": "sklearn LogisticRegression(C=1.0)",
+  "coef": [
+    0.499237,
+    3.070894,
+    2.564069,
+    6.860292,
+    4.054751,
+    0.733932
+  ],
+  "intercept": -0.912,
+  "trained_on": "real_pseudo"
+}
