@@ -1,0 +1,846 @@
+{
+  "note": "Real-data columns are agreement with the default setting and phase-independent share (no ground truth). Synthetic columns are BER on the assumed 92 bps model.",
+  "sweeps": {
+    "smoothing_window_frames": {
+      "1": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 13.48,
+          "synth_ber_true_n8": 0.27,
+          "synth_ber_phase0_n80": 14.53,
+          "synth_ber_true_n80": 1.88,
+          "real_unchanged_pct": 100.0,
+          "real_phase_indep_pct": 43.58
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 6.61,
+          "synth_ber_true_n8": 0.0,
+          "synth_ber_phase0_n80": 12.19,
+          "synth_ber_true_n80": 6.24,
+          "real_unchanged_pct": 100.0,
+          "real_phase_indep_pct": 34.93
+        }
+      },
+      "3": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 8.25,
+          "synth_ber_true_n8": 0.0,
+          "synth_ber_phase0_n80": 11.87,
+          "synth_ber_true_n80": 3.01,
+          "real_unchanged_pct": 81.19,
+          "real_phase_indep_pct": 55.89
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 6.49,
+          "synth_ber_true_n8": 0.0,
+          "synth_ber_phase0_n80": 10.71,
+          "synth_ber_true_n80": 2.73,
+          "real_unchanged_pct": 95.66,
+          "real_phase_indep_pct": 50.73
+        }
+      },
+      "5": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 14.55,
+          "synth_ber_true_n8": 4.38,
+          "synth_ber_phase0_n80": 17.48,
+          "synth_ber_true_n80": 9.54,
+          "real_unchanged_pct": 75.63,
+          "real_phase_indep_pct": 71.85
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 8.59,
+          "synth_ber_true_n8": 4.03,
+          "synth_ber_phase0_n80": 15.54,
+          "synth_ber_true_n80": 10.93,
+          "real_unchanged_pct": 82.68,
+          "real_phase_indep_pct": 68.09
+        }
+      },
+      "7": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 23.5,
+          "synth_ber_true_n8": 24.24,
+          "synth_ber_phase0_n80": 22.82,
+          "synth_ber_true_n80": 21.61,
+          "real_unchanged_pct": 70.45,
+          "real_phase_indep_pct": 74.84
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 24.75,
+          "synth_ber_true_n8": 24.84,
+          "synth_ber_phase0_n80": 24.54,
+          "synth_ber_true_n80": 22.91,
+          "real_unchanged_pct": 71.22,
+          "real_phase_indep_pct": 72.51
+        }
+      },
+      "9": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 24.8,
+          "synth_ber_true_n8": 24.74,
+          "synth_ber_phase0_n80": 26.24,
+          "synth_ber_true_n80": 26.15,
+          "real_unchanged_pct": 69.22,
+          "real_phase_indep_pct": 78.31
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 24.77,
+          "synth_ber_true_n8": 24.66,
+          "synth_ber_phase0_n80": 26.54,
+          "synth_ber_true_n80": 26.68,
+          "real_unchanged_pct": 73.32,
+          "real_phase_indep_pct": 74.94
+        }
+      }
+    },
+    "threshold_shift_fraction_of_range": {
+      "-0.3": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 18.99,
+          "synth_ber_true_n8": 4.88,
+          "synth_ber_phase0_n80": 49.08,
+          "synth_ber_true_n80": 49.03,
+          "real_unchanged_pct": 69.5
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 6.68,
+          "synth_ber_true_n8": 0.0,
+          "synth_ber_phase0_n80": 47.71,
+          "synth_ber_true_n80": 47.14,
+          "real_unchanged_pct": 99.27
+        }
+      },
+      "-0.2": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 18.01,
+          "synth_ber_true_n8": 3.19,
+          "synth_ber_phase0_n80": 44.57,
+          "synth_ber_true_n80": 42.16,
+          "real_unchanged_pct": 70.16
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 6.99,
+          "synth_ber_true_n8": 0.0,
+          "synth_ber_phase0_n80": 38.0,
+          "synth_ber_true_n80": 35.9,
+          "real_unchanged_pct": 99.51
+        }
+      },
+      "-0.1": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 17.03,
+          "synth_ber_true_n8": 1.32,
+          "synth_ber_phase0_n80": 23.84,
+          "synth_ber_true_n80": 13.73,
+          "real_unchanged_pct": 70.37
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 6.57,
+          "synth_ber_true_n8": 0.0,
+          "synth_ber_phase0_n80": 20.87,
+          "synth_ber_true_n80": 16.06,
+          "real_unchanged_pct": 99.75
+        }
+      },
+      "+0.0": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 13.48,
+          "synth_ber_true_n8": 0.27,
+          "synth_ber_phase0_n80": 14.53,
+          "synth_ber_true_n80": 1.88,
+          "real_unchanged_pct": 100.0
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 6.61,
+          "synth_ber_true_n8": 0.0,
+          "synth_ber_phase0_n80": 12.19,
+          "synth_ber_true_n80": 6.24,
+          "real_unchanged_pct": 100.0
+        }
+      },
+      "+0.1": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 17.05,
+          "synth_ber_true_n8": 1.48,
+          "synth_ber_phase0_n80": 24.3,
+          "synth_ber_true_n80": 14.34,
+          "real_unchanged_pct": 83.08
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 6.59,
+          "synth_ber_true_n8": 0.0,
+          "synth_ber_phase0_n80": 21.05,
+          "synth_ber_true_n80": 16.49,
+          "real_unchanged_pct": 99.77
+        }
+      },
+      "+0.2": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 18.01,
+          "synth_ber_true_n8": 3.73,
+          "synth_ber_phase0_n80": 45.47,
+          "synth_ber_true_n80": 43.09,
+          "real_unchanged_pct": 82.86
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 6.74,
+          "synth_ber_true_n8": 0.0,
+          "synth_ber_phase0_n80": 38.82,
+          "synth_ber_true_n80": 36.54,
+          "real_unchanged_pct": 99.53
+        }
+      },
+      "+0.3": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 18.87,
+          "synth_ber_true_n8": 5.48,
+          "synth_ber_phase0_n80": 48.98,
+          "synth_ber_true_n80": 49.05,
+          "real_unchanged_pct": 82.48
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 6.52,
+          "synth_ber_true_n8": 0.02,
+          "synth_ber_phase0_n80": 47.74,
+          "synth_ber_true_n80": 47.64,
+          "real_unchanged_pct": 99.3
+        }
+      }
+    },
+    "phase_offset_bits": {
+      "-0.50": {
+        "baseline (confident)": {
+          "synth_ber_n8": 22.14,
+          "synth_ber_n80": 22.68,
+          "real_unchanged_pct": 69.86
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 13.21,
+          "synth_ber_n80": 17.8,
+          "real_unchanged_pct": 62.91
+        }
+      },
+      "-0.45": {
+        "baseline (confident)": {
+          "synth_ber_n8": 19.97,
+          "synth_ber_n80": 20.59,
+          "real_unchanged_pct": 71.22
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 6.69,
+          "synth_ber_n80": 12.2,
+          "real_unchanged_pct": 65.48
+        }
+      },
+      "-0.40": {
+        "baseline (confident)": {
+          "synth_ber_n8": 15.41,
+          "synth_ber_n80": 17.47,
+          "real_unchanged_pct": 73.95
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 0.06,
+          "synth_ber_n80": 7.7,
+          "real_unchanged_pct": 69.05
+        }
+      },
+      "-0.35": {
+        "baseline (confident)": {
+          "synth_ber_n8": 11.51,
+          "synth_ber_n80": 13.45,
+          "real_unchanged_pct": 77.4
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 6.66,
+          "real_unchanged_pct": 73.95
+        }
+      },
+      "-0.30": {
+        "baseline (confident)": {
+          "synth_ber_n8": 9.3,
+          "synth_ber_n80": 10.97,
+          "real_unchanged_pct": 80.64
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 6.74,
+          "real_unchanged_pct": 77.7
+        }
+      },
+      "-0.25": {
+        "baseline (confident)": {
+          "synth_ber_n8": 7.13,
+          "synth_ber_n80": 8.85,
+          "real_unchanged_pct": 83.86
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 6.61,
+          "real_unchanged_pct": 80.89
+        }
+      },
+      "-0.20": {
+        "baseline (confident)": {
+          "synth_ber_n8": 4.76,
+          "synth_ber_n80": 6.48,
+          "real_unchanged_pct": 87.06
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 6.49,
+          "real_unchanged_pct": 84.62
+        }
+      },
+      "-0.15": {
+        "baseline (confident)": {
+          "synth_ber_n8": 2.13,
+          "synth_ber_n80": 3.89,
+          "real_unchanged_pct": 90.42
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 6.47,
+          "real_unchanged_pct": 88.76
+        }
+      },
+      "-0.10": {
+        "baseline (confident)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 1.75,
+          "real_unchanged_pct": 92.88
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 6.39,
+          "real_unchanged_pct": 92.39
+        }
+      },
+      "-0.05": {
+        "baseline (confident)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 0.86,
+          "real_unchanged_pct": 95.43
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 6.34,
+          "real_unchanged_pct": 96.31
+        }
+      },
+      "-0.00": {
+        "baseline (confident)": {
+          "synth_ber_n8": 0.27,
+          "synth_ber_n80": 1.88,
+          "real_unchanged_pct": 100.0
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 6.24,
+          "real_unchanged_pct": 100.0
+        }
+      },
+      "+0.05": {
+        "baseline (confident)": {
+          "synth_ber_n8": 2.8,
+          "synth_ber_n80": 4.36,
+          "real_unchanged_pct": 95.94
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 6.29,
+          "real_unchanged_pct": 94.92
+        }
+      },
+      "+0.10": {
+        "baseline (confident)": {
+          "synth_ber_n8": 4.78,
+          "synth_ber_n80": 6.38,
+          "real_unchanged_pct": 93.01
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 6.46,
+          "real_unchanged_pct": 91.26
+        }
+      },
+      "+0.15": {
+        "baseline (confident)": {
+          "synth_ber_n8": 6.78,
+          "synth_ber_n80": 8.35,
+          "real_unchanged_pct": 90.34
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 6.54,
+          "real_unchanged_pct": 87.26
+        }
+      },
+      "+0.20": {
+        "baseline (confident)": {
+          "synth_ber_n8": 9.08,
+          "synth_ber_n80": 10.69,
+          "real_unchanged_pct": 86.42
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 0.0,
+          "synth_ber_n80": 6.64,
+          "real_unchanged_pct": 83.47
+        }
+      },
+      "+0.25": {
+        "baseline (confident)": {
+          "synth_ber_n8": 11.88,
+          "synth_ber_n80": 13.82,
+          "real_unchanged_pct": 83.34
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 2.23,
+          "synth_ber_n80": 9.3,
+          "real_unchanged_pct": 79.03
+        }
+      },
+      "+0.30": {
+        "baseline (confident)": {
+          "synth_ber_n8": 15.64,
+          "synth_ber_n80": 17.16,
+          "real_unchanged_pct": 80.22
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 8.71,
+          "synth_ber_n80": 14.41,
+          "real_unchanged_pct": 74.89
+        }
+      },
+      "+0.35": {
+        "baseline (confident)": {
+          "synth_ber_n8": 20.12,
+          "synth_ber_n80": 20.32,
+          "real_unchanged_pct": 77.18
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 15.26,
+          "synth_ber_n80": 20.02,
+          "real_unchanged_pct": 70.59
+        }
+      },
+      "+0.40": {
+        "baseline (confident)": {
+          "synth_ber_n8": 22.55,
+          "synth_ber_n80": 22.73,
+          "real_unchanged_pct": 73.46
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 22.34,
+          "synth_ber_n80": 26.14,
+          "real_unchanged_pct": 67.85
+        }
+      },
+      "+0.45": {
+        "baseline (confident)": {
+          "synth_ber_n8": 24.25,
+          "synth_ber_n80": 24.73,
+          "real_unchanged_pct": 70.53
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 19.42,
+          "synth_ber_n80": 23.11,
+          "real_unchanged_pct": 64.38
+        }
+      },
+      "+0.50": {
+        "baseline (confident)": {
+          "synth_ber_n8": 22.14,
+          "synth_ber_n80": 22.68,
+          "real_unchanged_pct": 69.86
+        },
+        "tuned (nearest)": {
+          "synth_ber_n8": 13.21,
+          "synth_ber_n80": 17.8,
+          "real_unchanged_pct": 62.91
+        }
+      }
+    },
+    "period_error_pct": {
+      "-10": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 48.42,
+          "synth_ber_true_n8": 48.13,
+          "synth_ber_phase0_n80": 48.52,
+          "synth_ber_true_n80": 48.28,
+          "real_unchanged_pct": 51.29
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 48.38,
+          "synth_ber_true_n8": 48.68,
+          "synth_ber_phase0_n80": 48.49,
+          "synth_ber_true_n80": 48.84,
+          "real_unchanged_pct": 52.38
+        }
+      },
+      "-3": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 48.62,
+          "synth_ber_true_n8": 48.35,
+          "synth_ber_phase0_n80": 48.7,
+          "synth_ber_true_n80": 48.25,
+          "real_unchanged_pct": 52.73
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 48.47,
+          "synth_ber_true_n8": 48.01,
+          "synth_ber_phase0_n80": 48.18,
+          "synth_ber_true_n80": 47.86,
+          "real_unchanged_pct": 51.69
+        }
+      },
+      "-2": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 47.73,
+          "synth_ber_true_n8": 47.65,
+          "synth_ber_phase0_n80": 47.9,
+          "synth_ber_true_n80": 47.6,
+          "real_unchanged_pct": 53.79
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 48.06,
+          "synth_ber_true_n8": 47.75,
+          "synth_ber_phase0_n80": 48.02,
+          "synth_ber_true_n80": 47.98,
+          "real_unchanged_pct": 52.55
+        }
+      },
+      "-1": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 48.21,
+          "synth_ber_true_n8": 48.08,
+          "synth_ber_phase0_n80": 48.29,
+          "synth_ber_true_n80": 48.17,
+          "real_unchanged_pct": 56.49
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 47.25,
+          "synth_ber_true_n8": 47.89,
+          "synth_ber_phase0_n80": 47.41,
+          "synth_ber_true_n80": 47.9,
+          "real_unchanged_pct": 53.71
+        }
+      },
+      "-0.5": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 46.16,
+          "synth_ber_true_n8": 45.98,
+          "synth_ber_phase0_n80": 46.16,
+          "synth_ber_true_n80": 45.99,
+          "real_unchanged_pct": 58.16
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 46.22,
+          "synth_ber_true_n8": 45.94,
+          "synth_ber_phase0_n80": 46.2,
+          "synth_ber_true_n80": 46.14,
+          "real_unchanged_pct": 55.76
+        }
+      },
+      "-0.2": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 41.02,
+          "synth_ber_true_n8": 41.2,
+          "synth_ber_phase0_n80": 41.42,
+          "synth_ber_true_n80": 41.48,
+          "real_unchanged_pct": 67.89
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 40.68,
+          "synth_ber_true_n8": 41.19,
+          "synth_ber_phase0_n80": 42.11,
+          "synth_ber_true_n80": 42.27,
+          "real_unchanged_pct": 61.64
+        }
+      },
+      "+0": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 13.48,
+          "synth_ber_true_n8": 0.27,
+          "synth_ber_phase0_n80": 14.53,
+          "synth_ber_true_n80": 1.88,
+          "real_unchanged_pct": 100.0
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 6.61,
+          "synth_ber_true_n8": 0.0,
+          "synth_ber_phase0_n80": 12.19,
+          "synth_ber_true_n80": 6.24,
+          "real_unchanged_pct": 100.0
+        }
+      },
+      "+0.2": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 41.17,
+          "synth_ber_true_n8": 41.22,
+          "synth_ber_phase0_n80": 41.26,
+          "synth_ber_true_n80": 41.68,
+          "real_unchanged_pct": 70.02
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 41.21,
+          "synth_ber_true_n8": 41.11,
+          "synth_ber_phase0_n80": 42.2,
+          "synth_ber_true_n80": 42.44,
+          "real_unchanged_pct": 62.51
+        }
+      },
+      "+0.5": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 45.84,
+          "synth_ber_true_n8": 46.01,
+          "synth_ber_phase0_n80": 46.06,
+          "synth_ber_true_n80": 46.02,
+          "real_unchanged_pct": 60.11
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 45.99,
+          "synth_ber_true_n8": 46.05,
+          "synth_ber_phase0_n80": 46.31,
+          "synth_ber_true_n80": 46.79,
+          "real_unchanged_pct": 55.33
+        }
+      },
+      "+1": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 47.58,
+          "synth_ber_true_n8": 47.7,
+          "synth_ber_phase0_n80": 47.66,
+          "synth_ber_true_n80": 47.81,
+          "real_unchanged_pct": 56.38
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 47.48,
+          "synth_ber_true_n8": 48.01,
+          "synth_ber_phase0_n80": 47.64,
+          "synth_ber_true_n80": 48.23,
+          "real_unchanged_pct": 54.31
+        }
+      },
+      "+2": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 47.76,
+          "synth_ber_true_n8": 47.83,
+          "synth_ber_phase0_n80": 47.63,
+          "synth_ber_true_n80": 47.81,
+          "real_unchanged_pct": 53.72
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 48.01,
+          "synth_ber_true_n8": 47.89,
+          "synth_ber_phase0_n80": 48.24,
+          "synth_ber_true_n80": 47.87,
+          "real_unchanged_pct": 51.93
+        }
+      },
+      "+3": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 48.23,
+          "synth_ber_true_n8": 48.08,
+          "synth_ber_phase0_n80": 48.27,
+          "synth_ber_true_n80": 48.02,
+          "real_unchanged_pct": 52.94
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 48.12,
+          "synth_ber_true_n8": 47.99,
+          "synth_ber_phase0_n80": 48.03,
+          "synth_ber_true_n80": 48.03,
+          "real_unchanged_pct": 53.06
+        }
+      },
+      "+10": {
+        "baseline (confident)": {
+          "synth_ber_phase0_n8": 47.97,
+          "synth_ber_true_n8": 48.34,
+          "synth_ber_phase0_n80": 48.13,
+          "synth_ber_true_n80": 48.26,
+          "real_unchanged_pct": 53.42
+        },
+        "tuned (nearest)": {
+          "synth_ber_phase0_n8": 48.19,
+          "synth_ber_true_n8": 48.27,
+          "synth_ber_phase0_n80": 47.73,
+          "synth_ber_true_n80": 48.48,
+          "real_unchanged_pct": 53.08
+        }
+      }
+    },
+    "roi": {
+      "scale 0.5": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 93.92,
+          "real_phase_indep_pct": 44.89,
+          "gap_over_noise": 65.39
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 99.67,
+          "real_phase_indep_pct": 34.82,
+          "gap_over_noise": 65.39
+        }
+      },
+      "scale 0.7": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 96.23,
+          "real_phase_indep_pct": 43.4,
+          "gap_over_noise": 61.82
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 99.86,
+          "real_phase_indep_pct": 35.02,
+          "gap_over_noise": 61.82
+        }
+      },
+      "scale 0.85": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 98.58,
+          "real_phase_indep_pct": 43.21,
+          "gap_over_noise": 55.89
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 99.84,
+          "real_phase_indep_pct": 34.96,
+          "gap_over_noise": 55.89
+        }
+      },
+      "scale 1.0": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 100.0,
+          "real_phase_indep_pct": 43.58,
+          "gap_over_noise": 55.86
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 100.0,
+          "real_phase_indep_pct": 34.93,
+          "gap_over_noise": 55.86
+        }
+      },
+      "scale 1.25": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 97.64,
+          "real_phase_indep_pct": 43.88,
+          "gap_over_noise": 55.59
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 99.62,
+          "real_phase_indep_pct": 34.66,
+          "gap_over_noise": 55.59
+        }
+      },
+      "scale 1.5": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 93.89,
+          "real_phase_indep_pct": 43.85,
+          "gap_over_noise": 43.88
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 99.23,
+          "real_phase_indep_pct": 34.49,
+          "gap_over_noise": 43.88
+        }
+      },
+      "scale 2.0": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 83.19,
+          "real_phase_indep_pct": 41.12,
+          "gap_over_noise": 15.29
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 98.96,
+          "real_phase_indep_pct": 34.33,
+          "gap_over_noise": 15.29
+        }
+      },
+      "shift x -0.50": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 92.72,
+          "real_phase_indep_pct": 44.26,
+          "gap_over_noise": 51.62
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 99.48,
+          "real_phase_indep_pct": 34.58,
+          "gap_over_noise": 51.62
+        }
+      },
+      "shift x -0.25": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 97.81,
+          "real_phase_indep_pct": 43.22,
+          "gap_over_noise": 57.21
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 99.89,
+          "real_phase_indep_pct": 34.77,
+          "gap_over_noise": 57.21
+        }
+      },
+      "shift x -0.10": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 99.0,
+          "real_phase_indep_pct": 43.55,
+          "gap_over_noise": 55.96
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 100.0,
+          "real_phase_indep_pct": 34.93,
+          "gap_over_noise": 55.96
+        }
+      },
+      "shift x +0.00": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 100.0,
+          "real_phase_indep_pct": 43.58,
+          "gap_over_noise": 55.86
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 100.0,
+          "real_phase_indep_pct": 34.93,
+          "gap_over_noise": 55.86
+        }
+      },
+      "shift x +0.10": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 98.9,
+          "real_phase_indep_pct": 43.66,
+          "gap_over_noise": 55.52
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 100.0,
+          "real_phase_indep_pct": 34.93,
+          "gap_over_noise": 55.52
+        }
+      },
+      "shift x +0.25": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 96.58,
+          "real_phase_indep_pct": 43.79,
+          "gap_over_noise": 54.7
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 99.89,
+          "real_phase_indep_pct": 34.82,
+          "gap_over_noise": 54.7
+        }
+      },
+      "shift x +0.50": {
+        "baseline (confident)": {
+          "real_unchanged_pct": 92.05,
+          "real_phase_indep_pct": 45.16,
+          "gap_over_noise": 43.16
+        },
+        "tuned (nearest)": {
+          "real_unchanged_pct": 99.34,
+          "real_phase_indep_pct": 34.34,
+          "gap_over_noise": 43.16
+        }
+      }
+    }
+  },
+  "runtime_s": 30.6
+}
