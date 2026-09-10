@@ -1,0 +1,498 @@
+{
+  "methods": {
+    "M0 fixed threshold": {
+      "real_dev_median": {
+        "safe_pct": 43.58,
+        "phase_stability_pct": 90.45,
+        "threshold_tolerance_pct": 75.95,
+        "ms_per_1000_frames": 0.06,
+        "time_s_all_dev": 0.002
+      },
+      "real_dev_per_lamp": {
+        "1LED_92bps/lamp1": {
+          "n_bits": 2955,
+          "safe_pct": 41.42,
+          "phase_stability_pct": 89.44,
+          "threshold_tolerance_pct": 74.84,
+          "ones_pct": 44.77,
+          "time_s": 0.0004,
+          "ms_per_1000_frames": 0.05
+        },
+        "2LEDs_92bps/lamp1": {
+          "n_bits": 1823,
+          "safe_pct": 48.77,
+          "phase_stability_pct": 90.84,
+          "threshold_tolerance_pct": 75.29,
+          "ones_pct": 60.12,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.05
+        },
+        "2LEDs_92bps/lamp2": {
+          "n_bits": 1823,
+          "safe_pct": 43.34,
+          "phase_stability_pct": 89.33,
+          "threshold_tolerance_pct": 74.05,
+          "ones_pct": 40.81,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.04
+        },
+        "3LEDs_92bps/lamp1": {
+          "n_bits": 1215,
+          "safe_pct": 42.8,
+          "phase_stability_pct": 90.12,
+          "threshold_tolerance_pct": 75.93,
+          "ones_pct": 40.16,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.06
+        },
+        "3LEDs_92bps/lamp2": {
+          "n_bits": 1215,
+          "safe_pct": 43.62,
+          "phase_stability_pct": 89.46,
+          "threshold_tolerance_pct": 75.97,
+          "ones_pct": 41.32,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.06
+        },
+        "3LEDs_92bps/lamp3": {
+          "n_bits": 1215,
+          "safe_pct": 40.41,
+          "phase_stability_pct": 89.17,
+          "threshold_tolerance_pct": 74.24,
+          "ones_pct": 41.65,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.06
+        },
+        "4LEDs_92bps/lamp1": {
+          "n_bits": 912,
+          "safe_pct": 44.3,
+          "phase_stability_pct": 91.77,
+          "threshold_tolerance_pct": 77.69,
+          "ones_pct": 46.93,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.07
+        },
+        "4LEDs_92bps/lamp2": {
+          "n_bits": 912,
+          "safe_pct": 43.53,
+          "phase_stability_pct": 91.39,
+          "threshold_tolerance_pct": 76.92,
+          "ones_pct": 47.48,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.07
+        },
+        "4LEDs_92bps/lamp3": {
+          "n_bits": 912,
+          "safe_pct": 47.37,
+          "phase_stability_pct": 91.72,
+          "threshold_tolerance_pct": 77.36,
+          "ones_pct": 54.28,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.07
+        },
+        "4LEDs_92bps/lamp4": {
+          "n_bits": 912,
+          "safe_pct": 44.96,
+          "phase_stability_pct": 90.78,
+          "threshold_tolerance_pct": 77.52,
+          "ones_pct": 50.55,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.07
+        }
+      },
+      "synthetic": {
+        "realistic (noise 8, exposure 0.3)": {
+          "ber_true_phase_pct": 0.058,
+          "ber_phase0_pct": 9.49,
+          "phase_tolerance_bits": 0.1,
+          "period_tolerance_pct": 0.0
+        },
+        "hard (noise 80, exposure 0.3)": {
+          "ber_true_phase_pct": 2.034,
+          "ber_phase0_pct": 11.1,
+          "phase_tolerance_bits": 0.0,
+          "period_tolerance_pct": 0.0
+        }
+      }
+    },
+    "M1 adaptive threshold": {
+      "real_dev_median": {
+        "safe_pct": 44.0,
+        "phase_stability_pct": 90.35,
+        "threshold_tolerance_pct": 75.95,
+        "ms_per_1000_frames": 0.29,
+        "time_s_all_dev": 0.009,
+        "agree_with_M0_pct": 98.69
+      },
+      "real_dev_per_lamp": {
+        "1LED_92bps/lamp1": {
+          "n_bits": 2955,
+          "safe_pct": 41.69,
+          "phase_stability_pct": 89.61,
+          "threshold_tolerance_pct": 74.84,
+          "ones_pct": 45.82,
+          "time_s": 0.0011,
+          "ms_per_1000_frames": 0.14,
+          "agree_with_M0_pct": 98.75
+        },
+        "2LEDs_92bps/lamp1": {
+          "n_bits": 1823,
+          "safe_pct": 48.05,
+          "phase_stability_pct": 90.97,
+          "threshold_tolerance_pct": 75.29,
+          "ones_pct": 58.97,
+          "time_s": 0.0007,
+          "ms_per_1000_frames": 0.14,
+          "agree_with_M0_pct": 98.63
+        },
+        "2LEDs_92bps/lamp2": {
+          "n_bits": 1823,
+          "safe_pct": 43.06,
+          "phase_stability_pct": 89.38,
+          "threshold_tolerance_pct": 74.05,
+          "ones_pct": 40.92,
+          "time_s": 0.0007,
+          "ms_per_1000_frames": 0.13,
+          "agree_with_M0_pct": 99.78
+        },
+        "3LEDs_92bps/lamp1": {
+          "n_bits": 1215,
+          "safe_pct": 42.63,
+          "phase_stability_pct": 90.08,
+          "threshold_tolerance_pct": 75.93,
+          "ones_pct": 40.08,
+          "time_s": 0.0011,
+          "ms_per_1000_frames": 0.33,
+          "agree_with_M0_pct": 98.93
+        },
+        "3LEDs_92bps/lamp2": {
+          "n_bits": 1215,
+          "safe_pct": 43.7,
+          "phase_stability_pct": 89.13,
+          "threshold_tolerance_pct": 75.97,
+          "ones_pct": 41.81,
+          "time_s": 0.0011,
+          "ms_per_1000_frames": 0.33,
+          "agree_with_M0_pct": 98.52
+        },
+        "3LEDs_92bps/lamp3": {
+          "n_bits": 1215,
+          "safe_pct": 40.91,
+          "phase_stability_pct": 88.88,
+          "threshold_tolerance_pct": 74.24,
+          "ones_pct": 42.22,
+          "time_s": 0.0011,
+          "ms_per_1000_frames": 0.32,
+          "agree_with_M0_pct": 99.26
+        },
+        "4LEDs_92bps/lamp1": {
+          "n_bits": 912,
+          "safe_pct": 44.85,
+          "phase_stability_pct": 91.83,
+          "threshold_tolerance_pct": 77.69,
+          "ones_pct": 47.26,
+          "time_s": 0.0007,
+          "ms_per_1000_frames": 0.26,
+          "agree_with_M0_pct": 98.79
+        },
+        "4LEDs_92bps/lamp2": {
+          "n_bits": 912,
+          "safe_pct": 44.3,
+          "phase_stability_pct": 91.44,
+          "threshold_tolerance_pct": 76.92,
+          "ones_pct": 49.23,
+          "time_s": 0.0006,
+          "ms_per_1000_frames": 0.24,
+          "agree_with_M0_pct": 96.27
+        },
+        "4LEDs_92bps/lamp3": {
+          "n_bits": 912,
+          "safe_pct": 46.71,
+          "phase_stability_pct": 91.83,
+          "threshold_tolerance_pct": 77.36,
+          "ones_pct": 54.17,
+          "time_s": 0.001,
+          "ms_per_1000_frames": 0.38,
+          "agree_with_M0_pct": 98.57
+        },
+        "4LEDs_92bps/lamp4": {
+          "n_bits": 912,
+          "safe_pct": 47.59,
+          "phase_stability_pct": 90.62,
+          "threshold_tolerance_pct": 77.52,
+          "ones_pct": 52.19,
+          "time_s": 0.001,
+          "ms_per_1000_frames": 0.37,
+          "agree_with_M0_pct": 94.85
+        }
+      },
+      "synthetic": {
+        "realistic (noise 8, exposure 0.3)": {
+          "ber_true_phase_pct": 0.05,
+          "ber_phase0_pct": 9.54,
+          "phase_tolerance_bits": 0.1,
+          "period_tolerance_pct": 0.0
+        },
+        "hard (noise 80, exposure 0.3)": {
+          "ber_true_phase_pct": 2.092,
+          "ber_phase0_pct": 11.26,
+          "phase_tolerance_bits": 0.0,
+          "period_tolerance_pct": 0.0
+        }
+      }
+    },
+    "M0 + end margin 0.3": {
+      "real_dev_median": {
+        "safe_pct": 39.73,
+        "phase_stability_pct": 88.6,
+        "threshold_tolerance_pct": 80.04,
+        "ms_per_1000_frames": 0.07,
+        "time_s_all_dev": 0.003,
+        "agree_with_M0_pct": 95.88
+      },
+      "real_dev_per_lamp": {
+        "1LED_92bps/lamp1": {
+          "n_bits": 2955,
+          "safe_pct": 37.77,
+          "phase_stability_pct": 88.05,
+          "threshold_tolerance_pct": 79.51,
+          "ones_pct": 45.75,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.03,
+          "agree_with_M0_pct": 95.43
+        },
+        "2LEDs_92bps/lamp1": {
+          "n_bits": 1823,
+          "safe_pct": 44.32,
+          "phase_stability_pct": 88.81,
+          "threshold_tolerance_pct": 79.1,
+          "ones_pct": 58.2,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.05,
+          "agree_with_M0_pct": 95.45
+        },
+        "2LEDs_92bps/lamp2": {
+          "n_bits": 1823,
+          "safe_pct": 39.0,
+          "phase_stability_pct": 87.96,
+          "threshold_tolerance_pct": 77.95,
+          "ones_pct": 43.01,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.04,
+          "agree_with_M0_pct": 95.06
+        },
+        "3LEDs_92bps/lamp1": {
+          "n_bits": 1215,
+          "safe_pct": 38.27,
+          "phase_stability_pct": 88.39,
+          "threshold_tolerance_pct": 79.71,
+          "ones_pct": 42.63,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.06,
+          "agree_with_M0_pct": 95.88
+        },
+        "3LEDs_92bps/lamp2": {
+          "n_bits": 1215,
+          "safe_pct": 39.01,
+          "phase_stability_pct": 87.73,
+          "threshold_tolerance_pct": 80.37,
+          "ones_pct": 43.46,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.06,
+          "agree_with_M0_pct": 95.88
+        },
+        "3LEDs_92bps/lamp3": {
+          "n_bits": 1215,
+          "safe_pct": 36.79,
+          "phase_stability_pct": 87.86,
+          "threshold_tolerance_pct": 78.15,
+          "ones_pct": 43.21,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.08,
+          "agree_with_M0_pct": 95.8
+        },
+        "4LEDs_92bps/lamp1": {
+          "n_bits": 912,
+          "safe_pct": 41.34,
+          "phase_stability_pct": 91.0,
+          "threshold_tolerance_pct": 81.41,
+          "ones_pct": 47.48,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.12,
+          "agree_with_M0_pct": 96.82
+        },
+        "4LEDs_92bps/lamp2": {
+          "n_bits": 912,
+          "safe_pct": 40.46,
+          "phase_stability_pct": 91.0,
+          "threshold_tolerance_pct": 81.03,
+          "ones_pct": 47.92,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.12,
+          "agree_with_M0_pct": 96.93
+        },
+        "4LEDs_92bps/lamp3": {
+          "n_bits": 912,
+          "safe_pct": 44.85,
+          "phase_stability_pct": 90.62,
+          "threshold_tolerance_pct": 81.36,
+          "ones_pct": 53.62,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.12,
+          "agree_with_M0_pct": 96.49
+        },
+        "4LEDs_92bps/lamp4": {
+          "n_bits": 912,
+          "safe_pct": 40.68,
+          "phase_stability_pct": 90.24,
+          "threshold_tolerance_pct": 81.25,
+          "ones_pct": 50.0,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.12,
+          "agree_with_M0_pct": 95.94
+        }
+      },
+      "synthetic": {
+        "realistic (noise 8, exposure 0.3)": {
+          "ber_true_phase_pct": 0.0,
+          "ber_phase0_pct": 8.64,
+          "phase_tolerance_bits": 0.2,
+          "period_tolerance_pct": 0.0
+        },
+        "hard (noise 80, exposure 0.3)": {
+          "ber_true_phase_pct": 0.942,
+          "ber_phase0_pct": 10.9,
+          "phase_tolerance_bits": 0.06,
+          "period_tolerance_pct": 0.0
+        }
+      }
+    },
+    "M2 ML classifier (synth-trained)": {
+      "real_dev_median": {
+        "safe_pct": 49.74,
+        "phase_stability_pct": 91.53,
+        "threshold_tolerance_pct": 87.22,
+        "ms_per_1000_frames": 0.07,
+        "time_s_all_dev": 0.003,
+        "agree_with_M0_pct": 80.69
+      },
+      "real_dev_per_lamp": {
+        "1LED_92bps/lamp1": {
+          "n_bits": 2955,
+          "safe_pct": 37.5,
+          "phase_stability_pct": 88.71,
+          "threshold_tolerance_pct": 87.02,
+          "ones_pct": 49.27,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.04,
+          "agree_with_M0_pct": 79.66
+        },
+        "2LEDs_92bps/lamp1": {
+          "n_bits": 1823,
+          "safe_pct": 53.21,
+          "phase_stability_pct": 91.47,
+          "threshold_tolerance_pct": 86.09,
+          "ones_pct": 61.38,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.05,
+          "agree_with_M0_pct": 82.83
+        },
+        "2LEDs_92bps/lamp2": {
+          "n_bits": 1823,
+          "safe_pct": 48.71,
+          "phase_stability_pct": 90.37,
+          "threshold_tolerance_pct": 85.33,
+          "ones_pct": 56.17,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.07,
+          "agree_with_M0_pct": 76.52
+        },
+        "3LEDs_92bps/lamp1": {
+          "n_bits": 1215,
+          "safe_pct": 47.57,
+          "phase_stability_pct": 91.6,
+          "threshold_tolerance_pct": 86.63,
+          "ones_pct": 58.02,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.08,
+          "agree_with_M0_pct": 75.72
+        },
+        "3LEDs_92bps/lamp2": {
+          "n_bits": 1215,
+          "safe_pct": 46.67,
+          "phase_stability_pct": 91.35,
+          "threshold_tolerance_pct": 87.41,
+          "ones_pct": 57.53,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.06,
+          "agree_with_M0_pct": 75.39
+        },
+        "3LEDs_92bps/lamp3": {
+          "n_bits": 1215,
+          "safe_pct": 41.89,
+          "phase_stability_pct": 90.33,
+          "threshold_tolerance_pct": 86.63,
+          "ones_pct": 53.0,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.09,
+          "agree_with_M0_pct": 80.91
+        },
+        "4LEDs_92bps/lamp1": {
+          "n_bits": 912,
+          "safe_pct": 50.77,
+          "phase_stability_pct": 92.65,
+          "threshold_tolerance_pct": 87.77,
+          "ones_pct": 59.43,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.11,
+          "agree_with_M0_pct": 82.46
+        },
+        "4LEDs_92bps/lamp2": {
+          "n_bits": 912,
+          "safe_pct": 53.4,
+          "phase_stability_pct": 92.54,
+          "threshold_tolerance_pct": 87.5,
+          "ones_pct": 60.31,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.07,
+          "agree_with_M0_pct": 81.25
+        },
+        "4LEDs_92bps/lamp3": {
+          "n_bits": 912,
+          "safe_pct": 53.07,
+          "phase_stability_pct": 93.36,
+          "threshold_tolerance_pct": 87.88,
+          "ones_pct": 61.73,
+          "time_s": 0.0002,
+          "ms_per_1000_frames": 0.07,
+          "agree_with_M0_pct": 84.43
+        },
+        "4LEDs_92bps/lamp4": {
+          "n_bits": 912,
+          "safe_pct": 52.85,
+          "phase_stability_pct": 92.76,
+          "threshold_tolerance_pct": 88.49,
+          "ones_pct": 60.86,
+          "time_s": 0.0003,
+          "ms_per_1000_frames": 0.1,
+          "agree_with_M0_pct": 80.48
+        }
+      },
+      "synthetic": {
+        "realistic (noise 8, exposure 0.3)": {
+          "ber_true_phase_pct": 0.0,
+          "ber_phase0_pct": 7.41,
+          "phase_tolerance_bits": 0.37,
+          "period_tolerance_pct": 0.0
+        },
+        "hard (noise 80, exposure 0.3)": {
+          "ber_true_phase_pct": 1.184,
+          "ber_phase0_pct": 11.41,
+          "phase_tolerance_bits": 0.0,
+          "period_tolerance_pct": 0.0
+        }
+      }
+    }
+  },
+  "note": "Decoded-message correctness and real-data BER are not measurable: no ground truth. Real-data columns are internal-consistency indicators on the DEV part (first 30%). Synthetic columns use the assumed 92 bps model. TEST (last 70%) untouched."
+}
