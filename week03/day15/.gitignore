@@ -1,0 +1,3 @@
+# decoder.py outputs (20 .npy bit files); decode_report.json IS tracked
+bits/
+signal_v1/

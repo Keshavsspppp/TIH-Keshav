@@ -1,0 +1,462 @@
+{
+  "1LED_92bps/lamp1": {
+    "92bps": {
+      "fixed": {
+        "phase_frames": 0.565,
+        "median_margin_pct_of_range": 49.33,
+        "worst_margin_pct_of_range": 45.513,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 9856,
+        "ones_pct": 45.38,
+        "flip_rate_pct": 47.58,
+        "longest_run": 16,
+        "mean_run_bits": 2.101,
+        "agree_at_-0.15_bit_pct": 89.55,
+        "agree_at_+0.15_bit_pct": 89.23,
+        "self_repetition": {
+          "best_lag": 310,
+          "best_score": 0.1834,
+          "noise_level": 0.0241,
+          "ratio": 7.6
+        }
+      },
+      "adaptive": {
+        "phase_frames": 0.565,
+        "median_margin_pct_of_range": 49.32,
+        "worst_margin_pct_of_range": 45.624,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 9856,
+        "ones_pct": 45.97,
+        "flip_rate_pct": 47.36,
+        "longest_run": 16,
+        "mean_run_bits": 2.111,
+        "agree_at_-0.15_bit_pct": 89.87,
+        "agree_at_+0.15_bit_pct": 89.33,
+        "self_repetition": {
+          "best_lag": 310,
+          "best_score": 0.1849,
+          "noise_level": 0.0241,
+          "ratio": 7.67
+        }
+      },
+      "fixed_vs_adaptive_agree_pct": 98.762,
+      "fixed_vs_adaptive_agree_pct_same_phase": 98.762
+    }
+  },
+  "2LEDs_92bps/lamp1": {
+    "92bps": {
+      "fixed": {
+        "phase_frames": 0.0,
+        "median_margin_pct_of_range": 49.58,
+        "worst_margin_pct_of_range": 46.187,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 6084,
+        "ones_pct": 60.01,
+        "flip_rate_pct": 43.3,
+        "longest_run": 18,
+        "mean_run_bits": 2.309,
+        "agree_at_-0.15_bit_pct": 60.02,
+        "agree_at_+0.15_bit_pct": 90.94,
+        "self_repetition": {
+          "best_lag": 483,
+          "best_score": 0.1908,
+          "noise_level": 0.0361,
+          "ratio": 5.28
+        }
+      },
+      "adaptive": {
+        "phase_frames": 0.0,
+        "median_margin_pct_of_range": 49.58,
+        "worst_margin_pct_of_range": 46.186,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 6084,
+        "ones_pct": 59.71,
+        "flip_rate_pct": 43.4,
+        "longest_run": 18,
+        "mean_run_bits": 2.304,
+        "agree_at_-0.15_bit_pct": 59.9,
+        "agree_at_+0.15_bit_pct": 90.97,
+        "self_repetition": {
+          "best_lag": 310,
+          "best_score": 0.1877,
+          "noise_level": 0.0358,
+          "ratio": 5.24
+        }
+      },
+      "fixed_vs_adaptive_agree_pct": 99.441,
+      "fixed_vs_adaptive_agree_pct_same_phase": 99.441
+    }
+  },
+  "2LEDs_92bps/lamp2": {
+    "92bps": {
+      "fixed": {
+        "phase_frames": 0.0,
+        "median_margin_pct_of_range": 49.57,
+        "worst_margin_pct_of_range": 28.247,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 6084,
+        "ones_pct": 40.73,
+        "flip_rate_pct": 44.86,
+        "longest_run": 15,
+        "mean_run_bits": 2.229,
+        "agree_at_-0.15_bit_pct": 58.16,
+        "agree_at_+0.15_bit_pct": 89.07,
+        "self_repetition": {
+          "best_lag": 137,
+          "best_score": 0.229,
+          "noise_level": 0.0339,
+          "ratio": 6.75
+        }
+      },
+      "adaptive": {
+        "phase_frames": 0.0,
+        "median_margin_pct_of_range": 49.57,
+        "worst_margin_pct_of_range": 28.246,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 6084,
+        "ones_pct": 40.88,
+        "flip_rate_pct": 44.83,
+        "longest_run": 15,
+        "mean_run_bits": 2.23,
+        "agree_at_-0.15_bit_pct": 58.29,
+        "agree_at_+0.15_bit_pct": 89.05,
+        "self_repetition": {
+          "best_lag": 137,
+          "best_score": 0.226,
+          "noise_level": 0.0339,
+          "ratio": 6.68
+        }
+      },
+      "fixed_vs_adaptive_agree_pct": 99.655,
+      "fixed_vs_adaptive_agree_pct_same_phase": 99.655
+    }
+  },
+  "3LEDs_92bps/lamp1": {
+    "92bps": {
+      "fixed": {
+        "phase_frames": 0.0,
+        "median_margin_pct_of_range": 49.75,
+        "worst_margin_pct_of_range": 48.646,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 4056,
+        "ones_pct": 39.23,
+        "flip_rate_pct": 44.29,
+        "longest_run": 13,
+        "mean_run_bits": 2.257,
+        "agree_at_-0.15_bit_pct": 58.25,
+        "agree_at_+0.15_bit_pct": 89.87,
+        "self_repetition": {
+          "best_lag": 137,
+          "best_score": 0.2212,
+          "noise_level": 0.0311,
+          "ratio": 7.11
+        }
+      },
+      "adaptive": {
+        "phase_frames": 0.0,
+        "median_margin_pct_of_range": 49.75,
+        "worst_margin_pct_of_range": 48.605,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 4056,
+        "ones_pct": 38.63,
+        "flip_rate_pct": 44.44,
+        "longest_run": 13,
+        "mean_run_bits": 2.25,
+        "agree_at_-0.15_bit_pct": 58.05,
+        "agree_at_+0.15_bit_pct": 89.97,
+        "self_repetition": {
+          "best_lag": 137,
+          "best_score": 0.2286,
+          "noise_level": 0.0307,
+          "ratio": 7.43
+        }
+      },
+      "fixed_vs_adaptive_agree_pct": 99.112,
+      "fixed_vs_adaptive_agree_pct_same_phase": 99.112
+    }
+  },
+  "3LEDs_92bps/lamp2": {
+    "92bps": {
+      "fixed": {
+        "phase_frames": 2.261,
+        "median_margin_pct_of_range": 49.67,
+        "worst_margin_pct_of_range": 48.548,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 4056,
+        "ones_pct": 39.45,
+        "flip_rate_pct": 43.4,
+        "longest_run": 13,
+        "mean_run_bits": 2.303,
+        "agree_at_-0.15_bit_pct": 89.15,
+        "agree_at_+0.15_bit_pct": 89.86,
+        "self_repetition": {
+          "best_lag": 137,
+          "best_score": 0.2345,
+          "noise_level": 0.0276,
+          "ratio": 8.5
+        }
+      },
+      "adaptive": {
+        "phase_frames": 0.0,
+        "median_margin_pct_of_range": 49.66,
+        "worst_margin_pct_of_range": 48.553,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 4056,
+        "ones_pct": 40.48,
+        "flip_rate_pct": 44.39,
+        "longest_run": 18,
+        "mean_run_bits": 2.252,
+        "agree_at_-0.15_bit_pct": 58.5,
+        "agree_at_+0.15_bit_pct": 89.4,
+        "self_repetition": {
+          "best_lag": 137,
+          "best_score": 0.2078,
+          "noise_level": 0.0287,
+          "ratio": 7.24
+        }
+      },
+      "fixed_vs_adaptive_agree_pct": 60.404,
+      "fixed_vs_adaptive_agree_pct_same_phase": 98.743
+    }
+  },
+  "3LEDs_92bps/lamp3": {
+    "92bps": {
+      "fixed": {
+        "phase_frames": 1.696,
+        "median_margin_pct_of_range": 48.43,
+        "worst_margin_pct_of_range": 38.212,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 4056,
+        "ones_pct": 40.06,
+        "flip_rate_pct": 45.82,
+        "longest_run": 14,
+        "mean_run_bits": 2.182,
+        "agree_at_-0.15_bit_pct": 89.69,
+        "agree_at_+0.15_bit_pct": 88.41,
+        "self_repetition": {
+          "best_lag": 137,
+          "best_score": 0.2379,
+          "noise_level": 0.0284,
+          "ratio": 8.38
+        }
+      },
+      "adaptive": {
+        "phase_frames": 0.0,
+        "median_margin_pct_of_range": 48.42,
+        "worst_margin_pct_of_range": 38.138,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 4056,
+        "ones_pct": 41.91,
+        "flip_rate_pct": 47.87,
+        "longest_run": 13,
+        "mean_run_bits": 2.089,
+        "agree_at_-0.15_bit_pct": 55.44,
+        "agree_at_+0.15_bit_pct": 88.86,
+        "self_repetition": {
+          "best_lag": 137,
+          "best_score": 0.2478,
+          "noise_level": 0.0346,
+          "ratio": 7.17
+        }
+      },
+      "fixed_vs_adaptive_agree_pct": 63.683,
+      "fixed_vs_adaptive_agree_pct_same_phase": 98.915
+    }
+  },
+  "4LEDs_92bps/lamp1": {
+    "92bps": {
+      "fixed": {
+        "phase_frames": 1.46,
+        "median_margin_pct_of_range": 49.68,
+        "worst_margin_pct_of_range": 48.864,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 3045,
+        "ones_pct": 48.97,
+        "flip_rate_pct": 48.78,
+        "longest_run": 21,
+        "mean_run_bits": 2.049,
+        "agree_at_-0.15_bit_pct": 89.59,
+        "agree_at_+0.15_bit_pct": 90.05,
+        "self_repetition": {
+          "best_lag": 173,
+          "best_score": 0.1806,
+          "noise_level": 0.0403,
+          "ratio": 4.48
+        }
+      },
+      "adaptive": {
+        "phase_frames": 1.46,
+        "median_margin_pct_of_range": 49.68,
+        "worst_margin_pct_of_range": 48.834,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 3045,
+        "ones_pct": 50.08,
+        "flip_rate_pct": 47.8,
+        "longest_run": 21,
+        "mean_run_bits": 2.091,
+        "agree_at_-0.15_bit_pct": 89.56,
+        "agree_at_+0.15_bit_pct": 90.02,
+        "self_repetition": {
+          "best_lag": 173,
+          "best_score": 0.1708,
+          "noise_level": 0.0399,
+          "ratio": 4.28
+        }
+      },
+      "fixed_vs_adaptive_agree_pct": 97.898,
+      "fixed_vs_adaptive_agree_pct_same_phase": 97.898
+    }
+  },
+  "4LEDs_92bps/lamp2": {
+    "92bps": {
+      "fixed": {
+        "phase_frames": 0.0,
+        "median_margin_pct_of_range": 49.66,
+        "worst_margin_pct_of_range": 49.036,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 3045,
+        "ones_pct": 47.72,
+        "flip_rate_pct": 46.29,
+        "longest_run": 13,
+        "mean_run_bits": 2.16,
+        "agree_at_-0.15_bit_pct": 57.37,
+        "agree_at_+0.15_bit_pct": 90.48,
+        "self_repetition": {
+          "best_lag": 36,
+          "best_score": 0.179,
+          "noise_level": 0.0383,
+          "ratio": 4.67
+        }
+      },
+      "adaptive": {
+        "phase_frames": 2.261,
+        "median_margin_pct_of_range": 49.65,
+        "worst_margin_pct_of_range": 48.884,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 3045,
+        "ones_pct": 49.16,
+        "flip_rate_pct": 45.11,
+        "longest_run": 20,
+        "mean_run_bits": 2.216,
+        "agree_at_-0.15_bit_pct": 89.75,
+        "agree_at_+0.15_bit_pct": 89.52,
+        "self_repetition": {
+          "best_lag": 173,
+          "best_score": 0.1537,
+          "noise_level": 0.0341,
+          "ratio": 4.5
+        }
+      },
+      "fixed_vs_adaptive_agree_pct": 59.409,
+      "fixed_vs_adaptive_agree_pct_same_phase": 97.077
+    }
+  },
+  "4LEDs_92bps/lamp3": {
+    "92bps": {
+      "fixed": {
+        "phase_frames": 1.13,
+        "median_margin_pct_of_range": 49.69,
+        "worst_margin_pct_of_range": 47.853,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 3045,
+        "ones_pct": 54.35,
+        "flip_rate_pct": 44.65,
+        "longest_run": 21,
+        "mean_run_bits": 2.239,
+        "agree_at_-0.15_bit_pct": 90.18,
+        "agree_at_+0.15_bit_pct": 91.49,
+        "self_repetition": {
+          "best_lag": 101,
+          "best_score": 0.1701,
+          "noise_level": 0.0382,
+          "ratio": 4.45
+        }
+      },
+      "adaptive": {
+        "phase_frames": 1.13,
+        "median_margin_pct_of_range": 49.69,
+        "worst_margin_pct_of_range": 47.85,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 3045,
+        "ones_pct": 55.14,
+        "flip_rate_pct": 43.99,
+        "longest_run": 21,
+        "mean_run_bits": 2.272,
+        "agree_at_-0.15_bit_pct": 90.38,
+        "agree_at_+0.15_bit_pct": 91.13,
+        "self_repetition": {
+          "best_lag": 101,
+          "best_score": 0.1649,
+          "noise_level": 0.0371,
+          "ratio": 4.44
+        }
+      },
+      "fixed_vs_adaptive_agree_pct": 98.818,
+      "fixed_vs_adaptive_agree_pct_same_phase": 98.818
+    }
+  },
+  "4LEDs_92bps/lamp4": {
+    "92bps": {
+      "fixed": {
+        "phase_frames": 1.083,
+        "median_margin_pct_of_range": 49.66,
+        "worst_margin_pct_of_range": 48.636,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 3045,
+        "ones_pct": 51.43,
+        "flip_rate_pct": 47.27,
+        "longest_run": 19,
+        "mean_run_bits": 2.115,
+        "agree_at_-0.15_bit_pct": 91.66,
+        "agree_at_+0.15_bit_pct": 89.0,
+        "self_repetition": {
+          "best_lag": 137,
+          "best_score": 0.1668,
+          "noise_level": 0.0363,
+          "ratio": 4.6
+        }
+      },
+      "adaptive": {
+        "phase_frames": 1.083,
+        "median_margin_pct_of_range": 49.65,
+        "worst_margin_pct_of_range": 48.655,
+        "bits_below_5pct_margin": 0.0,
+        "bits_below_15pct_margin": 0.0,
+        "n_bits": 3045,
+        "ones_pct": 51.89,
+        "flip_rate_pct": 46.81,
+        "longest_run": 19,
+        "mean_run_bits": 2.135,
+        "agree_at_-0.15_bit_pct": 91.4,
+        "agree_at_+0.15_bit_pct": 89.26,
+        "self_repetition": {
+          "best_lag": 137,
+          "best_score": 0.1754,
+          "noise_level": 0.0363,
+          "ratio": 4.83
+        }
+      },
+      "fixed_vs_adaptive_agree_pct": 97.11,
+      "fixed_vs_adaptive_agree_pct_same_phase": 97.11
+    }
+  }
+}
