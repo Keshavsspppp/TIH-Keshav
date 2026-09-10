@@ -1,0 +1,104 @@
+{
+  "config": {
+    "bits_per_second": 92.0,
+    "phase_convention": 0.0,
+    "n_phases": 12,
+    "threshold": "fixed",
+    "adaptive_window_frames": 2600,
+    "hysteresis": 0.0,
+    "local_normalise": false,
+    "local_normalise_window": 261
+  },
+  "signals": {
+    "1LED_92bps_lamp1": {
+      "n_bits": 9855,
+      "safe_bits_pct": 40.82,
+      "ones_pct": 45.22,
+      "ones_pct_safe_only": 40.99,
+      "flip_rate_pct": 48.44,
+      "median_margin_pct": 49.33,
+      "agreement_across_phases_pct": 83.63
+    },
+    "2LEDs_92bps_lamp1": {
+      "n_bits": 6083,
+      "safe_bits_pct": 47.44,
+      "ones_pct": 60.0,
+      "ones_pct_safe_only": 64.21,
+      "flip_rate_pct": 43.29,
+      "median_margin_pct": 49.58,
+      "agreement_across_phases_pct": 86.12
+    },
+    "2LEDs_92bps_lamp2": {
+      "n_bits": 6083,
+      "safe_bits_pct": 43.14,
+      "ones_pct": 40.74,
+      "ones_pct_safe_only": 36.32,
+      "flip_rate_pct": 44.87,
+      "median_margin_pct": 49.57,
+      "agreement_across_phases_pct": 84.2
+    },
+    "3LEDs_92bps_lamp1": {
+      "n_bits": 4055,
+      "safe_bits_pct": 43.75,
+      "ones_pct": 39.21,
+      "ones_pct_safe_only": 35.23,
+      "flip_rate_pct": 44.28,
+      "median_margin_pct": 49.75,
+      "agreement_across_phases_pct": 84.62
+    },
+    "3LEDs_92bps_lamp2": {
+      "n_bits": 4055,
+      "safe_bits_pct": 43.82,
+      "ones_pct": 39.98,
+      "ones_pct_safe_only": 35.57,
+      "flip_rate_pct": 44.15,
+      "median_margin_pct": 49.67,
+      "agreement_across_phases_pct": 84.51
+    },
+    "3LEDs_92bps_lamp3": {
+      "n_bits": 4055,
+      "safe_bits_pct": 40.76,
+      "ones_pct": 41.58,
+      "ones_pct_safe_only": 35.39,
+      "flip_rate_pct": 48.13,
+      "median_margin_pct": 48.43,
+      "agreement_across_phases_pct": 83.45
+    },
+    "4LEDs_92bps_lamp1": {
+      "n_bits": 3044,
+      "safe_bits_pct": 45.73,
+      "ones_pct": 48.32,
+      "ones_pct_safe_only": 48.28,
+      "flip_rate_pct": 46.5,
+      "median_margin_pct": 49.68,
+      "agreement_across_phases_pct": 84.99
+    },
+    "4LEDs_92bps_lamp2": {
+      "n_bits": 3044,
+      "safe_bits_pct": 45.47,
+      "ones_pct": 47.73,
+      "ones_pct_safe_only": 47.69,
+      "flip_rate_pct": 46.3,
+      "median_margin_pct": 49.66,
+      "agreement_across_phases_pct": 84.86
+    },
+    "4LEDs_92bps_lamp3": {
+      "n_bits": 3044,
+      "safe_bits_pct": 46.85,
+      "ones_pct": 54.43,
+      "ones_pct_safe_only": 57.85,
+      "flip_rate_pct": 46.24,
+      "median_margin_pct": 49.69,
+      "agreement_across_phases_pct": 85.76
+    },
+    "4LEDs_92bps_lamp4": {
+      "n_bits": 3044,
+      "safe_bits_pct": 44.81,
+      "ones_pct": 51.61,
+      "ones_pct_safe_only": 54.55,
+      "flip_rate_pct": 48.04,
+      "median_margin_pct": 49.66,
+      "agreement_across_phases_pct": 84.67
+    }
+  }
+}

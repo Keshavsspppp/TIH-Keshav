@@ -1,0 +1,3 @@
+# decoder_v2.py outputs (bits + safe masks); report.json IS tracked
+bits_v2/
+signal_v1/
