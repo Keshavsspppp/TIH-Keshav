@@ -1,0 +1,26 @@
+{
+ "confident": {
+  "mean_ber_over_all_phases_pct": 11.08,
+  "band": [
+   -0.1,
+   -0.0
+  ],
+  "band_width_bits": 0.15
+ },
+ "nearest": {
+  "mean_ber_over_all_phases_pct": 4.82,
+  "band": [
+   -0.4,
+   0.2
+  ],
+  "band_width_bits": 0.65
+ },
+ "average": {
+  "mean_ber_over_all_phases_pct": 4.79,
+  "band": [
+   -0.35,
+   0.25
+  ],
+  "band_width_bits": 0.65
+ }
+}
