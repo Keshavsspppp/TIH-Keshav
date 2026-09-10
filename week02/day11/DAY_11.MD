@@ -8,6 +8,8 @@
 
 This step does **not** decode anything. It produces the signal that the decoder will read. Bits come later.
 
+> **Note (2026-09-10, audit).** `configs/preprocess_v1.yaml` and `signals/` were not committed. The config has been reconstructed from the documented settings (`configs/preprocess_v1.yaml`, header comment explains); with it, `occ_pipeline.py` on `../../Videos/` reproduces all ten signals **byte-for-byte** (value and file SHA-256 match `../day12/SIGNAL_V1_MANIFEST.json`), which is the determinism claim in §4 checked on a different machine and a different day. The frozen output is now in `../day12/signal_v1/`. `fig_signals.png` was not regenerated.
+
 ---
 
 ## 1. How to Run It
@@ -75,7 +77,7 @@ The code for all three is written and works — it sits behind config flags. Swi
 | 3LEDs | 3 | 11,466 of 13,057 | 44.1 | 11,466 |
 | 4LEDs | 4 | 8,609 of 11,033 | 33.1 | 8,609 |
 
-**10 signals, 130,000 samples in total**, in about 130 seconds of runtime.
+**10 signals, 131,080 samples in total**, in about 130 seconds of runtime (57 s on the audit re-run).
 
 Every signal spans 1 to 253 in brightness, so the on/off gap survives the whole pipeline. See `fig_signals.png`.
 

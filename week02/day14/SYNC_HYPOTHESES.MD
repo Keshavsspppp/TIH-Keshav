@@ -23,6 +23,8 @@ Why this file exists: Day 13 found that the level changes in the video line up w
 
 E8 and E9 are new today and they change the picture. See §6.
 
+> **Note (2026-09-10, audit).** E8 and E9 re-verified on the regenerated Signal V1: coincidence 2.28–3.85× chance across all ten lamp pairs; strongest repeat lags 21 / 81 / 41 / 61 in `2LEDs` and `4LEDs`, 63 / 84 in `3LEDs`. The code that produced them on Day 14 is not in this folder; the equivalent is `../../OCC_Complete_Analysis.ipynb` §8. The lamp correlation in H5 ("0.31 to 0.41") is the Day 07 figure; on Signal V1 it is 0.36–0.44. Question numbering: Day 07 used Q1–Q8 and Day 09 renumbered to Q1–Q4; from Day 10 on, Q1 = transmitted bits, Q2 = framing, Q3 = payload-vs-switching rate, and "Q5" below (exposure time) is a new question, not Day 07's Q5.
+
 ---
 
 ## H1 — The bit rate is simply not 92 bps
@@ -91,7 +93,7 @@ They coincide 2.3 to 3.9 times more than chance (E8).
 
 The shared glitches repeat every about **21 frames**, with harmonics at 41, 61 and 81. The same 21-frame beat appears in `2LEDs` and `4LEDs` — separate recordings — and in `3LEDs` as 63 and 84, which are multiples of it.
 
-Two grids drifting past each other realign every `T / |T − nearest whole number|` frames. Setting that to 21 gives three candidate periods:
+Two grids drifting past each other realign every `T / |T − nearest whole number|` frames. Setting that to 21 gives four candidate periods (two of them within 0.2 % of each other):
 
 | Period (frames) | Bit rate | Beat |
 |---|---|---|
@@ -101,6 +103,8 @@ Two grids drifting past each other realign every `T / |T − nearest whole numbe
 | **2.865** | **90.8 bps** | **21.2 frames** |
 
 **The third and fourth land within 1.2% of the filename's 92 bps.**
+
+> **Note (2026-09-10, audit).** The repeat lags are 21, 41, 61, 81 — spaced **20** apart, so the beat is nearer 20.2 frames than 21; that moves the candidates to about 1.905 / 2.105 / 2.85 frames (136 / 124 / 91 bps) and does not change the conclusion. A fifth candidate sits on the other side of the 3-frame pole (`T ≈ 3.15`, about 82 bps; visible in `fig_beat.png`, right panel). The filename's 2.826 frames would give a 16-frame beat, which is not what is observed.
 
 | | |
 |---|---|

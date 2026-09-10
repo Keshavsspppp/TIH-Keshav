@@ -47,9 +47,11 @@ The original plan (Day 05) had detrending and rolling normalisation as central p
 | Smooth, window 3 | 31.9 | 73.1% | 81.4% |
 | Smooth, window 5 | 11.4 | 43.3% | 74.5% |
 | Detrend, window 261 | 25.1 | 100.0% | 77.9% |
-| Detrend, window 29 | 12.7 | 100.1% | 75.7% |
+| Detrend, window 29 | 12.7 | 100.1% *(adds a few spurious crossings)* | 75.7% |
 | Normalise, window 261 | 24.8 | 100.0% | 77.6% |
 | All three together | 21.4 | 73.1% | 78.0% |
+
+> **Note (2026-09-10, audit).** All seven rows reproduce exactly on the regenerated Signal V1. "gap / noise" here is `(mean on − mean off) / rms(std on, std off)` with on/off taken as samples more than 25 % of the range from the mid-level, over all ten signals; it is **not** the Day 10 §2 figure (24–33), which used a ±60 grey-level cut on 4,000 frames of one lamp. `ablation.json` was not committed; the numbers are recomputable from the notebook cell in `../../OCC_Complete_Analysis.ipynb` §6.
 
 Three things stand out.
 
@@ -127,6 +129,8 @@ Read-only stops ordinary accidents. It does not stop an admin user, who can stil
 3. **Signal V1 as frozen** — 10 signals, 131,080 samples, fingerprinted, read-only.
 
 Once approved, decoder work runs against `signal_v1/` and never touches a video again.
+
+> **Note (2026-09-10, audit).** No mentor approval or corrections are recorded for this review (the Day 12 task asked for both). `signal_v1/` was not committed originally; it has been regenerated from `../../Videos/` with `../day11/occ_pipeline.py` and `freeze_signal.py` and added to this folder. Every `.npy` is byte-identical to the frozen original (`file_sha256` matches the manifest for all ten). `freeze_signal.py --verify --out signal_v1` reports the settings file as changed, because the reconstructed `preprocess_v1.yaml` cannot match the original file's hash — the signals themselves pass.
 
 ---
 

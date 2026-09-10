@@ -1,0 +1,109 @@
+{
+  "pipeline_version": "1.0.0",
+  "git_commit": null,
+  "created_utc": "2026-09-10T06:30:06Z",
+  "video": {
+    "id": "2LEDs_92bps",
+    "path": "data\\raw\\2LEDs_92bps.mp4",
+    "sha256": "a0c467cda2f48ea249c9b146906f644296968c1ca43159e5bfdecb51ff934f51",
+    "total_frames": 21157
+  },
+  "trim": {
+    "start_frame": 975,
+    "end_frame": 18169,
+    "kept_frames": 17195,
+    "dropped_lead_in": 975,
+    "dropped_lead_out": 2987,
+    "kept_seconds": 66.13
+  },
+  "lamps_found": 2,
+  "cleaning_applied": [
+    "none"
+  ],
+  "signals": [
+    {
+      "lamp": 1,
+      "file": "lamp1.npy",
+      "n_samples": 17195,
+      "box": [
+        319,
+        23,
+        75,
+        82
+      ],
+      "n_pixels": 4517,
+      "fill": 0.734,
+      "min": 1.0,
+      "max": 253.21925354003906,
+      "mean": 142.812,
+      "sha256": "27697cf645a07ac1056744f0ba9335c5da9b824fbe0c1f97d2150db356bed878"
+    },
+    {
+      "lamp": 2,
+      "file": "lamp2.npy",
+      "n_samples": 17195,
+      "box": [
+        418,
+        25,
+        73,
+        81
+      ],
+      "n_pixels": 4403,
+      "fill": 0.745,
+      "min": 1.0,
+      "max": 253.25372314453125,
+      "mean": 134.437,
+      "sha256": "249089480aa1ff671b6281057e4b13253984c186b58cfe2ae37518c4ea3c8546"
+    }
+  ],
+  "config": {
+    "random_seed": 1337,
+    "video": {
+      "fps": 260.0,
+      "bits_per_second": 92.0
+    },
+    "trim": {
+      "window_s": 1.0,
+      "min_lit_share": 0.15,
+      "lit_level": 180
+    },
+    "roi": {
+      "sample_frames": 600,
+      "min_variance": 400.0,
+      "variance_share": 0.03,
+      "min_pixels": 100,
+      "max_lamps": 6,
+      "kmeans_iters": 30,
+      "kmeans_attempts": 5,
+      "min_separation": 0.15,
+      "min_fill": 0.4,
+      "min_share": 0.25,
+      "row_height": 60
+    },
+    "intensity": {
+      "statistic": "bright_mean",
+      "bright_fraction": 0.25,
+      "percentile": 90
+    },
+    "clean": {
+      "detrend": {
+        "enabled": false,
+        "window_frames": 261
+      },
+      "normalise": {
+        "enabled": false,
+        "window_frames": 261
+      },
+      "smooth": {
+        "enabled": false,
+        "window_frames": 3
+      }
+    }
+  },
+  "environment": {
+    "python": "3.13.9",
+    "opencv": "5.0.0",
+    "numpy": "2.3.5"
+  },
+  "runtime_s": 14.87
+}

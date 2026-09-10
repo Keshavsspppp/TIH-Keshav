@@ -39,7 +39,7 @@ The main deliverable. One row per video.
 | Frame rate steady? | yes | yes | yes | yes |
 | Resolution / codec | 640×360 mpeg4 | 640×360 mpeg4 | 640×360 mpeg4 | 640×360 mpeg4 |
 | **Usable part** | | | | |
-| Dark at start | 217 fr | 93 fr *(see §5)* | 965 fr | 1,816 fr |
+| Dark at start | 217 fr | 93 fr *(see §5; real transmission from ~975)* | 965 fr | 1,816 fr |
 | Dark at end | 1,985 fr | 2,987 fr | 626 fr | 608 fr |
 | Transmission length | 107.1 s | 69.5 s | 44.1 s | 33.1 s |
 | Bits available | ~9,900 | ~6,400/LED | ~4,100/LED | ~3,000/LED |
@@ -62,6 +62,8 @@ The main deliverable. One row per video.
 | **Overall verdict** | green | **amber** | green | green |
 
 \* The apparent drift in the multi-LED videos is not camera movement — see §4.
+
+> **Note (2026-09-10, audit):** re-checked on a full read of all 75,305 frames in `../../Videos/`. Frame counts, zero duplicated and zero black frames, lead-in/lead-out, the 877-frame gap, the drift figures and the ambient medians reproduce. "Frames with a lamp lit" is measured **within the trimmed transmission span**, not the whole file (whole-file values are 45 / 57 / 65 / 65 %). "Ambient" here means the mean of pixels not brighter than 180; the per-second range depends on that cut and came out 2–3× larger on the re-check (0.6–0.9 grey levels), still under 0.4 % of contrast. The code that produced this table is not in the repository; `occ_prototype.ipynb` in this folder is unrelated to it (see the note at the top of that notebook).
 
 ---
 

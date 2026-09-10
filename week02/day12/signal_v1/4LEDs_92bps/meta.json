@@ -1,0 +1,143 @@
+{
+  "pipeline_version": "1.0.0",
+  "git_commit": null,
+  "created_utc": "2026-09-10T06:30:25Z",
+  "video": {
+    "id": "4LEDs_92bps",
+    "path": "data\\raw\\4LEDs_92bps.mp4",
+    "sha256": "2034cc19edeb2cdf08403e97395e16e0015566e1eeef3f7d103518ccfbbc76ba",
+    "total_frames": 11033
+  },
+  "trim": {
+    "start_frame": 1816,
+    "end_frame": 10424,
+    "kept_frames": 8609,
+    "dropped_lead_in": 1816,
+    "dropped_lead_out": 608,
+    "kept_seconds": 33.11
+  },
+  "lamps_found": 4,
+  "cleaning_applied": [
+    "none"
+  ],
+  "signals": [
+    {
+      "lamp": 1,
+      "file": "lamp1.npy",
+      "n_samples": 8609,
+      "box": [
+        279,
+        86,
+        67,
+        67
+      ],
+      "n_pixels": 3356,
+      "fill": 0.748,
+      "min": 1.0,
+      "max": 253.08912658691406,
+      "mean": 144.166,
+      "sha256": "537a5d88a55f15a13dee28756043331378d851edf12c11a5a10424f2860c0191"
+    },
+    {
+      "lamp": 2,
+      "file": "lamp2.npy",
+      "n_samples": 8609,
+      "box": [
+        401,
+        89,
+        66,
+        65
+      ],
+      "n_pixels": 3282,
+      "fill": 0.765,
+      "min": 1.0,
+      "max": 253.12779235839844,
+      "mean": 144.643,
+      "sha256": "02f0603e51f0dd29a9ebfa42ce33d2f3b4b50385c28c20320beb870c54f63662"
+    },
+    {
+      "lamp": 3,
+      "file": "lamp3.npy",
+      "n_samples": 8609,
+      "box": [
+        281,
+        167,
+        66,
+        66
+      ],
+      "n_pixels": 3268,
+      "fill": 0.75,
+      "min": 1.0,
+      "max": 252.73553466796875,
+      "mean": 143.408,
+      "sha256": "9d3aa2d251c16d77a1efad32094f44aedfbecab3c4572171a3f1e808d6bd766e"
+    },
+    {
+      "lamp": 4,
+      "file": "lamp4.npy",
+      "n_samples": 8609,
+      "box": [
+        400,
+        169,
+        65,
+        65
+      ],
+      "n_pixels": 3184,
+      "fill": 0.754,
+      "min": 1.017045497894287,
+      "max": 253.06439208984375,
+      "mean": 145.926,
+      "sha256": "724655986359882b1aede3e788ca1a6544fadd349d00e09190da7b2a66679f71"
+    }
+  ],
+  "config": {
+    "random_seed": 1337,
+    "video": {
+      "fps": 260.0,
+      "bits_per_second": 92.0
+    },
+    "trim": {
+      "window_s": 1.0,
+      "min_lit_share": 0.15,
+      "lit_level": 180
+    },
+    "roi": {
+      "sample_frames": 600,
+      "min_variance": 400.0,
+      "variance_share": 0.03,
+      "min_pixels": 100,
+      "max_lamps": 6,
+      "kmeans_iters": 30,
+      "kmeans_attempts": 5,
+      "min_separation": 0.15,
+      "min_fill": 0.4,
+      "min_share": 0.25,
+      "row_height": 60
+    },
+    "intensity": {
+      "statistic": "bright_mean",
+      "bright_fraction": 0.25,
+      "percentile": 90
+    },
+    "clean": {
+      "detrend": {
+        "enabled": false,
+        "window_frames": 261
+      },
+      "normalise": {
+        "enabled": false,
+        "window_frames": 261
+      },
+      "smooth": {
+        "enabled": false,
+        "window_frames": 3
+      }
+    }
+  },
+  "environment": {
+    "python": "3.13.9",
+    "opencv": "5.0.0",
+    "numpy": "2.3.5"
+  },
+  "runtime_s": 9.45
+}

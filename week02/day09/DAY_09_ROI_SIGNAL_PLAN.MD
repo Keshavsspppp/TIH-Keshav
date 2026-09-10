@@ -43,11 +43,15 @@ So the thing that makes the lamps hard to separate by shape is exactly the thing
 
 **The lamp count was never given to the detector.** It is worked out from the data and matches the filename in all four videos. The faint glare smudge in `1LED` is correctly ignored.
 
+> **Note (2026-09-10, audit):** re-run of `roi_extract.py` on `../../Videos/` finds the same 1/2/3/4 lamps and the same boxes (regenerated `rois.json` added to this folder). The boxes finally used by Signal V1 differ by ≤ 1 px (`../day12/SIGNAL_V1_MANIFEST.json`), because `roi_extract.py` does not seed k-means — fixed in `../day11/occ_pipeline.py`. The "0.31 to 0.41" correlation quoted above is the Day 07 figure; on the final per-lamp signals it is 0.36–0.44 (`../../week01/day07/DAY_07_FINDINGS.MD` §4 correction).
+
 ### Trimming
 
 Trim on **sustained activity** — the first point where the lamp is lit for at least 15% of a one-second window — not on the first bright frame.
 
 This matters for `2LEDs`, which has a brief flash at frame 93 followed by 3.4 seconds of darkness before the real transmission. Trimming naively would have fed that silence into the timing recovery. The new rule starts it at frame 778 instead of 93.
+
+> **Corrected on Day 11 (2026-09-10, audit note).** 778 is the *start of the first one-second window* that holds enough activity, not the first lit frame — so this rule still fed about 200 dark frames (0.8 s) to every signal. `../day11/occ_pipeline.py` steps forward to the first lit frame inside that window; the trim points Signal V1 actually uses are 217 / 975 / 965 / 1816 (`../day11/DAY_11.MD` §3). The Day 10 notebook was run with the 778-style trims from `rois.json`.
 
 ---
 
@@ -79,6 +83,8 @@ Averaging over the bit is the textbook matched-filter answer, and it is what we 
 With 2.83 frames per bit, **at least one frame per bit falls entirely inside that bit** and is therefore fully on or fully off. Which frame that is changes from bit to bit, because 2.83 is not a whole number. So instead of fixing a position, we take the frame within the bit whose brightness is furthest from the threshold.
 
 This is why it scores 0.00% at **every** phase we tested. It does not need to know where the bit starts.
+
+> **Forward reference (2026-09-10, audit note).** Day 15 found the other side of this property: because the score is identical at every phase, it carries **no information about the phase**, so the decoder cannot estimate where bits start — the phase it reports is set by floating-point noise, and a third of the bits change under a half-bit shift (`../../week03/day15/DAY_15.MD` §3). Day 16 measured that only about 44 % of each bit stream is decided regardless of phase (`../../week03/day16/DAY_16.MD` §3). The robustness claimed here is real for *reading* a bit once its boundaries are known; it is what removed the signal needed to *find* the boundaries.
 
 ### The honest caveat
 
@@ -124,6 +130,8 @@ Steps 4, 5 and 6 stay in the code behind config flags. They are switched off bec
 | Long clips | Re-estimate the phase in blocks rather than once per video | Not yet tested; `1LED` runs 28,000 frames, so a small frame-rate error would build up |
 
 The phase search still runs, even though the chosen rule barely needs it. It costs little, and the phase estimate is itself a reportable number: if it drifts across a clip, that tells us the real frame rate is not exactly 260.
+
+> **Correction (2026-09-10, audit; the table above is kept as the record).** Row 1 — "Confirmed from run lengths (Day 07)" is wrong. The Day 07 run-length table omitted the 1-, 4- and 7-frame runs that cannot exist at 2.826 frames per bit; they are about 22 % of the runs in `1LED` (`../day10/Day10_EDA.ipynb` §4), and no bit rate shows clock structure (`../day13/Day13_Synchronisation.ipynb`). **92 bps is an assumption from the filename, not a measurement.** Row 3 — "almost nothing" is true for the confidence score and is precisely the problem: the score cannot see the phase at all (see the §2 note). The same "bit rate is known" wording appears on slide 4 of `DAY09_KeshavPrasad_PPT.pptx.pdf`, which is not edited.
 
 ---
 
@@ -185,4 +193,6 @@ The phase search still runs, even though the chosen rule barely needs it. It cos
 | `fig_roi.png` | All four videos with the detected boxes drawn |
 | `fig_phase.png` | The four extraction rules across every bit phase |
 | `fig_eye_only.png` | Eye diagram for one bit |
-| `rois.json` | Trim points and lamp boxes for all four videos |
+| `rois.json` | Trim points and lamp boxes for all four videos — **regenerated 2026-09-10** from `../../Videos/` with `roi_extract.py` (the original was not committed; trims match the Day 10 notebook to within 3 frames) |
+
+> **Note (2026-09-10, audit):** `Day09_progress_pack.pptx` is in this folder as `DAY09_KeshavPrasad_PPT.pptx.pdf` (its title slide still reads "DAY 03 REVIEW"). `fig_eye_only.png` is not in the repository. `roi_extract.py` reads `data/raw/*.mp4`; copy or link `../../Videos/` there to run it.

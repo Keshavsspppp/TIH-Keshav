@@ -1,0 +1,3 @@
+# roi_extract side-products; audit_*.npz and rois.json ARE tracked (notebook inputs)
+var_*.npy
+data/

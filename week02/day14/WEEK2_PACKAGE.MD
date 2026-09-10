@@ -52,6 +52,8 @@
 
 Measured across 95 five-second windows in all ten signals. Two results were not what we expected.
 
+> **Note (2026-09-10, audit):** "near the threshold" is not defined here and the code is not in the repository, so the percentages could not be reproduced exactly; with a ±25 grey-level band the ordering holds (`1LED` median 1.8 % against 0.2–0.7 % for every other lamp; `3LEDs` L3 contrast 227). The 95-window count reproduces.
+
 ### The single-lamp video is the hardest, not the easiest
 
 | Signal | Median % of samples near the threshold | Worst window |
@@ -85,7 +87,7 @@ Lower contrast did not translate into a harder signal. Worth asking a peer wheth
 
 This is the main thing to compare with a peer.
 
-**What we did.** Estimated the symbol clock four ways: spectral null, transition-grid alignment, a period sweep, and long baselines between distant level changes.
+**What we did.** Estimated the symbol clock six ways across Days 10 and 13: spectral null, transition-grid alignment and a period sweep (Day 10); long baselines between distant level changes, best-phase grid distance at every rate, and a run-length model fit (Day 13).
 
 **What happened.** All four failed. The decisive measurement: level changes sit at an average of 0.703 frames from the nearest 92 bps boundary. Randomly chosen times sit at 0.705. A real edge can only be out by half a frame, since that is all the rounding allows.
 
@@ -127,12 +129,6 @@ To be filled in during the session. Left blank on purpose — nothing here is wr
 | Their project | |
 | Format | Findings compared verbally. No code exchanged |
 
-### What we presented
-
-- [ ] Signal V1 and the extraction pipeline (§2)
-- [ ] The cleaning evidence — every option measured worse (§2)
-- [ ] The sync failure and today's beat finding (§5)
-- [ ] The difficult segments (§4)
 
 ### Comparison notes
 

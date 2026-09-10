@@ -1,0 +1,3 @@
+# roi_extract.py writes these next to itself; regenerable
+var_*.npy
+data/

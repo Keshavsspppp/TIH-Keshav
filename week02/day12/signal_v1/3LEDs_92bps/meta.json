@@ -1,0 +1,126 @@
+{
+  "pipeline_version": "1.0.0",
+  "git_commit": null,
+  "created_utc": "2026-09-10T06:30:16Z",
+  "video": {
+    "id": "3LEDs_92bps",
+    "path": "data\\raw\\3LEDs_92bps.mp4",
+    "sha256": "abf867d80deadb05a6ebb88dde7283656471fc8eb30d780ff8ac6f4ace880d8a",
+    "total_frames": 13057
+  },
+  "trim": {
+    "start_frame": 965,
+    "end_frame": 12430,
+    "kept_frames": 11466,
+    "dropped_lead_in": 965,
+    "dropped_lead_out": 626,
+    "kept_seconds": 44.1
+  },
+  "lamps_found": 3,
+  "cleaning_applied": [
+    "none"
+  ],
+  "signals": [
+    {
+      "lamp": 1,
+      "file": "lamp1.npy",
+      "n_samples": 11466,
+      "box": [
+        410,
+        41,
+        49,
+        49
+      ],
+      "n_pixels": 1715,
+      "fill": 0.714,
+      "min": 1.3333333730697632,
+      "max": 252.65167236328125,
+      "mean": 134.436,
+      "sha256": "ab44db3b24ecea284d85a5b304cf3fcefb989d43418a174092676bc262e9f6b3"
+    },
+    {
+      "lamp": 2,
+      "file": "lamp2.npy",
+      "n_samples": 11466,
+      "box": [
+        480,
+        41,
+        49,
+        49
+      ],
+      "n_pixels": 1711,
+      "fill": 0.713,
+      "min": 1.068333387374878,
+      "max": 252.8333282470703,
+      "mean": 135.169,
+      "sha256": "aa72c2d2517bb7c18df0646a933d48d272fb405fcad66432b3a1dc391d8fed1a"
+    },
+    {
+      "lamp": 3,
+      "file": "lamp3.npy",
+      "n_samples": 11466,
+      "box": [
+        554,
+        46,
+        47,
+        46
+      ],
+      "n_pixels": 1547,
+      "fill": 0.716,
+      "min": 1.6888889074325562,
+      "max": 236.0481414794922,
+      "mean": 113.723,
+      "sha256": "a0834b6280c043579204239fa698b97f57074eb1935f223437c96166e517bd21"
+    }
+  ],
+  "config": {
+    "random_seed": 1337,
+    "video": {
+      "fps": 260.0,
+      "bits_per_second": 92.0
+    },
+    "trim": {
+      "window_s": 1.0,
+      "min_lit_share": 0.15,
+      "lit_level": 180
+    },
+    "roi": {
+      "sample_frames": 600,
+      "min_variance": 400.0,
+      "variance_share": 0.03,
+      "min_pixels": 100,
+      "max_lamps": 6,
+      "kmeans_iters": 30,
+      "kmeans_attempts": 5,
+      "min_separation": 0.15,
+      "min_fill": 0.4,
+      "min_share": 0.25,
+      "row_height": 60
+    },
+    "intensity": {
+      "statistic": "bright_mean",
+      "bright_fraction": 0.25,
+      "percentile": 90
+    },
+    "clean": {
+      "detrend": {
+        "enabled": false,
+        "window_frames": 261
+      },
+      "normalise": {
+        "enabled": false,
+        "window_frames": 261
+      },
+      "smooth": {
+        "enabled": false,
+        "window_frames": 3
+      }
+    }
+  },
+  "environment": {
+    "python": "3.13.9",
+    "opencv": "5.0.0",
+    "numpy": "2.3.5"
+  },
+  "runtime_s": 9.24
+}

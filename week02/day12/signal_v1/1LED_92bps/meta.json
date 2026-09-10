@@ -1,0 +1,92 @@
+{
+  "pipeline_version": "1.0.0",
+  "git_commit": null,
+  "created_utc": "2026-09-10T06:29:51Z",
+  "video": {
+    "id": "1LED_92bps",
+    "path": "data\\raw\\1LED_92bps.mp4",
+    "sha256": "ec24d5ecbb2c82f0bec225935fae2b49fcf1b43a88392de1bbbf7ebe6c311469",
+    "total_frames": 30058
+  },
+  "trim": {
+    "start_frame": 217,
+    "end_frame": 28072,
+    "kept_frames": 27856,
+    "dropped_lead_in": 217,
+    "dropped_lead_out": 1985,
+    "kept_seconds": 107.14
+  },
+  "lamps_found": 1,
+  "cleaning_applied": [
+    "none"
+  ],
+  "signals": [
+    {
+      "lamp": 1,
+      "file": "lamp1.npy",
+      "n_samples": 27856,
+      "box": [
+        294,
+        117,
+        105,
+        105
+      ],
+      "n_pixels": 8634,
+      "fill": 0.783,
+      "min": 1.0232220888137817,
+      "max": 252.05369567871094,
+      "mean": 122.34,
+      "sha256": "325e405405e456d5b8a72ad35b7b7d833f46b12113426e5aeb55c9a1fa95c9c8"
+    }
+  ],
+  "config": {
+    "random_seed": 1337,
+    "video": {
+      "fps": 260.0,
+      "bits_per_second": 92.0
+    },
+    "trim": {
+      "window_s": 1.0,
+      "min_lit_share": 0.15,
+      "lit_level": 180
+    },
+    "roi": {
+      "sample_frames": 600,
+      "min_variance": 400.0,
+      "variance_share": 0.03,
+      "min_pixels": 100,
+      "max_lamps": 6,
+      "kmeans_iters": 30,
+      "kmeans_attempts": 5,
+      "min_separation": 0.15,
+      "min_fill": 0.4,
+      "min_share": 0.25,
+      "row_height": 60
+    },
+    "intensity": {
+      "statistic": "bright_mean",
+      "bright_fraction": 0.25,
+      "percentile": 90
+    },
+    "clean": {
+      "detrend": {
+        "enabled": false,
+        "window_frames": 261
+      },
+      "normalise": {
+        "enabled": false,
+        "window_frames": 261
+      },
+      "smooth": {
+        "enabled": false,
+        "window_frames": 3
+      }
+    }
+  },
+  "environment": {
+    "python": "3.13.9",
+    "opencv": "5.0.0",
+    "numpy": "2.3.5"
+  },
+  "runtime_s": 22.64
+}

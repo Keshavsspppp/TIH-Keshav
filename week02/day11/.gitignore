@@ -1,0 +1,4 @@
+# occ_pipeline.py outputs; regenerable with configs/preprocess_v1.yaml
+signals/
+signals_verify/
+data/

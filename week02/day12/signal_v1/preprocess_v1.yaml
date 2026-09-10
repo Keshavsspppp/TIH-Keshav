@@ -1,0 +1,43 @@
+# preprocess_v1.yaml - settings for occ_pipeline.py (Day 11)
+#
+# AUDIT NOTE (2026-09-10): the original file was never committed. This copy was
+# reconstructed from the settings documented in DAY_09_ROI_SIGNAL_PLAN.MD s1/s3,
+# DAY_11.MD s2 and roi_extract.py. Run with it, occ_pipeline.py reproduces all ten
+# Signal V1 files byte-for-byte (value AND file SHA-256 match
+# day12/SIGNAL_V1_MANIFEST.json). Its own SHA-256 does not match the manifest's
+# config_sha256, because the original text (comments, ordering) is unknown.
+
+random_seed: 1337                 # seeds cv2.kmeans - the only random step
+
+video:
+  fps: 260.0                      # measured: header, and frames / duration agree
+  bits_per_second: 92.0           # FROM THE FILENAME. Day 10 found run lengths that
+                                  # cannot occur at this rate; treat as an assumption
+
+trim:                             # start on sustained activity, not the first flash
+  window_s: 1.0                   # 2LEDs has one flash at frame 93, then 3.4 s of dark
+  min_lit_share: 0.15
+  lit_level: 180
+
+roi:                              # one region per lamp, grouped by blink behaviour
+  sample_frames: 600              # spread across the WHOLE active part (risk R4)
+  min_variance: 400.0             # absolute cut: a lamp pixel swings ~0..245
+  variance_share: 0.03
+  min_pixels: 100                 # rejects specks of glare (risk R3)
+  max_lamps: 6
+  kmeans_iters: 30
+  kmeans_attempts: 5
+  min_separation: 0.15            # largest k whose group signals still differ
+  min_fill: 0.40                  # a lamp is a solid disc; halo is not
+  min_share: 0.25
+  row_height: 60                  # stable lamp order: top row first, then left to right
+
+intensity:
+  statistic: bright_mean          # mean of the brightest fraction of the box
+  bright_fraction: 0.25           # Day 10 compared eight statistics
+  percentile: 90                  # only used if statistic == percentile
+
+clean:                            # ALL OFF - measured decision, see DAY_12 s2
+  detrend:   {enabled: false, window_frames: 261}
+  normalise: {enabled: false, window_frames: 261}
+  smooth:    {enabled: false, window_frames: 3}
