@@ -1,0 +1,857 @@
+{
+  "selection_rule": "(fixed before running, Day 18 s3):\n  * full grid over a small, meaningful set of settings per candidate\n  * VALIDATION = synthetic streams with seeds 30-33 (never used on Day 17/18,\n    which used 0-3 train, 10-13 / 20-23 test) at noise 8 and 80, exposure 0.3,\n    random phase, decoded at the phase-0 convention (the realistic case)\n  * PRIMARY selection metric  : mean validation BER at phase 0\n  * SECONDARY (tie-break)     : phase tolerance (band with BER <= 1% at true phase)\n  * real DEV indicators are logged for every run but NOT used to select -\n    they cannot measure correctness (no ground truth)\n  * TEST (last 70% of each real signal) is not touched",
+  "runs": [
+    {
+      "val_ber_phase0_pct": 12.058,
+      "val_ber_true_phase_pct": 1.321,
+      "val_phase_tolerance_bits": 0.05,
+      "dev_safe_pct": 43.26,
+      "dev_phase_stability_pct": 90.37,
+      "candidate": "A threshold",
+      "end_margin": 0.0,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "confident",
+      "run_s": 0.14,
+      "run_id": "E19-01"
+    },
+    {
+      "val_ber_phase0_pct": 6.185,
+      "val_ber_true_phase_pct": 3.259,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.1,
+      "candidate": "A threshold",
+      "end_margin": 0.0,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "nearest",
+      "run_s": 0.08,
+      "run_id": "E19-02"
+    },
+    {
+      "val_ber_phase0_pct": 6.594,
+      "val_ber_true_phase_pct": 0.863,
+      "val_phase_tolerance_bits": 0.319,
+      "dev_safe_pct": 40.44,
+      "dev_phase_stability_pct": 90.07,
+      "candidate": "A threshold",
+      "end_margin": 0.0,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "average",
+      "run_s": 0.12,
+      "run_id": "E19-03"
+    },
+    {
+      "val_ber_phase0_pct": 12.05,
+      "val_ber_true_phase_pct": 1.305,
+      "val_phase_tolerance_bits": 0.05,
+      "dev_safe_pct": 43.58,
+      "dev_phase_stability_pct": 90.45,
+      "candidate": "A threshold",
+      "end_margin": 0.0,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "confident",
+      "run_s": 0.15,
+      "run_id": "E19-04"
+    },
+    {
+      "val_ber_phase0_pct": 6.19,
+      "val_ber_true_phase_pct": 3.255,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.1,
+      "candidate": "A threshold",
+      "end_margin": 0.0,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "nearest",
+      "run_s": 0.09,
+      "run_id": "E19-05"
+    },
+    {
+      "val_ber_phase0_pct": 6.577,
+      "val_ber_true_phase_pct": 0.863,
+      "val_phase_tolerance_bits": 0.319,
+      "dev_safe_pct": 41.16,
+      "dev_phase_stability_pct": 90.08,
+      "candidate": "A threshold",
+      "end_margin": 0.0,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "average",
+      "run_s": 0.14,
+      "run_id": "E19-06"
+    },
+    {
+      "val_ber_phase0_pct": 12.075,
+      "val_ber_true_phase_pct": 1.309,
+      "val_phase_tolerance_bits": 0.05,
+      "dev_safe_pct": 45.11,
+      "dev_phase_stability_pct": 90.76,
+      "candidate": "A threshold",
+      "end_margin": 0.0,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "confident",
+      "run_s": 0.15,
+      "run_id": "E19-07"
+    },
+    {
+      "val_ber_phase0_pct": 6.19,
+      "val_ber_true_phase_pct": 3.251,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.12,
+      "candidate": "A threshold",
+      "end_margin": 0.0,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "nearest",
+      "run_s": 0.09,
+      "run_id": "E19-08"
+    },
+    {
+      "val_ber_phase0_pct": 6.59,
+      "val_ber_true_phase_pct": 0.867,
+      "val_phase_tolerance_bits": 0.319,
+      "dev_safe_pct": 42.46,
+      "dev_phase_stability_pct": 90.47,
+      "candidate": "A threshold",
+      "end_margin": 0.0,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "average",
+      "run_s": 0.17,
+      "run_id": "E19-09"
+    },
+    {
+      "val_ber_phase0_pct": 11.101,
+      "val_ber_true_phase_pct": 0.571,
+      "val_phase_tolerance_bits": 0.081,
+      "dev_safe_pct": 39.68,
+      "dev_phase_stability_pct": 88.76,
+      "candidate": "A threshold",
+      "end_margin": 0.2,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "confident",
+      "run_s": 0.17,
+      "run_id": "E19-10"
+    },
+    {
+      "val_ber_phase0_pct": 6.185,
+      "val_ber_true_phase_pct": 3.259,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.1,
+      "candidate": "A threshold",
+      "end_margin": 0.2,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "nearest",
+      "run_s": 0.13,
+      "run_id": "E19-11"
+    },
+    {
+      "val_ber_phase0_pct": 6.962,
+      "val_ber_true_phase_pct": 0.509,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 36.33,
+      "dev_phase_stability_pct": 87.26,
+      "candidate": "A threshold",
+      "end_margin": 0.2,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "average",
+      "run_s": 0.17,
+      "run_id": "E19-12"
+    },
+    {
+      "val_ber_phase0_pct": 11.088,
+      "val_ber_true_phase_pct": 0.563,
+      "val_phase_tolerance_bits": 0.081,
+      "dev_safe_pct": 40.22,
+      "dev_phase_stability_pct": 88.82,
+      "candidate": "A threshold",
+      "end_margin": 0.2,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "confident",
+      "run_s": 0.22,
+      "run_id": "E19-13"
+    },
+    {
+      "val_ber_phase0_pct": 6.19,
+      "val_ber_true_phase_pct": 3.255,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.1,
+      "candidate": "A threshold",
+      "end_margin": 0.2,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "nearest",
+      "run_s": 0.1,
+      "run_id": "E19-14"
+    },
+    {
+      "val_ber_phase0_pct": 6.953,
+      "val_ber_true_phase_pct": 0.509,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 37.1,
+      "dev_phase_stability_pct": 87.45,
+      "candidate": "A threshold",
+      "end_margin": 0.2,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "average",
+      "run_s": 0.15,
+      "run_id": "E19-15"
+    },
+    {
+      "val_ber_phase0_pct": 11.117,
+      "val_ber_true_phase_pct": 0.575,
+      "val_phase_tolerance_bits": 0.081,
+      "dev_safe_pct": 42.33,
+      "dev_phase_stability_pct": 89.42,
+      "candidate": "A threshold",
+      "end_margin": 0.2,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "confident",
+      "run_s": 0.18,
+      "run_id": "E19-16"
+    },
+    {
+      "val_ber_phase0_pct": 6.19,
+      "val_ber_true_phase_pct": 3.251,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.12,
+      "candidate": "A threshold",
+      "end_margin": 0.2,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "nearest",
+      "run_s": 0.09,
+      "run_id": "E19-17"
+    },
+    {
+      "val_ber_phase0_pct": 6.974,
+      "val_ber_true_phase_pct": 0.529,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 39.19,
+      "dev_phase_stability_pct": 88.72,
+      "candidate": "A threshold",
+      "end_margin": 0.2,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "average",
+      "run_s": 0.17,
+      "run_id": "E19-18"
+    },
+    {
+      "val_ber_phase0_pct": 10.742,
+      "val_ber_true_phase_pct": 0.596,
+      "val_phase_tolerance_bits": 0.106,
+      "dev_safe_pct": 38.94,
+      "dev_phase_stability_pct": 88.45,
+      "candidate": "A threshold",
+      "end_margin": 0.3,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "confident",
+      "run_s": 0.18,
+      "run_id": "E19-19"
+    },
+    {
+      "val_ber_phase0_pct": 6.185,
+      "val_ber_true_phase_pct": 3.259,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.1,
+      "candidate": "A threshold",
+      "end_margin": 0.3,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "nearest",
+      "run_s": 0.12,
+      "run_id": "E19-20"
+    },
+    {
+      "val_ber_phase0_pct": 7.095,
+      "val_ber_true_phase_pct": 0.546,
+      "val_phase_tolerance_bits": 0.275,
+      "dev_safe_pct": 36.41,
+      "dev_phase_stability_pct": 87.01,
+      "candidate": "A threshold",
+      "end_margin": 0.3,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "average",
+      "run_s": 0.17,
+      "run_id": "E19-21"
+    },
+    {
+      "val_ber_phase0_pct": 10.73,
+      "val_ber_true_phase_pct": 0.588,
+      "val_phase_tolerance_bits": 0.106,
+      "dev_safe_pct": 39.74,
+      "dev_phase_stability_pct": 88.6,
+      "candidate": "A threshold",
+      "end_margin": 0.3,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "confident",
+      "run_s": 0.15,
+      "run_id": "E19-22"
+    },
+    {
+      "val_ber_phase0_pct": 6.19,
+      "val_ber_true_phase_pct": 3.255,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.1,
+      "candidate": "A threshold",
+      "end_margin": 0.3,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "nearest",
+      "run_s": 0.1,
+      "run_id": "E19-23"
+    },
+    {
+      "val_ber_phase0_pct": 7.082,
+      "val_ber_true_phase_pct": 0.55,
+      "val_phase_tolerance_bits": 0.275,
+      "dev_safe_pct": 37.18,
+      "dev_phase_stability_pct": 87.31,
+      "candidate": "A threshold",
+      "end_margin": 0.3,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "average",
+      "run_s": 0.17,
+      "run_id": "E19-24"
+    },
+    {
+      "val_ber_phase0_pct": 10.75,
+      "val_ber_true_phase_pct": 0.609,
+      "val_phase_tolerance_bits": 0.106,
+      "dev_safe_pct": 41.81,
+      "dev_phase_stability_pct": 89.44,
+      "candidate": "A threshold",
+      "end_margin": 0.3,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "confident",
+      "run_s": 0.17,
+      "run_id": "E19-25"
+    },
+    {
+      "val_ber_phase0_pct": 6.19,
+      "val_ber_true_phase_pct": 3.251,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.12,
+      "candidate": "A threshold",
+      "end_margin": 0.3,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "nearest",
+      "run_s": 0.1,
+      "run_id": "E19-26"
+    },
+    {
+      "val_ber_phase0_pct": 7.095,
+      "val_ber_true_phase_pct": 0.563,
+      "val_phase_tolerance_bits": 0.275,
+      "dev_safe_pct": 38.81,
+      "dev_phase_stability_pct": 88.41,
+      "candidate": "A threshold",
+      "end_margin": 0.3,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "average",
+      "run_s": 0.14,
+      "run_id": "E19-27"
+    },
+    {
+      "val_ber_phase0_pct": 10.413,
+      "val_ber_true_phase_pct": 0.629,
+      "val_phase_tolerance_bits": 0.131,
+      "dev_safe_pct": 38.22,
+      "dev_phase_stability_pct": 88.47,
+      "candidate": "A threshold",
+      "end_margin": 0.4,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "confident",
+      "run_s": 0.16,
+      "run_id": "E19-28"
+    },
+    {
+      "val_ber_phase0_pct": 6.185,
+      "val_ber_true_phase_pct": 3.259,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.1,
+      "candidate": "A threshold",
+      "end_margin": 0.4,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "nearest",
+      "run_s": 0.1,
+      "run_id": "E19-29"
+    },
+    {
+      "val_ber_phase0_pct": 7.478,
+      "val_ber_true_phase_pct": 0.588,
+      "val_phase_tolerance_bits": 0.269,
+      "dev_safe_pct": 35.92,
+      "dev_phase_stability_pct": 87.08,
+      "candidate": "A threshold",
+      "end_margin": 0.4,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "average",
+      "run_s": 0.17,
+      "run_id": "E19-30"
+    },
+    {
+      "val_ber_phase0_pct": 10.4,
+      "val_ber_true_phase_pct": 0.621,
+      "val_phase_tolerance_bits": 0.131,
+      "dev_safe_pct": 39.02,
+      "dev_phase_stability_pct": 88.62,
+      "candidate": "A threshold",
+      "end_margin": 0.4,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "confident",
+      "run_s": 0.17,
+      "run_id": "E19-31"
+    },
+    {
+      "val_ber_phase0_pct": 6.19,
+      "val_ber_true_phase_pct": 3.255,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.1,
+      "candidate": "A threshold",
+      "end_margin": 0.4,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "nearest",
+      "run_s": 0.11,
+      "run_id": "E19-32"
+    },
+    {
+      "val_ber_phase0_pct": 7.453,
+      "val_ber_true_phase_pct": 0.588,
+      "val_phase_tolerance_bits": 0.269,
+      "dev_safe_pct": 36.69,
+      "dev_phase_stability_pct": 87.27,
+      "candidate": "A threshold",
+      "end_margin": 0.4,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "average",
+      "run_s": 0.18,
+      "run_id": "E19-33"
+    },
+    {
+      "val_ber_phase0_pct": 10.454,
+      "val_ber_true_phase_pct": 0.642,
+      "val_phase_tolerance_bits": 0.125,
+      "dev_safe_pct": 41.03,
+      "dev_phase_stability_pct": 89.44,
+      "candidate": "A threshold",
+      "end_margin": 0.4,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "confident",
+      "run_s": 0.19,
+      "run_id": "E19-34"
+    },
+    {
+      "val_ber_phase0_pct": 6.19,
+      "val_ber_true_phase_pct": 3.251,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.12,
+      "candidate": "A threshold",
+      "end_margin": 0.4,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "nearest",
+      "run_s": 0.11,
+      "run_id": "E19-35"
+    },
+    {
+      "val_ber_phase0_pct": 7.499,
+      "val_ber_true_phase_pct": 0.6,
+      "val_phase_tolerance_bits": 0.269,
+      "dev_safe_pct": 38.58,
+      "dev_phase_stability_pct": 88.44,
+      "candidate": "A threshold",
+      "end_margin": 0.4,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "average",
+      "run_s": 0.17,
+      "run_id": "E19-36"
+    },
+    {
+      "val_ber_phase0_pct": 10.183,
+      "val_ber_true_phase_pct": 0.654,
+      "val_phase_tolerance_bits": 0.131,
+      "dev_safe_pct": 38.14,
+      "dev_phase_stability_pct": 88.24,
+      "candidate": "A threshold",
+      "end_margin": 0.5,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "confident",
+      "run_s": 0.16,
+      "run_id": "E19-37"
+    },
+    {
+      "val_ber_phase0_pct": 6.185,
+      "val_ber_true_phase_pct": 3.259,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.1,
+      "candidate": "A threshold",
+      "end_margin": 0.5,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "nearest",
+      "run_s": 0.1,
+      "run_id": "E19-38"
+    },
+    {
+      "val_ber_phase0_pct": 7.924,
+      "val_ber_true_phase_pct": 0.613,
+      "val_phase_tolerance_bits": 0.244,
+      "dev_safe_pct": 36.17,
+      "dev_phase_stability_pct": 87.02,
+      "candidate": "A threshold",
+      "end_margin": 0.5,
+      "percentiles": [
+        5,
+        95
+      ],
+      "rule": "average",
+      "run_s": 0.14,
+      "run_id": "E19-39"
+    },
+    {
+      "val_ber_phase0_pct": 10.175,
+      "val_ber_true_phase_pct": 0.646,
+      "val_phase_tolerance_bits": 0.131,
+      "dev_safe_pct": 38.85,
+      "dev_phase_stability_pct": 88.33,
+      "candidate": "A threshold",
+      "end_margin": 0.5,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "confident",
+      "run_s": 0.17,
+      "run_id": "E19-40"
+    },
+    {
+      "val_ber_phase0_pct": 6.19,
+      "val_ber_true_phase_pct": 3.255,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.1,
+      "candidate": "A threshold",
+      "end_margin": 0.5,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "nearest",
+      "run_s": 0.12,
+      "run_id": "E19-41"
+    },
+    {
+      "val_ber_phase0_pct": 7.903,
+      "val_ber_true_phase_pct": 0.613,
+      "val_phase_tolerance_bits": 0.244,
+      "dev_safe_pct": 36.88,
+      "dev_phase_stability_pct": 87.23,
+      "candidate": "A threshold",
+      "end_margin": 0.5,
+      "percentiles": [
+        10,
+        90
+      ],
+      "rule": "average",
+      "run_s": 0.17,
+      "run_id": "E19-42"
+    },
+    {
+      "val_ber_phase0_pct": 10.217,
+      "val_ber_true_phase_pct": 0.667,
+      "val_phase_tolerance_bits": 0.131,
+      "dev_safe_pct": 40.76,
+      "dev_phase_stability_pct": 89.1,
+      "candidate": "A threshold",
+      "end_margin": 0.5,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "confident",
+      "run_s": 0.18,
+      "run_id": "E19-43"
+    },
+    {
+      "val_ber_phase0_pct": 6.19,
+      "val_ber_true_phase_pct": 3.251,
+      "val_phase_tolerance_bits": 0.3,
+      "dev_safe_pct": 34.93,
+      "dev_phase_stability_pct": 88.12,
+      "candidate": "A threshold",
+      "end_margin": 0.5,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "nearest",
+      "run_s": 0.11,
+      "run_id": "E19-44"
+    },
+    {
+      "val_ber_phase0_pct": 7.958,
+      "val_ber_true_phase_pct": 0.625,
+      "val_phase_tolerance_bits": 0.237,
+      "dev_safe_pct": 38.9,
+      "dev_phase_stability_pct": 88.08,
+      "candidate": "A threshold",
+      "end_margin": 0.5,
+      "percentiles": [
+        25,
+        75
+      ],
+      "rule": "average",
+      "run_s": 0.16,
+      "run_id": "E19-45"
+    },
+    {
+      "val_ber_phase0_pct": 8.453,
+      "val_ber_true_phase_pct": 0.625,
+      "val_phase_tolerance_bits": 0.181,
+      "dev_safe_pct": 49.82,
+      "dev_phase_stability_pct": 91.52,
+      "candidate": "B ML",
+      "C": 0.1,
+      "frames": 5,
+      "coef": [
+        2.690781,
+        13.431821,
+        13.26624,
+        4.861803,
+        -1.470354,
+        -0.077326
+      ],
+      "intercept": 0.098746,
+      "run_s": 0.2,
+      "run_id": "E19-46"
+    },
+    {
+      "val_ber_phase0_pct": 6.999,
+      "val_ber_true_phase_pct": 0.6,
+      "val_phase_tolerance_bits": 0.2,
+      "dev_safe_pct": 48.78,
+      "dev_phase_stability_pct": 92.05,
+      "candidate": "B ML",
+      "C": 0.1,
+      "frames": 7,
+      "coef": [
+        -1.072766,
+        3.260332,
+        13.321312,
+        13.193316,
+        5.08434,
+        -0.881733,
+        -1.009283,
+        -0.086467
+      ],
+      "intercept": 0.105375,
+      "run_s": 0.24,
+      "run_id": "E19-47"
+    },
+    {
+      "val_ber_phase0_pct": 8.92,
+      "val_ber_true_phase_pct": 0.617,
+      "val_phase_tolerance_bits": 0.181,
+      "dev_safe_pct": 49.74,
+      "dev_phase_stability_pct": 91.53,
+      "candidate": "B ML",
+      "C": 1.0,
+      "frames": 5,
+      "coef": [
+        3.895891,
+        20.226945,
+        19.72075,
+        7.139896,
+        -2.235986,
+        -0.107267
+      ],
+      "intercept": 0.145473,
+      "run_s": 0.16,
+      "run_id": "E19-48"
+    },
+    {
+      "val_ber_phase0_pct": 7.182,
+      "val_ber_true_phase_pct": 0.596,
+      "val_phase_tolerance_bits": 0.194,
+      "dev_safe_pct": 48.78,
+      "dev_phase_stability_pct": 91.95,
+      "candidate": "B ML",
+      "C": 1.0,
+      "frames": 7,
+      "coef": [
+        -1.604354,
+        4.663643,
+        20.174431,
+        19.824695,
+        7.405889,
+        -1.298264,
+        -1.719613,
+        -0.154097
+      ],
+      "intercept": 0.173151,
+      "run_s": 0.24,
+      "run_id": "E19-49"
+    },
+    {
+      "val_ber_phase0_pct": 8.958,
+      "val_ber_true_phase_pct": 0.617,
+      "val_phase_tolerance_bits": 0.181,
+      "dev_safe_pct": 49.79,
+      "dev_phase_stability_pct": 91.45,
+      "candidate": "B ML",
+      "C": 10.0,
+      "frames": 5,
+      "coef": [
+        4.348417,
+        23.077607,
+        22.448828,
+        8.093441,
+        -2.592853,
+        -0.111538
+      ],
+      "intercept": 0.158669,
+      "run_s": 0.21,
+      "run_id": "E19-50"
+    },
+    {
+      "val_ber_phase0_pct": 7.232,
+      "val_ber_true_phase_pct": 0.592,
+      "val_phase_tolerance_bits": 0.187,
+      "dev_safe_pct": 48.75,
+      "dev_phase_stability_pct": 91.91,
+      "candidate": "B ML",
+      "C": 10.0,
+      "frames": 7,
+      "coef": [
+        -1.822368,
+        5.274131,
+        23.187842,
+        22.73228,
+        8.433839,
+        -1.469373,
+        -2.032131,
+        -0.179869
+      ],
+      "intercept": 0.197857,
+      "run_s": 0.23,
+      "run_id": "E19-51"
+    }
+  ]
+}
