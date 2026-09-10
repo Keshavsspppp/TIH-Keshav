@@ -23,6 +23,8 @@ These four deliverables are the same four set for Day 05. This version is not a 
 
 If the faculty intended something different for Day 06, this is worth raising, because the task list given is word-for-word the Day 05 one.
 
+> **Note (2026-09-10, audit):** §1 (flowchart), §2.1–2.3 (methods), §3 (metrics) and §6 (folder structure) are the Day 05 text with wording changes only; the new material is §0, §2.4's sharper statement of the comparison, §4 (data roles, E00, E17–E19) and §7. Both files are kept as the record. The Day 06 task also asked for `Methodology V1` and mentor corrections: `METHODOLOGY_V1.MD` is referenced here, in `EXPERIMENT_PLAN_V2.MD` and in `../day07/DAY_07_FINDINGS.MD` §6–7, but is **not in the repository**, and no mentor corrections are recorded for Day 06. `init_repo.sh` (§6) is also absent. Several settings in this plan were later reversed on measurement — see the notes under §2.2 and §2.3 below and the gate note in `../day05/DAY_05.MD` §5.
+
 ---
 
 ## 1. Pipeline Flowchart
@@ -140,6 +142,8 @@ The main method.
 
 **Order matters.** Detrend before normalise, or the drift gets baked into the scale. Smooth last and keep it short, or the smoother erases the very edges we are trying to read.
 
+> **Reversed on measurement (2026-09-10, audit note; original design kept above).** On the supplied videos there is no drift to remove (on-level moves ≤ 0.13 grey levels per recording; ambient ≈ 0.1 % of contrast). Detrend, normalise and smooth were switched **off** on Day 09 and measured as harmful on Day 12 — every option roughly halves the on/off separation and a 3-frame smoother deletes 27 % of real level changes (`../../week02/day12/DAY_12_SIGNAL_V1.MD` §2). The "over the first `K` frames" ROI rule was changed to sample across the whole clip (`../day07/DAY_07.MD` §3). The CSRT tracker was never needed: the camera is static (`../../week02/day08/DAY_08.MD` §4).
+
 ### 2.3 Advanced — M2, ML classifier (only if labels allow)
 
 | Part      | What it does                                                                                                   |
@@ -153,6 +157,8 @@ The main method.
 **What M2 actually tests.** It changes only the last step — the 0/1 decision. It uses M1's ROI, cleaning and timing. So M1 vs M2 answers "is a learned decision better than a threshold", and nothing more. It is not end-to-end deep learning, and we say so rather than letting the result be read that way.
 
 If we only get one label per whole message, we cannot train per-bit. The backup is to use M1's confident answers on perfectly decoded videos as labels — but then M2 is copying M1, not competing with it, and that goes in the results.
+
+> **Superseded (2026-09-10, audit note).** No labels of any kind were supplied, so M2 never ran (Gate G4 failed, `../day07/DAY_07_FINDINGS.MD` §5.1). The grouped-by-video split cannot work on four single-condition videos and was replaced by a within-video time split (`../day04/DAY_04.MD` §3 note).
 
 ### 2.4 The project's own experiment
 

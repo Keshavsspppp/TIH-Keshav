@@ -1,0 +1,3 @@
+# inspect_dataset.py outputs; the two manifests ARE tracked
+reports/
+data/

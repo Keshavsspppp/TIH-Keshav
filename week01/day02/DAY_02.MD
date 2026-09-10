@@ -27,22 +27,28 @@
 - **CNN-based light-source localization:** Using detection networks instead of classical blob detection for the ROI-finding step, especially in cluttered or moving scenes.
 
 
+# 2. Comparison of Related Methods / Systems
+
+![Comparison of 6 related OCC methods / systems](methods.png)
+
+> **Note (2026-09-10, audit):** ten papers were reviewed for Week 1 (Danakis 2012; Roberts 2013; Luo 2014; Nguyen 2015; Ji 2014; Chow 2015 / Liu 2016; Chuang 2019; Hsu 2020; Peng 2023; Saeed 2019 — listed in the Week-1 review deck). Six *systems* are tabulated above. The Day 03 slide's "10 methods" counts the papers; the table counts systems. The row references in §3 below originally pointed at a 10-row draft of this table and have been re-pointed at the 6-row table that is actually in the repository.
+
 # 3. Shortlisted Candidate Methods for This Project
 
 Given the brief's own instruction (**software-only, offline, dataset-driven, no hardware assumptions about modulation scheme**), the shortlist should be *techniques adaptable to whatever the supplied videos actually contain*, not full OCC transmitter/receiver protocols:
 
 ## 1. Fixed-Threshold Baseline
 
-**Global or per-video static intensity threshold** (mean, Otsu, or midpoint of min/max) applied to the extracted intensity signal, informed by the row-6/row-10 framing that OOK is the base modulation in nearly all reviewed systems.
+**Global or per-video static intensity threshold** (mean, Otsu, or midpoint of min/max) applied to the extracted intensity signal, informed by rows 1–2 (UFSOOK, UPSOOK), which show OOK as the base modulation in nearly all reviewed systems.
 
-Fast, simple, but brittle to ambient-light drift and auto-exposure changes (limitation noted repeatedly in rows 2, 3, 5).
+Fast, simple, but brittle to ambient-light drift and auto-exposure changes (limitation noted in rows 3 and 5).
 
 ## 2. Adaptive / Signal-Processing Pipeline
 
-**Rolling or windowed threshold, detrending (high-pass or moving-average subtraction) plus symbol-boundary/clock recovery**, directly modeled on how undersampled-modulation systems (rows 1, 2, 4) and rolling-shutter systems (rows 3, 4, 5) recover timing without hardware synchronization.
+**Rolling or windowed threshold, detrending (high-pass or moving-average subtraction) plus symbol-boundary/clock recovery**, directly modeled on how undersampled-modulation systems (rows 1, 2) and rolling-shutter systems (rows 3, 4, 5) recover timing without hardware synchronization.
 
 This is the natural **"main" baseline** given the project scope.
 
 ## 3. Simple ML-Assisted Symbol Classifier
 
-A lightweight classifier (**Logistic Regression / small CNN / SVM on windowed intensity features**) trained where per-symbol or per-message labels exist, following the pattern in rows 6–8, but scaled down since the project has **4 weeks** and a modest, faculty-provided dataset rather than a purpose-built large corpus.
+A lightweight classifier (**Logistic Regression / small CNN / SVM on windowed intensity features**) trained where per-symbol or per-message labels exist, following the pattern in row 6, but scaled down since the project has **4 weeks** and a modest, faculty-provided dataset rather than a purpose-built large corpus.

@@ -80,6 +80,8 @@ Every single run gets its own `run_id` inside `runs/`. The experiment ID groups 
 | **Pass mark** | Full M1 has lower BER than M0 on 60% or more of the videos (Gate G3) |
 | **Why both ways** | Stacking alone cannot tell the difference between a part that helps and a part that just does no harm when added last |
 
+> **Note (2026-09-10, audit):** the pass mark needs BER, which needs ground truth; none was supplied. Gate G3 was re-worded on Day 07 (§7 row 5) and never formally closed — see `DAY_05.MD` §5 note. The detrend/normalise parts of M1 were later measured as harmful on this dataset and switched off (`DAY_05.MD` §2 note).
+
 ### E06 — How well M1 finds the light on its own
 
 | | |
@@ -159,6 +161,8 @@ Before any training: count how many labelled bits we have, check what level they
 | **Metrics** | BER, MCR, training time, test time per video |
 | **Pass mark** | Lower BER than M1 on the same held-out videos |
 | **Leak guard** | `train.py` asserts that no `video_id` is in both train and test. If it fails, it stops the run — it is not just a warning |
+
+> **Note (2026-09-10, audit):** Phase E never ran — Gate G4 failed because no labels were supplied (`../day07/DAY_07_FINDINGS.MD` §5.1). The by-video split was replaced by a within-video time split on Day 07 (`../day04/DAY_04.MD` §3 note).
 
 ### E14 — Compare how the two degrade
 

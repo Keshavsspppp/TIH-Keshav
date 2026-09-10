@@ -124,6 +124,9 @@ This is the real method for the project.
 | Decision | Rolling median as the threshold, plus a Schmitt trigger (hysteresis) so the output does not flicker near the middle |
 | Packets | If a preamble exists, find it by cross-correlation. Even if we do not know the preamble, report the best match as a hint |
 
+
+> **Reversed on measurement (2026-09-10, audit note; original design kept above).** Detrending and normalising were designed against ambient and exposure drift. On the supplied videos the lamp's on-level moves by at most 0.13 grey levels across a whole recording and ambient light varies by roughly 0.1 % of the lamp contrast (`../../week02/day08/DAY_08.MD` §6, `../../week02/day10/Day10_EDA.ipynb` §5). Both steps, and smoothing, were switched **off** on Day 09 (`../../week02/day09/DAY_09_ROI_SIGNAL_PLAN.MD` §3) and measured as harmful on Day 12: every option roughly halves the on/off separation and a 3-frame smoother deletes 27 % of real level changes (`../../week02/day12/DAY_12_SIGNAL_V1.MD` §2). The variance-map ROI step was also changed to sample frames across the whole clip (`../day07/DAY_07.MD` §3).
+
 ### M2 — ML classifier (only if we can)
 
 **This runs only if we have labels.** The exact condition is Gate G4 in §5.
@@ -136,6 +139,9 @@ This is the real method for the project.
 | Splitting | **Split by video.** All frames of one video go either fully in train or fully in test. Never split inside a video |
 | Checking | Grouped k-fold on the training videos. Report the final number once, on held-out videos |
 | Also report | Training time, test time per video, and how many labelled bits we had |
+
+
+> **Superseded (2026-09-10, audit note).** The split-by-video rule cannot work on this dataset (one video per condition); Day 07 replaced it with a within-video time split — see `../day04/DAY_04.MD` §3 note. M2 itself never ran: no labels were supplied, so Gate G4 failed outright (`../day07/DAY_07_FINDINGS.MD` §5.1, §7 row 6).
 
 If we only get one label per whole message (and not per bit), we cannot train per-bit directly. The backup plan: take M1's confident answers on videos it decoded perfectly, and use those as labels. But then M2 is just copying M1, not competing with it. We say that clearly in the results instead of hiding it.
 
@@ -231,6 +237,8 @@ Clear checkpoints, decided now, so we cut work based on evidence and not on pani
 | G3 — M1 beats M0 | M1 has lower BER than M0 on most videos | Find out which stage is at fault (timing or decision) before adding anything new |
 | G4 — M2 allowed | We have per-bit or per-symbol labels, **or** M1 perfectly decodes 5+ videos we can use as labels | Skip M2. Do more sensitivity work instead, and write down why |
 | G5 — sensitivity study | M1 works at least somewhat on one real video | Run the sweeps on fake data only, and label them clearly as fake everywhere |
+
+> **Gate status after the data arrived (2026-09-10, audit note).** G1 passed (Day 07). G2 passed (Day 15). **G3 as written cannot be evaluated**: BER needs ground truth, and none was supplied. Day 07 §7 row 5 proposed re-wording it as "M1 must match M0 on accuracy and beat it on tolerance range"; no later document records that re-wording being adopted, and the accuracy half became moot when fixed and adaptive thresholds were found to agree on 97–99 % of bits (`../../week03/day15/DAY_15.MD` §2, `../../week03/day16/DAY_16.MD` §4). The tolerance half still needs ground truth. **G4 failed** (no labels). G5 is unmeasurable for the same reason.
 
 ---
 

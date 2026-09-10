@@ -146,6 +146,9 @@ Ordered by how likely they are to silently inflate results here:
 
 Frames within a video are temporally correlated and share a capture setup, so an i.i.d. row-level split is invalid. The correct construction is a **grouped split** with the group key being, in decreasing order of preference: `session_id` > `video_id` > `message_text`. Where session information exists, group by session; grouping by video alone is the minimum acceptable standard and its residual leakage must be stated.
 
+
+> **Superseded (2026-09-10, audit note; original text kept above).** The dataset turned out to be four videos of four *different* setups (1, 2, 3 and 4 lamps) with no ground truth, so a split by video or session removes a whole condition and leave-one-video-out has nothing to generalise over. Day 07 replaced this with a **within-video time split** (tune on the first 30 % of each video, report on the last 70 %) — see `../day07/DAY_07_FINDINGS.MD` §6 and §7 row 4, adopted in `../../week02/day08/DAY_08.MD` R9 and `../../week02/day09/DAY_09_ROI_SIGNAL_PLAN.MD` §6. As of Day 16 the time split has not actually been exercised, because no decoder was ever tuned (there is nothing to tune against without ground truth).
+
 ## 3.2 What must be preserved
 
 | Property | Requirement |
@@ -173,6 +176,8 @@ Frames within a video are temporally correlated and share a capture setup, so an
 # 4. Questions for the Next Mentor Review
 
 Carried forward from Day 03 blockers, now sharpened into what would actually unblock work:
+
+> **Note (2026-09-10, audit):** the codes C1–C3, D1, D4–D6 and F1 below refer to check IDs from an earlier draft of this document that is not in the repository; the Day 03 deck numbers the blockers 1–4. Read them as: C = symbol rate / timing, D = labels and framing, F = capture conditions. All six questions were answered by the data itself on Day 07 (`../day07/DAY_07_FINDINGS.MD`): 260 fps, no ground truth at any granularity, unknown framing, polarity unknown, four single-condition videos, no repeats.
 
 1. What is the symbol rate per video, and is `fps_to_symbol_ratio` fixed across the dataset? (Blocks C1–C3, and determines whether the problem is recoverable at all.)
 2. At what granularity is ground truth supplied — message string, bitstream, or per-symbol bits? (Blocks D1 and the entire ML arm.)

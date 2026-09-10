@@ -449,7 +449,15 @@ def verdict_for(row):
         level = "amber" if level == "green" else level
         reasons.append(f"{row['black_frames']} all-black frames")
 
-    if row["header_frames"] and abs(row["header_frames"] - row["counted_frames"]) > 2:
+    # Audit fix (2026-09-10): when the scan was capped with --max-frames the
+    # counted figure is a cap, not a measurement, so it must not be compared
+    # with the header. The Day 07 manifest was produced with --max-frames 8000
+    # and this check wrongly flagged all four videos.
+    if row.get("truncated"):
+        reasons.append(
+            f"scan capped at {row['counted_frames']} frames (--max-frames); "
+            f"header reports {row['header_frames']}, not verified by this run")
+    elif row["header_frames"] and abs(row["header_frames"] - row["counted_frames"]) > 2:
         level = "amber" if level == "green" else level
         reasons.append(
             f"header says {row['header_frames']} frames, we counted {row['counted_frames']}")
@@ -585,6 +593,7 @@ def main():
         row["header_fps"] = round(scan["header_fps"], 4) if scan["header_fps"] else None
         row["header_frames"] = scan["header_frames"]
         row["counted_frames"] = scan["counted_frames"]
+        row["truncated"] = scan["truncated"]
         row["black_frames"] = scan["black_frames"]
         row["mean_saturated_share"] = float(np.mean(scan["sat_fraction"]))
         # How bright does the light actually get? If it sits at the top of the
