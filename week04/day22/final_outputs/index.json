@@ -1,0 +1,284 @@
+[
+  {
+    "video": "1LED_92bps",
+    "video_sha256": "ec24d5ecbb2c82f0bec225935fae2b49fcf1b43a88392de1bbbf7ebe6c311469",
+    "frames_total": 30058,
+    "trim": {
+      "start_frame": 217,
+      "end_frame": 28072,
+      "kept_frames": 27856
+    },
+    "lamps_found": 1,
+    "per_lamp": [
+      {
+        "lamp": 1,
+        "box": [
+          294,
+          117,
+          105,
+          105
+        ],
+        "n_samples": 27856,
+        "signal_sha256": "325e405405e456d5b8a72ad35b7b7d833f46b12113426e5aeb55c9a1fa95c9c8",
+        "n_bits": 9855,
+        "bits_sha256": "92f817681578fe91d5d5d3ccd4062e5f215fd757f3f85fdb06b6c5e2d0d735de",
+        "safe_pct": 33.88,
+        "phase_stability_pct": 87.89,
+        "threshold_tolerance_pct": 99.09,
+        "ones_pct": 48.79,
+        "flip_pct": 53.58,
+        "median_margin_pct_of_range": 49.08
+      }
+    ],
+    "timing_s": {
+      "1_frame_extraction_s": 9.823,
+      "2_roi_selection_s": 8.408,
+      "3_signal_extraction_s": 19.809,
+      "4_preprocessing_s": 0.0,
+      "5_6_sync_and_decision_s": 0.058,
+      "end_to_end_s": 38.124
+    },
+    "config_sha256": "91a1e36433ab2287c840ef2b9d9045c88401ff3dcb54663c8d8297b0c17688fc",
+    "note": "No ground truth was supplied. Real-data numbers are internal-consistency indicators, never correctness."
+  },
+  {
+    "video": "2LEDs_92bps",
+    "video_sha256": "a0c467cda2f48ea249c9b146906f644296968c1ca43159e5bfdecb51ff934f51",
+    "frames_total": 21157,
+    "trim": {
+      "start_frame": 975,
+      "end_frame": 18169,
+      "kept_frames": 17195
+    },
+    "lamps_found": 2,
+    "per_lamp": [
+      {
+        "lamp": 1,
+        "box": [
+          319,
+          23,
+          75,
+          82
+        ],
+        "n_samples": 17195,
+        "signal_sha256": "27697cf645a07ac1056744f0ba9335c5da9b824fbe0c1f97d2150db356bed878",
+        "n_bits": 6083,
+        "bits_sha256": "a91edf3c7c592a8e877315e0576ea7a919ef184dea275dc4a632684af0101719",
+        "safe_pct": 36.22,
+        "phase_stability_pct": 87.9,
+        "threshold_tolerance_pct": 99.8,
+        "ones_pct": 56.29,
+        "flip_pct": 53.52,
+        "median_margin_pct_of_range": 49.53
+      },
+      {
+        "lamp": 2,
+        "box": [
+          418,
+          25,
+          73,
+          81
+        ],
+        "n_samples": 17195,
+        "signal_sha256": "249089480aa1ff671b6281057e4b13253984c186b58cfe2ae37518c4ea3c8546",
+        "n_bits": 6083,
+        "bits_sha256": "82501efd37d8e0a262ccbd51391190e4f8ca392488c2a1dd005863d1bd23a06b",
+        "safe_pct": 35.06,
+        "phase_stability_pct": 87.7,
+        "threshold_tolerance_pct": 99.66,
+        "ones_pct": 53.26,
+        "flip_pct": 53.68,
+        "median_margin_pct_of_range": 49.08
+      }
+    ],
+    "timing_s": {
+      "1_frame_extraction_s": 8.124,
+      "2_roi_selection_s": 5.743,
+      "3_signal_extraction_s": 13.292,
+      "4_preprocessing_s": 0.0,
+      "5_6_sync_and_decision_s": 0.023,
+      "end_to_end_s": 27.198
+    },
+    "config_sha256": "91a1e36433ab2287c840ef2b9d9045c88401ff3dcb54663c8d8297b0c17688fc",
+    "note": "No ground truth was supplied. Real-data numbers are internal-consistency indicators, never correctness."
+  },
+  {
+    "video": "3LEDs_92bps",
+    "video_sha256": "abf867d80deadb05a6ebb88dde7283656471fc8eb30d780ff8ac6f4ace880d8a",
+    "frames_total": 13057,
+    "trim": {
+      "start_frame": 965,
+      "end_frame": 12430,
+      "kept_frames": 11466
+    },
+    "lamps_found": 3,
+    "per_lamp": [
+      {
+        "lamp": 1,
+        "box": [
+          410,
+          41,
+          49,
+          49
+        ],
+        "n_samples": 11466,
+        "signal_sha256": "ab44db3b24ecea284d85a5b304cf3fcefb989d43418a174092676bc262e9f6b3",
+        "n_bits": 4055,
+        "bits_sha256": "078b7f00ff2072691fdf8fb18ce579bfc405af7759c18dfc5d10639116ead2c6",
+        "safe_pct": 34.33,
+        "phase_stability_pct": 88.59,
+        "threshold_tolerance_pct": 99.8,
+        "ones_pct": 53.27,
+        "flip_pct": 55.13,
+        "median_margin_pct_of_range": 49.56
+      },
+      {
+        "lamp": 2,
+        "box": [
+          480,
+          41,
+          49,
+          49
+        ],
+        "n_samples": 11466,
+        "signal_sha256": "aa72c2d2517bb7c18df0646a933d48d272fb405fcad66432b3a1dc391d8fed1a",
+        "n_bits": 4055,
+        "bits_sha256": "c6fdde6db799715d1934148f085488e52558d945eefe36c5e15d357a69010e17",
+        "safe_pct": 34.25,
+        "phase_stability_pct": 87.85,
+        "threshold_tolerance_pct": 99.73,
+        "ones_pct": 54.4,
+        "flip_pct": 54.88,
+        "median_margin_pct_of_range": 49.37
+      },
+      {
+        "lamp": 3,
+        "box": [
+          554,
+          46,
+          47,
+          46
+        ],
+        "n_samples": 11466,
+        "signal_sha256": "a0834b6280c043579204239fa698b97f57074eb1935f223437c96166e517bd21",
+        "n_bits": 4055,
+        "bits_sha256": "7d0ec969bad3d567382bb41c69570f88a9deac726636ca56367cd8e2b9ab867d",
+        "safe_pct": 33.74,
+        "phase_stability_pct": 87.51,
+        "threshold_tolerance_pct": 99.75,
+        "ones_pct": 49.22,
+        "flip_pct": 55.57,
+        "median_margin_pct_of_range": 48.15
+      }
+    ],
+    "timing_s": {
+      "1_frame_extraction_s": 4.593,
+      "2_roi_selection_s": 4.047,
+      "3_signal_extraction_s": 7.79,
+      "4_preprocessing_s": 0.0,
+      "5_6_sync_and_decision_s": 0.032,
+      "end_to_end_s": 16.483
+    },
+    "config_sha256": "91a1e36433ab2287c840ef2b9d9045c88401ff3dcb54663c8d8297b0c17688fc",
+    "note": "No ground truth was supplied. Real-data numbers are internal-consistency indicators, never correctness."
+  },
+  {
+    "video": "4LEDs_92bps",
+    "video_sha256": "2034cc19edeb2cdf08403e97395e16e0015566e1eeef3f7d103518ccfbbc76ba",
+    "frames_total": 11033,
+    "trim": {
+      "start_frame": 1816,
+      "end_frame": 10424,
+      "kept_frames": 8609
+    },
+    "lamps_found": 4,
+    "per_lamp": [
+      {
+        "lamp": 1,
+        "box": [
+          279,
+          86,
+          67,
+          67
+        ],
+        "n_samples": 8609,
+        "signal_sha256": "537a5d88a55f15a13dee28756043331378d851edf12c11a5a10424f2860c0191",
+        "n_bits": 3044,
+        "bits_sha256": "6369b2bdba993987a8e93bdbe0611309bb41c726d8706ffdafae318eb732c238",
+        "safe_pct": 37.55,
+        "phase_stability_pct": 88.12,
+        "threshold_tolerance_pct": 99.87,
+        "ones_pct": 56.6,
+        "flip_pct": 54.45,
+        "median_margin_pct_of_range": 49.64
+      },
+      {
+        "lamp": 2,
+        "box": [
+          401,
+          89,
+          66,
+          65
+        ],
+        "n_samples": 8609,
+        "signal_sha256": "02f0603e51f0dd29a9ebfa42ce33d2f3b4b50385c28c20320beb870c54f63662",
+        "n_bits": 3044,
+        "bits_sha256": "31a9e20f0871c8919009298309542bbf04612276c022d4e2b69751f7f0cf112d",
+        "safe_pct": 37.61,
+        "phase_stability_pct": 87.6,
+        "threshold_tolerance_pct": 99.89,
+        "ones_pct": 56.87,
+        "flip_pct": 53.66,
+        "median_margin_pct_of_range": 49.62
+      },
+      {
+        "lamp": 3,
+        "box": [
+          281,
+          167,
+          66,
+          66
+        ],
+        "n_samples": 8609,
+        "signal_sha256": "9d3aa2d251c16d77a1efad32094f44aedfbecab3c4572171a3f1e808d6bd766e",
+        "n_bits": 3044,
+        "bits_sha256": "3567abb0818cc755e31319199f8cb4c3f72c402fbbbb3c2d428069ec99407875",
+        "safe_pct": 35.38,
+        "phase_stability_pct": 88.45,
+        "threshold_tolerance_pct": 99.9,
+        "ones_pct": 56.21,
+        "flip_pct": 55.9,
+        "median_margin_pct_of_range": 49.67
+      },
+      {
+        "lamp": 4,
+        "box": [
+          400,
+          169,
+          65,
+          65
+        ],
+        "n_samples": 8609,
+        "signal_sha256": "724655986359882b1aede3e788ca1a6544fadd349d00e09190da7b2a66679f71",
+        "n_bits": 3044,
+        "bits_sha256": "5f3bac109bf7fd070fa330faeae9531e060ef65cb0a7a91c0cd40648fea5b71b",
+        "safe_pct": 35.94,
+        "phase_stability_pct": 88.5,
+        "threshold_tolerance_pct": 99.82,
+        "ones_pct": 57.23,
+        "flip_pct": 54.29,
+        "median_margin_pct_of_range": 49.62
+      }
+    ],
+    "timing_s": {
+      "1_frame_extraction_s": 3.864,
+      "2_roi_selection_s": 3.926,
+      "3_signal_extraction_s": 8.595,
+      "4_preprocessing_s": 0.0,
+      "5_6_sync_and_decision_s": 0.041,
+      "end_to_end_s": 16.435
+    },
+    "config_sha256": "91a1e36433ab2287c840ef2b9d9045c88401ff3dcb54663c8d8297b0c17688fc",
+    "note": "No ground truth was supplied. Real-data numbers are internal-consistency indicators, never correctness."
+  }
+]

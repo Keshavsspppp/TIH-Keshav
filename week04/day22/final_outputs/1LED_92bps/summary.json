@@ -1,0 +1,42 @@
+{
+  "video": "1LED_92bps",
+  "video_sha256": "ec24d5ecbb2c82f0bec225935fae2b49fcf1b43a88392de1bbbf7ebe6c311469",
+  "frames_total": 30058,
+  "trim": {
+    "start_frame": 217,
+    "end_frame": 28072,
+    "kept_frames": 27856
+  },
+  "lamps_found": 1,
+  "per_lamp": [
+    {
+      "lamp": 1,
+      "box": [
+        294,
+        117,
+        105,
+        105
+      ],
+      "n_samples": 27856,
+      "signal_sha256": "325e405405e456d5b8a72ad35b7b7d833f46b12113426e5aeb55c9a1fa95c9c8",
+      "n_bits": 9855,
+      "bits_sha256": "92f817681578fe91d5d5d3ccd4062e5f215fd757f3f85fdb06b6c5e2d0d735de",
+      "safe_pct": 33.88,
+      "phase_stability_pct": 87.89,
+      "threshold_tolerance_pct": 99.09,
+      "ones_pct": 48.79,
+      "flip_pct": 53.58,
+      "median_margin_pct_of_range": 49.08
+    }
+  ],
+  "timing_s": {
+    "1_frame_extraction_s": 9.823,
+    "2_roi_selection_s": 8.408,
+    "3_signal_extraction_s": 19.809,
+    "4_preprocessing_s": 0.0,
+    "5_6_sync_and_decision_s": 0.058,
+    "end_to_end_s": 38.124
+  },
+  "config_sha256": "91a1e36433ab2287c840ef2b9d9045c88401ff3dcb54663c8d8297b0c17688fc",
+  "note": "No ground truth was supplied. Real-data numbers are internal-consistency indicators, never correctness."
+}

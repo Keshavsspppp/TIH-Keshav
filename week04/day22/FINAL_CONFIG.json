@@ -1,0 +1,163 @@
+{
+  "frozen": "2026-09-11 (Day 22)",
+  "status": "FROZEN. Changes after this date go in CHANGES_AFTER_FREEZE.MD and are re-validated.",
+  "preprocessing": {
+    "random_seed": 1337,
+    "video": {
+      "fps": 260.0,
+      "bits_per_second": 92.0
+    },
+    "trim": {
+      "window_s": 1.0,
+      "min_lit_share": 0.15,
+      "lit_level": 180
+    },
+    "roi": {
+      "sample_frames": 600,
+      "min_variance": 400.0,
+      "variance_share": 0.03,
+      "min_pixels": 100,
+      "max_lamps": 6,
+      "kmeans_iters": 30,
+      "kmeans_attempts": 5,
+      "min_separation": 0.15,
+      "min_fill": 0.4,
+      "min_share": 0.25,
+      "row_height": 60
+    },
+    "intensity": {
+      "statistic": "bright_mean",
+      "bright_fraction": 0.25,
+      "percentile": 90
+    },
+    "clean": {
+      "detrend": {
+        "enabled": false,
+        "window_frames": 261
+      },
+      "normalise": {
+        "enabled": false,
+        "window_frames": 261
+      },
+      "smooth": {
+        "enabled": false,
+        "window_frames": 3
+      }
+    }
+  },
+  "preprocessing_source": "week02/day11/configs/preprocess_v1.yaml (reconstructed; reproduces Signal V1 byte-for-byte)",
+  "roi": {
+    "method": "behaviour clustering on 600 frames spread across the transmission, one box per lamp (Day 09/11)",
+    "boxes_signal_v1": {
+      "1LED_92bps/lamp1": [
+        294,
+        117,
+        105,
+        105
+      ],
+      "2LEDs_92bps/lamp1": [
+        319,
+        23,
+        75,
+        82
+      ],
+      "2LEDs_92bps/lamp2": [
+        418,
+        25,
+        73,
+        81
+      ],
+      "3LEDs_92bps/lamp1": [
+        410,
+        41,
+        49,
+        49
+      ],
+      "3LEDs_92bps/lamp2": [
+        480,
+        41,
+        49,
+        49
+      ],
+      "3LEDs_92bps/lamp3": [
+        554,
+        46,
+        47,
+        46
+      ],
+      "4LEDs_92bps/lamp1": [
+        279,
+        86,
+        67,
+        67
+      ],
+      "4LEDs_92bps/lamp2": [
+        401,
+        89,
+        66,
+        65
+      ],
+      "4LEDs_92bps/lamp3": [
+        281,
+        167,
+        66,
+        66
+      ],
+      "4LEDs_92bps/lamp4": [
+        400,
+        169,
+        65,
+        65
+      ]
+    },
+    "note": "boxes are re-detected at run time by the frozen ROI settings; Day 20 showed a box 0.5-2x or shifted half a width changes < 1% of bits"
+  },
+  "signal_processing": {
+    "aggregation": "mean of the brightest 25% of pixels in the box",
+    "detrend": "off",
+    "normalise": "off",
+    "smooth": "off",
+    "evidence": "Day 12 ablation: every cleaning option lowers on/off separation; Day 20: smoothing >3 frames is fatal"
+  },
+  "synchronisation": {
+    "fps": 260.0,
+    "bits_per_second": 92.0,
+    "bits_per_second_basis": "ASSUMED from the filename; not confirmed by the data (Days 10, 13); Day 20: a 0.2% error is a coin toss over 3,000 bits",
+    "period_frames": 2.8260869565217392,
+    "phase_convention": 0.0,
+    "phase_basis": "declared, not estimated - the confidence score is flat across phase (Day 15); the ensemble mask reports which bits depend on it"
+  },
+  "decoder": {
+    "threshold": "fixed",
+    "threshold_percentiles": [
+      10,
+      90
+    ],
+    "sampling_rule": "nearest",
+    "end_margin": 0.0,
+    "n_phases": 12,
+    "hysteresis": 0.0,
+    "selection": "Day 19 E19-02 on synthetic validation BER at phase 0 (6.19% vs 12.05% for the Day 09 rule); Day 21: equivalent to 'average' on the phase axis, simpler, threshold-immune"
+  },
+  "split": {
+    "real": "within-video time split - first 30% DEV (tuning), last 70% TEST (opened once, Day 21; re-run unchanged on Day 23)",
+    "synthetic": "seeds 0-3 train, 10-13/20-23 test (Day 17-18), 30-33 validation (Day 19), 50-53 final test (Day 21)",
+    "why_not_by_video": "four videos of four different setups - one per condition (Day 07 s6)"
+  },
+  "evaluation": {
+    "real": [
+      "safe (phase-independent) share",
+      "phase stability (+/-0.15 bit)",
+      "threshold tolerance (+/-10% of range)",
+      "agreement with the baseline decoder",
+      "execution time"
+    ],
+    "synthetic": [
+      "BER at true phase",
+      "BER at phase 0",
+      "phase tolerance band (BER <= 1%)",
+      "period tolerance"
+    ],
+    "note": "No ground truth was supplied. Real-data numbers are internal-consistency indicators, never correctness."
+  }
+}

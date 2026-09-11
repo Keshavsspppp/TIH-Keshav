@@ -1,0 +1,80 @@
+{
+  "video": "3LEDs_92bps",
+  "video_sha256": "abf867d80deadb05a6ebb88dde7283656471fc8eb30d780ff8ac6f4ace880d8a",
+  "frames_total": 13057,
+  "trim": {
+    "start_frame": 965,
+    "end_frame": 12430,
+    "kept_frames": 11466
+  },
+  "lamps_found": 3,
+  "per_lamp": [
+    {
+      "lamp": 1,
+      "box": [
+        410,
+        41,
+        49,
+        49
+      ],
+      "n_samples": 11466,
+      "signal_sha256": "ab44db3b24ecea284d85a5b304cf3fcefb989d43418a174092676bc262e9f6b3",
+      "n_bits": 4055,
+      "bits_sha256": "078b7f00ff2072691fdf8fb18ce579bfc405af7759c18dfc5d10639116ead2c6",
+      "safe_pct": 34.33,
+      "phase_stability_pct": 88.59,
+      "threshold_tolerance_pct": 99.8,
+      "ones_pct": 53.27,
+      "flip_pct": 55.13,
+      "median_margin_pct_of_range": 49.56
+    },
+    {
+      "lamp": 2,
+      "box": [
+        480,
+        41,
+        49,
+        49
+      ],
+      "n_samples": 11466,
+      "signal_sha256": "aa72c2d2517bb7c18df0646a933d48d272fb405fcad66432b3a1dc391d8fed1a",
+      "n_bits": 4055,
+      "bits_sha256": "c6fdde6db799715d1934148f085488e52558d945eefe36c5e15d357a69010e17",
+      "safe_pct": 34.25,
+      "phase_stability_pct": 87.85,
+      "threshold_tolerance_pct": 99.73,
+      "ones_pct": 54.4,
+      "flip_pct": 54.88,
+      "median_margin_pct_of_range": 49.37
+    },
+    {
+      "lamp": 3,
+      "box": [
+        554,
+        46,
+        47,
+        46
+      ],
+      "n_samples": 11466,
+      "signal_sha256": "a0834b6280c043579204239fa698b97f57074eb1935f223437c96166e517bd21",
+      "n_bits": 4055,
+      "bits_sha256": "7d0ec969bad3d567382bb41c69570f88a9deac726636ca56367cd8e2b9ab867d",
+      "safe_pct": 33.74,
+      "phase_stability_pct": 87.51,
+      "threshold_tolerance_pct": 99.75,
+      "ones_pct": 49.22,
+      "flip_pct": 55.57,
+      "median_margin_pct_of_range": 48.15
+    }
+  ],
+  "timing_s": {
+    "1_frame_extraction_s": 4.593,
+    "2_roi_selection_s": 4.047,
+    "3_signal_extraction_s": 7.79,
+    "4_preprocessing_s": 0.0,
+    "5_6_sync_and_decision_s": 0.032,
+    "end_to_end_s": 16.483
+  },
+  "config_sha256": "91a1e36433ab2287c840ef2b9d9045c88401ff3dcb54663c8d8297b0c17688fc",
+  "note": "No ground truth was supplied. Real-data numbers are internal-consistency indicators, never correctness."
+}

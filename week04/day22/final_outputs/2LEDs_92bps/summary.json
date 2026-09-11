@@ -1,0 +1,61 @@
+{
+  "video": "2LEDs_92bps",
+  "video_sha256": "a0c467cda2f48ea249c9b146906f644296968c1ca43159e5bfdecb51ff934f51",
+  "frames_total": 21157,
+  "trim": {
+    "start_frame": 975,
+    "end_frame": 18169,
+    "kept_frames": 17195
+  },
+  "lamps_found": 2,
+  "per_lamp": [
+    {
+      "lamp": 1,
+      "box": [
+        319,
+        23,
+        75,
+        82
+      ],
+      "n_samples": 17195,
+      "signal_sha256": "27697cf645a07ac1056744f0ba9335c5da9b824fbe0c1f97d2150db356bed878",
+      "n_bits": 6083,
+      "bits_sha256": "a91edf3c7c592a8e877315e0576ea7a919ef184dea275dc4a632684af0101719",
+      "safe_pct": 36.22,
+      "phase_stability_pct": 87.9,
+      "threshold_tolerance_pct": 99.8,
+      "ones_pct": 56.29,
+      "flip_pct": 53.52,
+      "median_margin_pct_of_range": 49.53
+    },
+    {
+      "lamp": 2,
+      "box": [
+        418,
+        25,
+        73,
+        81
+      ],
+      "n_samples": 17195,
+      "signal_sha256": "249089480aa1ff671b6281057e4b13253984c186b58cfe2ae37518c4ea3c8546",
+      "n_bits": 6083,
+      "bits_sha256": "82501efd37d8e0a262ccbd51391190e4f8ca392488c2a1dd005863d1bd23a06b",
+      "safe_pct": 35.06,
+      "phase_stability_pct": 87.7,
+      "threshold_tolerance_pct": 99.66,
+      "ones_pct": 53.26,
+      "flip_pct": 53.68,
+      "median_margin_pct_of_range": 49.08
+    }
+  ],
+  "timing_s": {
+    "1_frame_extraction_s": 8.124,
+    "2_roi_selection_s": 5.743,
+    "3_signal_extraction_s": 13.292,
+    "4_preprocessing_s": 0.0,
+    "5_6_sync_and_decision_s": 0.023,
+    "end_to_end_s": 27.198
+  },
+  "config_sha256": "91a1e36433ab2287c840ef2b9d9045c88401ff3dcb54663c8d8297b0c17688fc",
+  "note": "No ground truth was supplied. Real-data numbers are internal-consistency indicators, never correctness."
+}
