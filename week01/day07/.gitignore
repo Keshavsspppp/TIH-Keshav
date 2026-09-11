@@ -1,3 +1,2 @@
-# inspect_dataset.py outputs; the two manifests ARE tracked
-reports/
+# inspect_dataset.py scratch outputs; reports/ (figures, per-video json, report) IS tracked
 data/

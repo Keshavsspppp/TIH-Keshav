@@ -21,7 +21,7 @@ All four: 640×360, `mpeg4` codec, `yuv420p`, **260 frames per second**, fixed f
 
 The raw copy is in `data/raw/`, read-only, with a `SHA256SUMS` file. Fingerprints are in `DATASET_MANIFEST.csv`.
 
-> **Correction (2026-09-10, audit).** `DATASET_MANIFEST.csv` was produced with `inspect_dataset.py --max-frames 8000`, so its `counted_frames` column reads 8000 for every video and its `verdict_reasons` say "header says 30058 frames, we counted 8000". That is a tool artefact, not a discrepancy: the scan was capped and the verdict code did not know it. A full read on Day 08 (`../../week02/day08/DAY_08.MD` §3) found header and counted frames identical for all four videos. The verdict code has been fixed to report a capped scan as such, and `DATASET_MANIFEST_fullscan.csv` (uncapped re-run, 2026-09-10, on a machine without `ffprobe`, so the container-metadata columns are blank) is added alongside. The frame counts in the table above are the header values and are correct.
+> **Correction (2026-09-10, audit).** `DATASET_MANIFEST.csv` was produced with `inspect_dataset.py --max-frames 8000`, so its `counted_frames` column reads 8000 for every video and its `verdict_reasons` say "header says 30058 frames, we counted 8000". That is a tool artefact, not a discrepancy: the scan was capped and the verdict code did not know it. A full read on Day 08 (`../../week02/day08/DAY_08.MD` §3) found header and counted frames identical for all four videos. The verdict code has been fixed to report a capped scan as such, and `reports/MANIFEST.csv` (uncapped re-run of the whole tool, 2026-09-11, with figures and per-video JSON under `reports/`; on a machine without `ffprobe`, so the container-metadata columns are blank) is added alongside. The frame counts in the table above are the header values and are correct.
 
 ---
 
@@ -194,7 +194,7 @@ The good news: each video holds thousands of bits, so a 70% held-out portion sti
 | 6 | Mark M2 as not runnable, with the reason: no labels supplied | `EXPERIMENT_PLAN_V2.MD` Phase E |
 | 7 | Each LED needs its own ROI, timing and decode, then the streams get combined | Pipeline stages 3–7 |
 
-> **Note (2026-09-10, audit):** row 1 — `sps = 2.83` is *not* a fact; see the §2 correction. Row 4 — adopted (Day 08 R9, Day 09 §6), never exercised. Row 5 — the re-wording of G3 was never formally adopted or closed; see `../day05/DAY_05.MD` §5 note. `METHODOLOGY_V1.MD` is not in the repository.
+> **Note (2026-09-10, audit):** row 1 — `sps = 2.83` is *not* a fact; see the §2 correction. Row 4 — adopted (Day 08 R9, Day 09 §6), never exercised. Row 5 — the re-wording of G3 was never formally adopted or closed; see `../day05/DAY_05.MD` §5 note. `METHODOLOGY_V1.MD` was reconstructed on 2026-09-11 (`../day06/`).
 
 ---
 

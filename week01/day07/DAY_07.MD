@@ -14,7 +14,7 @@
 
 Both scripts have been **run and tested** on a made-up dataset with deliberate faults built in. What they caught is written up in §7.
 
-> **Note (2026-09-10, audit):** `preserve_raw.sh` is not in the repository; only `inspect_dataset.py` is. There is no §7 in this file — the test findings it refers to are in `DAY_07_FINDINGS.MD`. The supplied videos are kept in `../../Videos/`; the scripts expect them under `data/raw/`. `inspect_dataset.py` was run with `--max-frames 8000` to produce `DATASET_MANIFEST.csv`, which made its frame-count warning misleading — see the correction in `DAY_07_FINDINGS.MD` §1 and `DATASET_MANIFEST_fullscan.csv`.
+> **Note (2026-09-10, audit):** `preserve_raw.sh` is not in the repository; only `inspect_dataset.py` is. There is no §7 in this file — the test findings it refers to are in `DAY_07_FINDINGS.MD`. The supplied videos are kept in `../../Videos/`; the scripts expect them under `data/raw/`. `inspect_dataset.py` was run with `--max-frames 8000` to produce `DATASET_MANIFEST.csv`, which made its frame-count warning misleading — see the correction in `DAY_07_FINDINGS.MD` §1 and the uncapped re-run under `reports/`. `preserve_raw.sh` was added on 2026-09-11 doing what §1 describes; its `SHA256SUMS` (identical to the manifest hashes) is committed in this folder, the locked copy itself lives in `data/raw/` (git-ignored).
 
 ---
 
