@@ -1,7 +1,7 @@
 # Day 18 — Method Comparison and Mentor Review
 
 **Project:** Optical Camera Communication (OCC) Video Message Decoding
-**Files:** `compare_methods.py`, `comparison.json`, `comparison.md`, this file (the 3-slide pack is §1).
+**Files:** `compare_methods.py`, `comparison.json`, `comparison.md`, this file (the 3-slide pack is §1 — written as three Markdown slides rather than a PDF like Days 03 and 09).
 **Data:** DEV part (first 30 %) of every Signal V1 lamp; synthetic streams from `occlib.synth`. TEST (last 70 %) untouched.
 
 ---
@@ -84,6 +84,21 @@ Message correctness and real-data BER: **not measurable, no ground truth.** Real
 **Complexity.** M0: threshold + argmax, 0.1 ms per 1,000 frames. M2: six multiplies per bit, trained in 0.1 s. Nothing here is expensive; runtime is not a selection criterion on this dataset.
 
 **Failure patterns.** The same one everywhere: bits whose window straddles a level change at an unknown phase. They are 50–60 % of every stream, they flip under a half-bit shift, and they flip under a threshold shift. The isolated-bit case is worst (Day 16 §3 note: 7.8 % of single-bit runs survive a phase change). The `2LEDs` L1 stream has 60 % ones (Day 16 §5) — it is either genuinely unbalanced data or a systematic decision bias, and without truth there is no way to tell.
+
+### 2.4 Generalisation across videos and sensitivity to signal quality
+
+**Across the four videos** (per-lamp values in `comparison.json`). The indicators barely move between recordings, which is the most that can be said with one video per condition:
+
+| Method | Safe bits, range over 10 lamps | Phase stability | Threshold tolerance |
+|---|---|---|---|
+| M0 fixed threshold | 40.4–48.8 % | 89.2–91.8 % | 74.0–77.7 % |
+| M1 adaptive threshold | 40.9–48.0 % | 88.9–91.8 % | 74.0–77.7 % |
+| M0 + end margin 0.3 | 36.8–44.9 % | 87.7–91.0 % | 78.0–81.4 % |
+| M2 ML classifier | 37.5–53.4 % | 88.7–93.4 % | 85.3–88.5 % |
+
+The spread within a method (a few points) is smaller than the spread between methods on the synthetic BER, and the lowest-contrast lamp (`3LEDs` L3, 227 vs 250) sits inside every range. **This is consistency across recordings, not generalisation:** four videos of four different lamp counts, no repeat of any condition, so a setting that suits one clip cannot be told from a method that works (Day 07 §6). Any claim beyond "the same behaviour on all four" is unsupported.
+
+**Sensitivity to signal quality.** Only the synthetic model can vary it. At the real noise level (6–11) every method is at 0.00–0.06 % BER with the phase known; at ten times that noise (80) they sit at 0.9–2.1 %, and at phase 0 the noise adds only 1–2 points to a 7–10 % phase-driven error. Signal quality is not the limiting factor on this dataset; the phase is. Day 20 §3 adds the one quality-related failure: beyond a ±10 % threshold shift at noise 80, every rule collapses, because the noise then reaches the threshold.
 
 ---
 
