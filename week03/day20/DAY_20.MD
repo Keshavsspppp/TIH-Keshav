@@ -97,6 +97,19 @@ Assumed bit period off by *e* % from the true one, over 3,000 bits.
 
 **Effect quantified.** A 0.2 % error in the assumed bit rate — 92.0 vs 92.2 bps — is already a coin toss over 3,000 bits, for both rules, phase known or not. The reason is arithmetic: 0.2 % of 3,000 bits is a 6-bit slip, and the BER alignment only absorbs whole-sequence shifts. For a 30-second message the rate must be known to about **0.03 %** (one bit of drift). Days 10, 13 and 14 could not confirm it to within **40 %**, and the Day 14 beat candidates sit at 90.8–91.1 bps, 1 % from the filename. **No sampling rule, threshold or ROI choice matters until this number is right.** Block-wise re-estimation of the phase (Day 08 R8) would relax it by the block length, but there is no phase estimate to re-estimate (Day 15).
 
+## 5b. Execution time per condition *(added 2026-09-11)*
+
+Median of 5 runs, one lamp (1LED DEV part, 8,356 frames), `timing.py` → `timing.json`. No tested condition changes the cost by more than a factor of two, and every decode is under a millisecond; runtime is not a discriminating metric on this dataset.
+
+| Condition | Baseline (confident) | Tuned (nearest) | Runner-up (average) |
+|---|---|---|---|
+| Default decode | 0.49 ms | 0.10 ms | 0.22 ms |
+| Smoothing 3 / 9 frames | 0.66 / 0.68 ms | 0.18 / 0.14 ms | 0.29 / 0.29 ms |
+| Threshold shift, period error | unchanged (same code path) | unchanged | unchanged |
+| 12-phase ensemble (safe mask) | 4.7 ms | 0.8 ms | 2.5 ms |
+
+ROI aggregation (brightest-25 % mean of one box, per frame): 20 µs at scale 0.5, 44 µs at 1.0, 267 µs at 2.0 — the one cost that scales with the setting (box area), and still ~8 s for the longest video at 2×.
+
 ---
 
 ## 6. In Terms of the Research Question
@@ -111,6 +124,7 @@ Assumed bit period off by *e* % from the true one, over 3,000 bits.
 | Threshold | ±30 % of range (noise 8); ±10 % (noise 80) | ±0 | Insensitive at the real noise level |
 | Bit phase | −0.40 to +0.20 bit | −0.10 to −0.05 | Robust over 60 % of phases |
 | Bit period | **±0.03 % over 3,000 bits** | same | **The one sensitivity that matters, and the one quantity not known** |
+| Execution time | < 1 ms per decode under every condition (§5b) | ×5 slower, still < 1 ms | Not a discriminator |
 | Ambient / exposure | not variable on this dataset (Day 08: 0.1 % drift); exposure only via the model | — | Untested on real data |
 
 **The insight.** The pipeline is robust to everything it can control — box, smoothing, threshold, even the phase, once the sampling rule is right — and hostage to the one thing it cannot: the bit period. Every "robustness" number above is conditional on 92.000 bps being exact. The data say it is not confirmed (Day 13) and may be off by a percent (Day 14). So the honest answer to the research question on this dataset is: *accurately enough that the settings do not matter, provided the clock is known; and the clock is not known.* The next real-data step is not decoder work — it is getting the transmitted bits for one video (Q1), or the clock from the beat (Day 14 H5) to better than 0.03 %.
@@ -131,3 +145,4 @@ Assumed bit period off by *e* % from the true one, over 3,000 bits.
 | `ablation.py` | The five sweeps, both rules, one video pass for the ROI variants |
 | `ablation_results.json` | Every number, per setting and rule (ROI rows are medians over the ten lamps) |
 | `fig_ablation_day20.png` | Six panels: smoothing, threshold, phase, period (synthetic BER); ROI scale and shift (real) |
+| `timing.py`, `timing.json` | Execution time per condition (§5b) |
