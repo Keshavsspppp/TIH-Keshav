@@ -120,6 +120,8 @@ Points where an outside view would help most. Findings only — no code.
 
 To be filled in during the session. Left blank on purpose — nothing here is written in advance.
 
+> **Note (2026-09-11):** this section was never filled in, so the Day 14 deliverables "peer-review observations" and "one documented peer insight" are absent. `PEER_REVIEW.MD` in this folder repeats the required fields with our side pre-filled from §2–§6; the peer side remains blank until it can be recovered from notes.
+
 ### Session details
 
 | | |

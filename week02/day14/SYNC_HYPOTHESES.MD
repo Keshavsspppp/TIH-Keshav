@@ -23,7 +23,7 @@ Why this file exists: Day 13 found that the level changes in the video line up w
 
 E8 and E9 are new today and they change the picture. See §6.
 
-> **Note (2026-09-10, audit).** E8 and E9 re-verified on the regenerated Signal V1: coincidence 2.28–3.85× chance across all ten lamp pairs; strongest repeat lags 21 / 81 / 41 / 61 in `2LEDs` and `4LEDs`, 63 / 84 in `3LEDs`. The code that produced them on Day 14 is not in this folder; the equivalent is `../../OCC_Complete_Analysis.ipynb` §8. The lamp correlation in H5 ("0.31 to 0.41") is the Day 07 figure; on Signal V1 it is 0.36–0.44. Question numbering: Day 07 used Q1–Q8 and Day 09 renumbered to Q1–Q4; from Day 10 on, Q1 = transmitted bits, Q2 = framing, Q3 = payload-vs-switching rate, and "Q5" below (exposure time) is a new question, not Day 07's Q5.
+> **Note (2026-09-10, audit).** E8 and E9 re-verified on the regenerated Signal V1: coincidence 2.28–3.85× chance across all ten lamp pairs; strongest repeat lags 21 / 81 / 41 / 61 in `2LEDs` and `4LEDs`, 63 / 84 in `3LEDs`. The code that produced them on Day 14 was not in this folder; `beat_analysis.py` (added 2026-09-11) reproduces E8, E9 and the H5 candidates from Signal V1 and writes `beat_results.json` / `fig_beat_check.png`; the same analysis is in `../../OCC_Complete_Analysis.ipynb` §8. The lamp correlation in H5 ("0.31 to 0.41") is the Day 07 figure; on Signal V1 it is 0.36–0.44. Question numbering: Day 07 used Q1–Q8 and Day 09 renumbered to Q1–Q4; from Day 10 on, Q1 = transmitted bits, Q2 = framing, Q3 = payload-vs-switching rate, and "Q5" below (exposure time) is a new question, not Day 07's Q5.
 
 ---
 
