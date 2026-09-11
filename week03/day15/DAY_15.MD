@@ -8,6 +8,21 @@
 
 > **Note (2026-09-10, audit).** Only `decode_report.json` (in this folder, not `bits/`) was committed; the 20 `.npy` bit files were not. Re-running `decoder.py` on the regenerated `../../week02/day12/signal_v1/` reproduces the report exactly. The §2 table is computed with the phase **held at the fixed decoder's choice**, which the original `decoder.py` did not output — the JSON's `fixed_vs_adaptive_agree_pct` lets each decoder pick its own phase and reads about 60 % on three signals (§3). `decoder.py` now also writes `fixed_vs_adaptive_agree_pct_same_phase`, and the report has been regenerated with that one extra field (every other value unchanged). The Day 15 task also asked for mentor feedback; none is recorded here.
 
+> **Added 2026-09-11.** (1) `plot_decisions.py` → `fig_decisions.png` draws the threshold and the decoded decisions over 150 frames of every lamp, which the Day 15 task asked for and `fig_decode.png` did not show; it makes §3 visible — most windows straddle two levels, and the adaptive threshold lies on top of the fixed one. (2) Baseline parameters, collected in one place:
+>
+> | Parameter | Value | Basis |
+> |---|---|---|
+> | `bits_per_second` | 92.0 | **Assumed** from the filename (Days 10, 13) |
+> | period | 260 / 92 = 2.826 frames | measured fps ÷ assumed rate |
+> | fixed threshold | midpoint of the 10th and 90th percentiles | near-binary signal, Day 10 |
+> | adaptive window | 2,600 frames (10 s), rolling 10/90 midpoint | wide enough not to chase data |
+> | hysteresis (adaptive only) | 5 % of range | Schmitt trigger, Day 05 M1 |
+> | sampling rule | most confident frame in the window | Day 09 §2 — **reversed on Day 19** |
+> | phase | own estimate, 60 steps over one period | shown in §3 to be meaningless |
+> | bit window | `ceil(start)` … `floor(start + period)` | **over-reaches into the next bit — found on Day 17** |
+>
+> (3) Discipline note: the DEV/TEST split (first 30 % / last 70 %) was instituted on Day 17. This day and Day 16 decoded the **full** signals, so their indicators include frames later designated TEST. No parameter was tuned on them (§5 "stop tuning"), so no selection leaked, but the numbers here are not held-out numbers.
+
 **Read this first.** The decoder works. The bits are not trustworthy, and the reason is specific and fixable-in-principle. It is set out in §3.
 
 ---
@@ -192,3 +207,4 @@ This is worth trying before any more decoder work, because every downstream numb
 | `bits/*_fixed.npy`, `bits/*_adaptive.npy` | Preliminary bit sequences, 20 files |
 | `bits/decode_report.json` | Per-signal indicators: margins, stream statistics, phase stability, repetition |
 | `fig_decode.png` | The three results of §2 to §4 in one figure |
+| `plot_decisions.py`, `fig_decisions.png` | Threshold and decoded bits drawn over the signal, all ten lamps (added 2026-09-11) |
