@@ -38,6 +38,22 @@ Baseline and tuned agree on **79.2 %** of TEST bits (77–81 % per lamp). Per-la
 
 **Reading it.** Every number went the way Day 19 §3 predicted. The tuned decoder's *safe* share is 9 points lower and its phase stability 2 points lower — the real-data indicators favour the baseline, and they are wrong to, because they measure how little the output moves, not whether it is right (Day 19 §3, Day 20 §4). The one indicator that does move the right way is threshold tolerance: 75 % → 99.8 %, the E09b failure of the baseline rule removed. Everything else on the real data is unverifiable.
 
+### 1.3 Robustness / ablation findings (Day 20, summarised)
+
+Working ranges at BER ≤ 1 % on the model (or < 1 % of real bits changed). Full tables and figure in `../day20/`.
+
+| Setting swept | Baseline | Tuned | What decides it |
+|---|---|---|---|
+| ROI scale 0.5×–2× | 83–100 % bits unchanged | **99.0–100 %** | box on the lamp = same bits |
+| ROI shift ±0.5 box | 92–100 % | **99.3–100 %** | same |
+| Smoothing window | 1–3 frames ok; ≥ 5 fatal | same | window longer than a bit erases edges |
+| Threshold ±0.3 of range | 17–30 % of bits flip; +5 BER points | **0.00 % BER, > 99 % unchanged** | confident rule follows the threshold, nearest does not |
+| Phase offset | −0.10 to −0.05 bit (0.05 wide) | **−0.40 to +0.20 bit (0.60 wide)** | single centre sample vs straddling window |
+| Bit period | **±0.2 % → 41 % BER** | **same** | 6-bit slip over 3,000 bits; no rule can absorb it |
+| Execution time | < 1 ms | < 1 ms | not a discriminator |
+
+**Generalisation limit, stated plainly.** Every one of these ranges was measured on the DEV part of four videos that are four different setups and on a synthetic model of the assumed clock. They show the same behaviour on all four recordings; they cannot show that the behaviour would hold on a fifth setup, a different camera, or a different lamp. The Day 14 difficult windows (`1LED` at 50 s and 95 s, the highest near-threshold rates in the set) fall inside TEST (DEV ends at 32 s); baseline and tuned agree on 82 % and 80 % of the bits in those two 5-second windows against 81 % for the whole of TEST (index-aligned), and the tuned rule's phase-independent share there is 30 % and 40 % against 34 % overall — nothing singles them out.
+
 ---
 
 ## 2. Representative Successes and Failures
@@ -73,6 +89,7 @@ Six of them, as frames ([one before] + window + [one after], brightness 0–255,
 2. **The phase.** Tuned decoding is right across 60 % of phases on the model. The other 40 % of phases give 8–25 % BER, and on the real videos we do not know which case we are in.
 3. **Noise at the true phase.** The tuned single-sample rule is worse than the baseline when the phase *is* known and noise is high (6.65 % vs 1.97 % at noise 80). At the real noise level (6–11) both are 0.0–0.2 %; this only matters if the assumption "phase unknown" is ever removed.
 4. **No correctness measurement at all on real data.** Unchanged since Day 07.
+5. **Split discipline has a dated start.** DEV/TEST was instituted on Day 17; Days 15–16 decoded the full signals (no tuning was done on them, but their reported indicators include TEST frames). From Day 17 on, TEST was opened once, here.
 
 ---
 
