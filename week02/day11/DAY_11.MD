@@ -8,7 +8,7 @@
 
 This step does **not** decode anything. It produces the signal that the decoder will read. Bits come later.
 
-> **Note (2026-09-10, audit).** `configs/preprocess_v1.yaml` and `signals/` were not committed. The config has been reconstructed from the documented settings (`configs/preprocess_v1.yaml`, header comment explains); with it, `occ_pipeline.py` on `../../Videos/` reproduces all ten signals **byte-for-byte** (value and file SHA-256 match `../day12/SIGNAL_V1_MANIFEST.json`), which is the determinism claim in §4 checked on a different machine and a different day. The frozen output is now in `../day12/signal_v1/`. `fig_signals.png` was not regenerated.
+> **Note (2026-09-10, audit).** `configs/preprocess_v1.yaml` and `signals/` were not committed. The config has been reconstructed from the documented settings (`configs/preprocess_v1.yaml`, header comment explains); with it, `occ_pipeline.py` on `../../Videos/` reproduces all ten signals **byte-for-byte** (value and file SHA-256 match `../day12/SIGNAL_V1_MANIFEST.json`), which is the determinism claim in §4 checked on a different machine and a different day. The frozen output is now in `../day12/signal_v1/`. `fig_signals.png` was not regenerated. Per-sample frame/timestamp metadata, which the Day 11 task asked for and `meta.json` only implies (trim start/end), is now written by `make_frames_csv.py` as `signal_v1/<video>/frames.csv` (sample index → video frame → seconds), added 2026-09-11.
 
 ---
 
