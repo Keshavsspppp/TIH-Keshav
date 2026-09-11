@@ -1,0 +1,57 @@
+{
+  "performance": {
+    "threshold_ms": 0.8527000027243048,
+    "decode_final_ms": 0.14480000027106144,
+    "decode_baseline_ms": 0.6087999972805846,
+    "safe_mask_12_phases_ms": 1.7394999995303806,
+    "peak_python_alloc_decode_MB": 0.588205,
+    "process_rss_MB": 120.09472,
+    "frame_buffer_MB": 0.6912,
+    "roi_sample_stack_MB": 138.24,
+    "FINAL_CONFIG.json_bytes": 4484,
+    "decoder_free_parameters": 4,
+    "decoder_parameter_list": "threshold percentiles (10, 90), period 2.826, phase 0, sampling rule",
+    "ml_classifier_parameters_for_comparison": 7,
+    "pipeline_code_lines": 783
+  },
+  "test_medians": {
+    "baseline (Day 15: fixed thr, confident)": {
+      "safe_pct": 44.370000000000005,
+      "phase_stability_pct": 89.595,
+      "threshold_tolerance_pct": 75.19
+    },
+    "final (frozen: fixed thr, nearest)": {
+      "safe_pct": 35.614999999999995,
+      "phase_stability_pct": 87.62,
+      "threshold_tolerance_pct": 99.825
+    }
+  },
+  "agreement_pct": 79.18677612411946,
+  "synthetic": {
+    "baseline (Day 15: fixed thr, confident)": {
+      "8": {
+        "ber_phase0": 12.714511686239197,
+        "ber_true": 0.20840280093364455,
+        "phase_tol": 0.09999999999999998
+      },
+      "80": {
+        "ber_phase0": 11.870623541180393,
+        "ber_true": 1.9673224408136045,
+        "phase_tol": 0.0
+      }
+    },
+    "final (frozen: fixed thr, nearest)": {
+      "8": {
+        "ber_phase0": 5.560186728909637,
+        "ber_true": 0.0,
+        "phase_tol": 0.6124999999999998
+      },
+      "80": {
+        "ber_phase0": 8.294431477159053,
+        "ber_true": 6.6522174058019345,
+        "phase_tol": 0.0
+      }
+    }
+  },
+  "note": "identical to Day 21; nothing changed after the freeze"
+}
