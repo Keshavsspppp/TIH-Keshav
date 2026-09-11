@@ -55,3 +55,18 @@ Selection rule fixed before running: primary = validation BER at phase 0 (synthe
 | E19-49 | B ML | C 1.0, 7 frames | 7.182 % | 0.596 % | 0.19 | 48.8 % | 92.0 % | 0.24 |
 | E19-50 | B ML | C 10.0, 5 frames | 8.958 % | 0.617 % | 0.18 | 49.8 % | 91.5 % | 0.21 |
 | E19-51 | B ML | C 10.0, 7 frames | 7.232 % | 0.592 % | 0.19 | 48.8 % | 91.9 % | 0.23 |
+
+## Dataset / split used for every run
+
+Synthetic validation streams: seeds 30–33, 3,000 bits each, noise 8 and 80, exposure 0.3, phase uniform in [0, T); never used on Days 17–18 (train seeds 0–3, test seeds 10–13 and 20–23). Real: DEV part (first 30 %) of all ten Signal V1 lamps, indicators logged only. TEST (last 70 %) not opened.
+
+## Observations (added 2026-09-11)
+
+| Runs | Observation |
+|---|---|
+| E19-01/10/19/28/37 (confident, end margin 0 → 0.5) | Each 0.1 frame of end margin removes about 0.4 points of phase-0 BER and widens the band; it cannot get the confident rule below 10 % — the window still straddles bits |
+| E19-02/11/20/29/38 (nearest) | End margin has no effect at all (the rule never looks at the window end); percentile pair changes the third decimal. Best on the primary metric, worst at the true phase under noise 80 (single noisy sample) |
+| E19-03/12/21/30/39 (average) | Equivalent to nearest on the primary metric within 0.4 points; better at the true phase; the end margin *hurts* it slightly because it removes a valid frame |
+| all A rows, percentile pairs (5,95)/(10,90)/(25,75) | Indistinguishable — the signal is near-binary, the midpoint is the same to within a grey level |
+| E19-46..51 (ML) | The 7-frame window is worth 1.5 points; C is irrelevant across two decades; the classifier never beats the nearest rule at phase 0 on this validation set |
+| DEV columns, all rows | Safe share and phase stability rank the rules in the *opposite* order to the validation BER (confident highest). Recorded as the reason these columns are not selection criteria |

@@ -19,6 +19,16 @@
 
 Every run is one row of `EXPERIMENT_LOG_DAY19.MD` with its settings, all five metrics and its runtime. Total runtime 11 s.
 
+**Parameters deliberately not tuned, and why** *(added 2026-09-11 — the task lists smoothing and synchronisation parameters)*:
+
+| Parameter | Not tuned because |
+|---|---|
+| Smoothing window | Day 12 measured every window as harmful on the signal (27 % of transitions deleted at 3 frames). Day 20 §2 then swept it on the decoder: a 3-frame window changes the tuned rule's BER by 0.1 point and destroys decoding from 5 frames. Nothing to gain |
+| Number of ensemble phases (`n_phases`) | Affects only the safe-mask resolution, not the decoded bits; Day 16 §6 showed 12 vs 24 moves the mask by under 0.3 points |
+| Phase | Cannot be estimated (Day 15); held as a convention. Day 20 §4 sweeps it |
+| Bit period | The filename's value, unconfirmed; Day 20 §5 shows a 0.2 % change is fatal, so it is not a parameter to *tune* but a quantity to *find* (Week-4 direction) |
+| Adaptive-threshold window | The adaptive threshold was dropped on Day 18 (identical to fixed, three times slower) |
+
 ---
 
 ## 2. Results
@@ -81,6 +91,6 @@ Day 15 found the symptom (the phase score is flat); Day 17's generator made it m
 | File | What it is |
 |---|---|
 | `tune.py` | The grid, the validation, the log writer |
-| `EXPERIMENT_LOG_DAY19.MD` | One row per run, all 51, best marked |
+| `EXPERIMENT_LOG_DAY19.MD` | One row per run, all 51, best marked; observations per group at the end |
 | `tuning_results.json` | The same, machine-readable, with the selection rule and the classifier weights per run |
 | `best_config.json` | The selected configuration, plus the best of each candidate |
