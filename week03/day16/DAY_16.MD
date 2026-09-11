@@ -153,7 +153,9 @@ Every setting in decoder v2, its value, and why.
 
 **Improved:** the decoder no longer claims a confidence it does not have. It reports what is decided and what is not, and 44% of every stream is now usable in a way it was not on Day 15.
 
-**Not improved:** the symbol timing itself. One approach failed (§2; see the correction at the top). Sub-frame interpolation failed because the data lacks intermediate frames; everything else fails for the reason Day 13 established — the transitions carry no grid structure to lock onto.
+**Not improved:** the symbol timing itself. One approach failed (§2; see the correction at the top).
+
+> **Forward reference (2026-09-11).** The Day 16 task asked for improved symbol timing and transition handling. What this day delivered is a way to *live with* the unknown phase (the mask), not better timing. The two improvements that did work came later and should be read as the completion of this task: **Day 17** found that the bit window used here reaches one frame into the next bit and added an end margin (`../day17/occlib.py`, `bit_windows`); **Day 19** replaced the most-confident-frame rule with the nearest-frame rule, which halves the phase-0 error on the model and widens the phase band from 0.05 to 0.65 bit (`../day19/DAY_19.MD` §3, `../day20/DAY_20.MD` §4). "Transition-aware decoding" in the task's sense was not attempted as such; the mask is phase-aware, and Day 20 §2–3 quantify how each rule behaves at transitions. Same evaluation procedure throughout: `report.json` regenerates identically. Sub-frame interpolation failed because the data lacks intermediate frames; everything else fails for the reason Day 13 established — the transitions carry no grid structure to lock onto.
 
 **Still true:** no ground truth. Nothing here measures whether a bit is right. A stream can be 100% phase-independent and still wrong about every bit if the period is wrong.
 
