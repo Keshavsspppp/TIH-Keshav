@@ -1,0 +1,14 @@
+# One environment for the whole repository (Days 7-21). Versions are the ones every
+# committed number was produced with (Python 3.13.9, 2026-09-11). Newer versions of these
+# packages will almost certainly work; if a regenerated file differs from a committed one,
+# pin back to these first.
+numpy==2.3.5
+opencv-python==5.0.0.93
+scipy==1.16.3
+scikit-learn==1.7.2
+PyYAML==6.0.3
+matplotlib==3.10.6
+jupyter
+nbformat==5.10.4
+nbconvert==7.16.6
+python-pptx==1.0.2   # Day 26: builds the presentation .pptx from the slide spec
