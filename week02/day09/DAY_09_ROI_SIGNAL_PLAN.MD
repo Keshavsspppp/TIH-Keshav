@@ -43,6 +43,8 @@ So the thing that makes the lamps hard to separate by shape is exactly the thing
 
 **The lamp count was never given to the detector.** It is worked out from the data and matches the filename in all four videos. The faint glare smudge in `1LED` is correctly ignored.
 
+> **Candidate-ROI comparison (2026-09-11).** The Day 09 task asked for candidate ROIs to be compared on visibility, noise, stability, isolation and ambient sensitivity. This section compared detection *methods*; the box-level comparison is now in `ROI_CANDIDATES.MD` (from `roi_candidates.py`: the Day 07 single-blob box, this section's box, ×0.5, ×2 and a half-width shift, per lamp, DEV part). What it shows: every box that sits on its lamp is equivalent — gap 243–250, gap/noise 30–125, on-level drift ≤ 0.3 grey levels; doubling the box halves visibility and triples noise; the Day 07 blob box scores a correlation of 0.99–1.00 against a *neighbouring* lamp on every multi-lamp video, which is the failure §1 describes, now quantified (own-lamp boxes sit at 0.38–0.41, the shared structure). The background correlation (0.14–0.53) is the lamp lighting the room, not ambient light driving the box — Day 08 measured ambient at under one grey level — and it is the same for every candidate, so it does not discriminate. Day 20 §1 later swept box scale and shift on the full decoder with the same conclusion.
+>
 > **Note (2026-09-10, audit):** re-run of `roi_extract.py` on `../../Videos/` finds the same 1/2/3/4 lamps and the same boxes (regenerated `rois.json` added to this folder). The boxes finally used by Signal V1 differ by ≤ 1 px (`../day12/SIGNAL_V1_MANIFEST.json`), because `roi_extract.py` does not seed k-means — fixed in `../day11/occ_pipeline.py`. The "0.31 to 0.41" correlation quoted above is the Day 07 figure; on the final per-lamp signals it is 0.36–0.44 (`../../week01/day07/DAY_07_FINDINGS.MD` §4 correction).
 
 ### Trimming
@@ -195,4 +197,4 @@ The phase search still runs, even though the chosen rule barely needs it. It cos
 | `fig_eye_only.png` | Eye diagram for one bit |
 | `rois.json` | Trim points and lamp boxes for all four videos — **regenerated 2026-09-10** from `../../Videos/` with `roi_extract.py` (the original was not committed; trims match the Day 10 notebook to within 3 frames) |
 
-> **Note (2026-09-10, audit):** `Day09_progress_pack.pptx` is in this folder as `DAY09_KeshavPrasad_PPT.pptx.pdf` (its title slide still reads "DAY 03 REVIEW"). `fig_eye_only.png` is not in the repository. `roi_extract.py` reads `data/raw/*.mp4`; copy or link `../../Videos/` there to run it.
+> **Note (2026-09-10, audit):** `Day09_progress_pack.pptx` is in this folder as `DAY09_KeshavPrasad_PPT.pptx.pdf` (its title slide still reads "DAY 03 REVIEW"). `fig_eye_only.png` was not committed; a replacement was drawn from Signal V1 on 2026-09-11 (labelled on the figure). `roi_extract.py` reads `data/raw/*.mp4`; copy or link `../../Videos/` there to run it.
