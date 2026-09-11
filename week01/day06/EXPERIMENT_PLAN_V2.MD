@@ -4,7 +4,7 @@
 **Replaces:** `EXPERIMENT_PLAN.MD` (version 1, Day 05). Version 1 is kept for the record, not deleted.
 **Read with:** `METHODOLOGY_V1.MD` (the plan), `DAY_05.MD` (workflow and folders), `EXPERIMENT_LOG.MD` (results).
 
-> **Note (2026-09-10, audit):** `METHODOLOGY_V1.MD` is not in the repository, so the §3 checklist and §6.3 split rule it cites cannot be checked; `EXPERIMENT_LOG.MD` lives in `../day05/`. After the data arrived: E00 ran (Day 07); the DEV/TEST role split (E00, E17, E19) was replaced by a within-video time split (`../day04/DAY_04.MD` §3 note); Gate G3 in E05 could not be evaluated and Gate G4 failed (`../day05/DAY_05.MD` §5 note); the detrend/normalise settings swept in E05 and E08 were switched off on measurement (`DAY_06.MD` §2.2 note).
+> **Note (2026-09-10, audit):** `METHODOLOGY_V1.MD` was not in the repository; it was reconstructed from the Day 04–06 text on 2026-09-11 with §3 and §6.3 matching these citations; `EXPERIMENT_LOG.MD` lives in `../day05/`. After the data arrived: E00 ran (Day 07); the DEV/TEST role split (E00, E17, E19) was replaced by a within-video time split (`../day04/DAY_04.MD` §3 note); Gate G3 in E05 could not be evaluated and Gate G4 failed (`../day05/DAY_05.MD` §5 note); the detrend/normalise settings swept in E05 and E08 were switched off on measurement (`DAY_06.MD` §2.2 note).
 
 ---
 
