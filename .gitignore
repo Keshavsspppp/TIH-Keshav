@@ -13,15 +13,29 @@
 /signal_v1/
 /bits/
 /bits_v2/
+# root-level scratch only: week01/day07/reports/ (the Day 07 inspection output) is tracked
 /reports/
 /runs/
 var_*.npy
+
+# ---- Python environment: ONE at the repository root, never per folder ----
+.venv/
+venv/
+env/
+.env
+.python-version
+.conda/
+*.egg-info/
 
 # ---- Python / Jupyter ----
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
 *_exec.ipynb
+
+# ---- faculty source material: keep local, not part of the submission package ----
+/OCC Video Message Decoding - Problem Statement*.docx
+/OCC_Video_Message_Decoding_Kickoff.pptx
 
 # ---- OS / editor ----
 desktop.ini
